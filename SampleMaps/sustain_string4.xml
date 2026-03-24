@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap CrossfadeGamma="1.0" ID="sustain_string4" RRGroupAmount="6.0"
+           MicPositions=";">
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.000000238418579"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.0"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.075582027435303"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.048069477081299"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.0"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.070379495620728"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.120752334594727"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.471323490142822"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.097981333732605"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.094603419303894"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.128936171531677"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.447248935699463"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.055914163589478"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.464848160743713"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.241720914840698"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.203574061393738"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.229368448257446"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.356625199317932"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.29909336566925"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.258387446403503"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.14039158821106"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.204143643379211"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.332852244377136"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.203351497650146"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.283166646957397"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.175252318382263"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_C4_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.038147211074829"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.220775723457336"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.062292814254761"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.055978655815125"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.157582998275757"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.00000011920929"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#3_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.000000238418579"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.222829103469849"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.247418522834778"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.104180693626404"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.038375735282898"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.000000715255737"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_G#3_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.000000953674316"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.000001072883606"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.094403147697449"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_F#3_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.00000011920929"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.102346420288086"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.364327430725098"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.000000238418579"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.179173946380615"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.123074889183044"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_E3_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.300732374191284"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.476549386978149"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR5.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.468976497650146"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR4.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.347458481788635"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR3.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.390681147575378"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR2.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="0" NormalizedPeak="1.229215860366821"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="89" HiVel="127" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_D3_RR1.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.652949452400208"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="2.518959283828735"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.77695369720459"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="12.62407302856445"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.206707954406738"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="3.137632608413696"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.067830324172974"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.812402248382568"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.560418128967285"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.67999792098999"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.778587341308594"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="6.452849864959717"/>
+  <sample Root="80" LoKey="80" HiKey="81" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.886188983917236"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.734408378601074"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.345840930938721"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.784590721130371"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="2.901176929473877"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="4.219089031219482"/>
+  <sample Root="78" LoKey="78" HiKey="79" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.702801465988159"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.278304100036621"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.913857460021973"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.117758750915527"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.499088764190674"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="9.89710521697998"/>
+  <sample Root="76" LoKey="76" HiKey="77" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.914819240570068"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.220633506774902"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.18966007232666"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.97302770614624"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.036529064178467"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="4.212474346160889"/>
+  <sample Root="74" LoKey="74" HiKey="75" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.532856464385986"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.668628692626953"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.779642581939697"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="12.76049327850342"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.158755302429199"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="6.51806640625"/>
+  <sample Root="72" LoKey="72" HiKey="73" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_C4_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.47590446472168"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.299297332763672"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.352782726287842"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.514926910400391"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.446142196655273"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="8.078802108764648"/>
+  <sample Root="70" LoKey="70" HiKey="71" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_A#3_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.846514225006104"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.333974361419678"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.124630928039551"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="6.14069128036499"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.185173988342285"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="5.967570781707764"/>
+  <sample Root="68" LoKey="68" HiKey="69" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_G#3_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.844394683837891"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.485625743865967"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.28009033203125"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="8.097487449645996"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.52414608001709"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="5.126523971557617"/>
+  <sample Root="66" LoKey="66" HiKey="67" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_F#3_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.091592788696289"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.645292282104492"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="5.081181049346924"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="2.928856372833252"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.370043516159058"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="4.766609191894531"/>
+  <sample Root="64" LoKey="64" HiKey="65" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_E3_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="2.843230724334717"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR6.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="7.30855655670166"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="5"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR5.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="4.332276344299316"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="4"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR4.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.769986391067505"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="3"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR3.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.613253116607666"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="2"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR2.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="0" NormalizedPeak="2.609737873077393"/>
+  <sample Root="62" LoKey="62" HiKey="63" LoVel="0" HiVel="103" RRGroup="1"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic1_string4_D3_RR1.wav"
+          Duplicate="1" UpperVelocityXFade="15" Normalized="1" NormalizedPeak="3.201852798461914"/>
+  <sample Root="82" LoKey="82" HiKey="83" LoVel="89" HiVel="127" RRGroup="6"
+          FileName="D:\Reaper Projects\Reaper Projects\Batch editing for libraries\Ambersand\AmbersandTest\ampersand_sustain_dynamic3_string4_A#4_RR6.wav"
+          Duplicate="1" LowerVelocityXFade="15" Normalized="1" NormalizedPeak="1.0"/>
+</samplemap>
