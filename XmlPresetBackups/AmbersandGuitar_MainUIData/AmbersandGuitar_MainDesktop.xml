@@ -1,3 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ContentProperties DeviceType="Desktop"/>
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="0" y="0"
+             width="1200" height="600" itemColour="4294967295" itemColour2="4227858431"
+             itemColour3="4294967295" bgColour="4294967295">
+    <Component type="ScriptImage" id="MainBG" x="0" y="-110" width="1200" height="800"
+               parentComponent="ScriptFloatingTile1" fileName="{PROJECT_FOLDER}Background.png">
+      <Component type="ScriptPanel" id="String6FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String6Fret0Marker" x="157" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret1Marker" x="195" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret2Marker" x="250" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret3Marker" x="298" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret4Marker" x="340" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret5Marker" x="386" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret6Marker" x="418" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret7Marker" x="456" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String6FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret8Marker" x="483" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret9Marker" x="510" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret10Marker" x="537" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret11Marker" x="564" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret12Marker" x="590" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret13Marker" x="617" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret14Marker" x="646" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret15Marker" x="673" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret16Marker" x="702" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret17Marker" x="733" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret18Marker" x="760" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret19Marker" x="785" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret20Marker" x="803" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String6Fret21Marker" x="823" y="392" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="String5FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String5Fret0Marker" x="157" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret1Marker" x="195" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret2Marker" x="250" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret3Marker" x="298" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret4Marker" x="340" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret5Marker" x="386" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret6Marker" x="418" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret7Marker" x="456" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String5FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret8Marker" x="483" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret9Marker" x="510" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret10Marker" x="537" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret11Marker" x="564" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret12Marker" x="590" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret13Marker" x="617" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret14Marker" x="646" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret15Marker" x="673" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret16Marker" x="702" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret17Marker" x="733" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret18Marker" x="760" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret19Marker" x="785" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret20Marker" x="803" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String5Fret21Marker" x="823" y="375" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="String4FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String4Fret0Marker" x="157" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret1Marker" x="195" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret2Marker" x="250" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret3Marker" x="298" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret4Marker" x="340" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret5Marker" x="386" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret6Marker" x="418" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret7Marker" x="456" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String4FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret8Marker" x="483" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret9Marker" x="510" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret10Marker" x="537" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret11Marker" x="564" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret12Marker" x="590" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret13Marker" x="617" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret14Marker" x="646" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret15Marker" x="673" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret16Marker" x="702" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret17Marker" x="733" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret18Marker" x="760" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret19Marker" x="785" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret20Marker" x="803" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String4Fret21Marker" x="823" y="361" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="String3FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String3Fret0Marker" x="157" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret1Marker" x="195" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret2Marker" x="250" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret3Marker" x="298" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret4Marker" x="340" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret5Marker" x="386" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret6Marker" x="418" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret7Marker" x="456" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String3FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret8Marker" x="483" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret9Marker" x="510" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret10Marker" x="537" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret11Marker" x="564" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret12Marker" x="590" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret13Marker" x="617" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret14Marker" x="646" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret15Marker" x="673" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret16Marker" x="702" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret17Marker" x="733" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret18Marker" x="760" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret19Marker" x="785" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret20Marker" x="803" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String3Fret21Marker" x="823" y="345" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="String2FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String2Fret0Marker" x="157" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret1Marker" x="195" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret2Marker" x="250" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret3Marker" x="298" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret4Marker" x="340" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret5Marker" x="386" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret6Marker" x="418" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret7Marker" x="456" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String2FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret8Marker" x="483" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret9Marker" x="510" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret10Marker" x="537" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret11Marker" x="564" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret12Marker" x="590" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret13Marker" x="617" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret14Marker" x="646" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret15Marker" x="673" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret16Marker" x="702" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret17Marker" x="733" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret18Marker" x="760" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret19Marker" x="785" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret20Marker" x="803" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String2Fret21Marker" x="823" y="328" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="String1FretMarkers" x="0" y="0" width="1200"
+                 height="800" parentComponent="MainBG" itemColour="0" itemColour2="0"
+                 textColour="16777215" bgColour="16777215">
+        <Component type="ScriptImage" id="String1Fret0Marker" x="157" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret1Marker" x="195" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret2Marker" x="250" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret3Marker" x="298" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret4Marker" x="340" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret5Marker" x="386" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret6Marker" x="418" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret7Marker" x="456" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="String1FretMarkers"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret8Marker" x="483" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret9Marker" x="510" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret10Marker" x="537" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret11Marker" x="564" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret12Marker" x="590" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret13Marker" x="617" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret14Marker" x="646" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret15Marker" x="673" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret16Marker" x="702" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret17Marker" x="733" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret18Marker" x="760" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret19Marker" x="785" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret20Marker" x="803" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+        <Component type="ScriptImage" id="String1Fret21Marker" x="823" y="314" width="44"
+                   height="40" fileName="{PROJECT_FOLDER}fret indicator2.png" parentComponent="ScriptPanel1"
+                   text="" visible="0"/>
+      </Component>
+    </Component>
+  </Component>
+</ContentProperties>
