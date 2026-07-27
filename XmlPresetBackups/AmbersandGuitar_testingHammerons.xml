@@ -18,7 +18,7 @@
             <Control type="ScriptSlider" id="VibratoDepthKnob" value="0.0"/>
             <Control type="ScriptSlider" id="VibratoFreqKnob" value="8.5"/>
             <Control type="ScriptSlider" id="PitchBendRangeKnob" value="2.0"/>
-            <Control type="ScriptButton" id="DoubleTrackingBtn" value="0.0"/>
+            <Control type="ScriptButton" id="DoubleTrackingBtn" value="1.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsSustain" value="0.0"/>
@@ -123,7 +123,7 @@
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
                 <Processor Type="SimpleGain" ID="LeftGuitarGain" Bypassed="0" Gain="0.0"
-                           Delay="0.0" Width="100.0" Balance="0.0" InvertPolarity="0.0">
+                           Delay="0.0" Width="100.0" Balance="-100.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
                       <ChildProcessors/>
@@ -714,7 +714,7 @@
                         <Processor Type="AHDSR" ID="SusAHDSR" Bypassed="0" Monophonic="0.0" Retrigger="1.0"
                                    Intensity="1.0" AttackCurve="0.5" DecayCurve="0.4173228442668915"
                                    Attack="0.0" AttackLevel="0.0" Hold="1.785698413848877" Decay="1.0"
-                                   Sustain="0.0" Release="151.0" EcoMode="1.0">
+                                   Sustain="0.0" Release="38.04982376098633" EcoMode="1.0">
                           <ChildProcessors>
                             <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                               <ChildProcessors/>
@@ -2624,7 +2624,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -2730,7 +2730,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ffffffff" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -2809,7 +2809,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -2888,7 +2888,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -2967,7 +2967,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -3046,7 +3046,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -3801,7 +3801,7 @@
                 <Processor Type="MidiMuter" ID="RightContainerMute" Bypassed="0">
                   <ChildProcessors/>
                   <Content>
-                    <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                    <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                     <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                   </Content>
                 </Processor>
@@ -3815,7 +3815,7 @@
             </Processor>
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
-                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="-100.0"
+                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="0.0"
                            Delay="0.0" Width="100.0" Balance="100.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
@@ -3859,7 +3859,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -3963,7 +3963,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4040,7 +4040,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4117,7 +4117,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4194,7 +4194,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4271,7 +4271,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -5773,7 +5773,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="2.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -5877,7 +5877,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -5954,7 +5954,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6031,7 +6031,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6108,7 +6108,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6185,7 +6185,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6318,7 +6318,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -6424,7 +6424,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ffffffff" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -6503,7 +6503,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -6582,7 +6582,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6661,7 +6661,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -6740,7 +6740,7 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1TremoloSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
