@@ -20,7 +20,7 @@ reg noteVelocity = 60;*/
 //const var releaseAddition = [-2, -3, -4, -5, -6];
 
 const var startReleaseVolume = 5;
-var releaseVolumeOverTime = Globals.releaseVolume;
+var releaseVolumeOverTime = Globals.g_releaseVolume;
 
 
 //note to self, figure out if you can fade between your pseudo releases
@@ -30,7 +30,7 @@ function onNoteOn()
 	
 	if(Message.getChannel() == 3){
 		    
-		Globals.string3ActiveRR = Sampler.getActiveRRGroup();
+		Globals.g_string3ActiveRR = Sampler.getActiveRRGroup();
 		
 	}
 	else{
@@ -44,7 +44,7 @@ function onNoteOn()
 	if(Message.getChannel() != 3){
 		Message.ignoreEvent(true);
 	}else{
-		Globals.string3ActiveRR = "not playing";
+		Globals.g_string3ActiveRR = "not playing";
 	}
 }
   function onController()
@@ -59,7 +59,7 @@ function onNoteOn()
 local releaseNote;
 local numOfReleases;
 
- if(!Globals.emulatedReleasesOn){
+ if(!Globals.g_emulatedReleasesOn){
 	 return;
  
 	}

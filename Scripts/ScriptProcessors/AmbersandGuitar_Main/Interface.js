@@ -1,32 +1,32 @@
-Globals.forcedHandPositionFret = -1;
-Globals.forcedString = -1;
-Globals.handPositionFret = 0;
-Globals.stringNote1 = -1;
-Globals.stringNote2 = -1;
-Globals.stringNote3 = -1;
-Globals.stringNote4 = -1;
-Globals.stringNote5 = -1;
-Globals.stringNote6 = -1; 
+Globals.g_forcedHandPositionFret = -1;
+Globals.g_forcedString = -1;
+Globals.g_handPositionFret = 0;
+Globals.g_stringNote1 = -1;
+Globals.g_stringNote2 = -1;
+Globals.g_stringNote3 = -1;
+Globals.g_stringNote4 = -1;
+Globals.g_stringNote5 = -1;
+Globals.g_stringNote6 = -1; 
 
-Globals.frettingEngine = 1;
-Globals.legatoRange = 2;
+Globals.g_frettingEngine = 1;
+Globals.g_legatoRange = 2;
 
 
 const var NOTESPERSTRING = 22;
 
-Globals.emulatedReleasesOn = true;
+Globals.g_emulatedReleasesOn = true;
 
 
 
 inline function onResetGlobalRRButtonControl(component, value)
 {
 	if(value){
-		Globals.stringNote1 = -1;
-		Globals.stringNote2 = -1;
-		Globals.stringNote3 = -1;
-		Globals.stringNote4 = -1;
-		Globals.stringNote5 = -1;
-		Globals.stringNote6 = -1; 
+		Globals.g_stringNote1 = -1;
+		Globals.g_stringNote2 = -1;
+		Globals.g_stringNote3 = -1;
+		Globals.g_stringNote4 = -1;
+		Globals.g_stringNote5 = -1;
+		Globals.g_stringNote6 = -1; 
 	}
 };
 
@@ -61,12 +61,12 @@ const var xPosOfFretBorder = [0, 5, 50, 87, 116, 146, //0
 
 
 
-Globals.string6ActiveRR = "not playing";
-Globals.string5ActiveRR = "not playing";
-Globals.string4ActiveRR = "not playing";
-Globals.string3ActiveRR = "not playing";
-Globals.string2ActiveRR = "not playing";
-Globals.string1ActiveRR = "not playing";
+Globals.g_string6ActiveRR = "not playing";
+Globals.g_string5ActiveRR = "not playing";
+Globals.g_string4ActiveRR = "not playing";
+Globals.g_string3ActiveRR = "not playing";
+Globals.g_string2ActiveRR = "not playing";
+Globals.g_string1ActiveRR = "not playing";
 
 
 
@@ -79,8 +79,8 @@ const var NUMOFSTRINGS = 6;
 //connecting with fret markers on the UI
 
 const var NOTESPERSTRING = 22;
-Globals.NUMOFSTRINGS = 6;
-Globals.pitchBendOffset = 0;
+Globals.g_NUMOFSTRINGS = 6;
+Globals.g_pitchBendOffset = 0;
 
 
 
@@ -93,7 +93,7 @@ const var HandPositionFretForceKnob = Content.getComponent("HandPositionFretForc
 
 inline function handPositionFretForceKnobChange(value){
 
-	Globals.forcedHandPositionFret = value - 2;
+	Globals.g_forcedHandPositionFret = value - 2;
 	
 	
 
@@ -113,9 +113,9 @@ const var StringForceKnob = Content.getComponent("StringForceKnob");
 
 inline function onStringForceKnobControl(component, value)
 {
-	Globals.forcedString = value - 2;
-	moveForceString(Globals.forcedString);
-	//Console.print(Globals.forcedString);
+	Globals.g_forcedString = value - 2;
+	moveForceString(Globals.g_forcedString);
+	//Console.print(Globals.g_forcedString);
 };
 
 Content.getComponent("StringForceKnob").setControlCallback(onStringForceKnobControl);
@@ -128,7 +128,7 @@ const var FrettingEngineComboBox = Content.getComponent("FrettingEngineComboBox"
 
 inline function onFrettingEngineComboBoxControl(component, value)
 {
-	Globals.frettingEngine = value;
+	Globals.g_frettingEngine = value;
 };
 
 Content.getComponent("FrettingEngineComboBox").setControlCallback(onFrettingEngineComboBoxControl);
@@ -200,7 +200,7 @@ namespace stringType
 //setting up fretMarkers
 
 var fretImages = [];
-for (var str = 0; str < Globals.NUMOFSTRINGS; str++){
+for (var str = 0; str < Globals.g_NUMOFSTRINGS; str++){
 	
 	var row = [];
 	
@@ -211,7 +211,7 @@ for (var str = 0; str < Globals.NUMOFSTRINGS; str++){
 }
 
 
-for (var i = 0; i < Globals.NUMOFSTRINGS; i++){
+for (var i = 0; i < Globals.g_NUMOFSTRINGS; i++){
 	for (var j = 0; j < NOTESPERSTRING; j++){
 		fretImages[i][j].set("visible", false);
 	}
@@ -222,12 +222,12 @@ inline function updateStringRRLabels()
 {
 	//looks like there's a way do global arrays. Look into later
 
-	StringRRLabel[0].set("text", Globals.string1ActiveRR);
-	StringRRLabel[1].set("text", Globals.string2ActiveRR);
-	StringRRLabel[2].set("text", Globals.string3ActiveRR);
-	StringRRLabel[3].set("text", Globals.string4ActiveRR);
-	StringRRLabel[4].set("text", Globals.string5ActiveRR);
-	StringRRLabel[5].set("text", Globals.string6ActiveRR);
+	StringRRLabel[0].set("text", Globals.g_string1ActiveRR);
+	StringRRLabel[1].set("text", Globals.g_string2ActiveRR);
+	StringRRLabel[2].set("text", Globals.g_string3ActiveRR);
+	StringRRLabel[3].set("text", Globals.g_string4ActiveRR);
+	StringRRLabel[4].set("text", Globals.g_string5ActiveRR);
+	StringRRLabel[5].set("text", Globals.g_string6ActiveRR);
 	
 
 }
@@ -237,7 +237,7 @@ inline function updateStringRRLabels()
 
 inline function hideAll()
 {
-    for (var i = 0; i < Globals.NUMOFSTRINGS; i++)
+    for (var i = 0; i < Globals.g_NUMOFSTRINGS; i++)
         for (var j = 0; j < NOTESPERSTRING; j++)
             fretImages[i][j].set("visible", false);
 }
@@ -271,8 +271,8 @@ inline function keyswitchForceFret(notePlayed, velocity)
 	newFretPosition = velocity % 18;
 
 		HandPositionFretForceKnob.setValue(newFretPosition);
-		Globals.forcedHandPositionFret = newFretPosition;
-		Globals.handPositionFret = newFretPosition;
+		Globals.g_forcedHandPositionFret = newFretPosition;
+		Globals.g_handPositionFret = newFretPosition;
 		
 		
 	}else if(notePlayed == 50)
@@ -280,7 +280,7 @@ inline function keyswitchForceFret(notePlayed, velocity)
 	 Console.print("keyswitch for auto fret change is hit");
 
 		HandPositionFretForceKnob.setValue(-1);
-		Globals.forcedHandPositionFret = -1;
+		Globals.g_forcedHandPositionFret = -1;
 		
 	}
 }
@@ -367,7 +367,7 @@ inline function moveFretBorder(fretPos){
 	
 	posOfCenter = xPosOfFretBorder[lowFret] + (distBetweenFrets/2);
 
-	if(Globals.forcedHandPositionFret != -1)
+	if(Globals.g_forcedHandPositionFret != -1)
 	{
 		FretBorderLowForced.set("visible", true);
 		FretBorderHighForced.set("visible", true);
@@ -491,7 +491,7 @@ function onNoteOn()
 	
 	keyswitchForceFret(notePlayed, velocityPlayed);
 	
-	moveForceString(Globals.forcedString);
+	moveForceString(Globals.g_forcedString);
 	
 	Synth.startTimer(0.05);
 	
@@ -521,8 +521,8 @@ function onController()
 	        normalized = (raw - 8192) / 8192.0;
 	
 	        // Convert to pixel offset
-	        Globals.pitchBendOffset = normalized * MAX_BEND_PIXELS;
-			Console.print(Globals.pitchBendOffset);
+	        Globals.g_pitchBendOffset = normalized * MAX_BEND_PIXELS;
+			Console.print(Globals.g_pitchBendOffset);
 
 	    }
 	    
@@ -535,40 +535,40 @@ function onController()
 	
 	hideAll();
 
-	if(Globals.stringNote6 >= 52 && Globals.stringNote6 <= 73){
-		fretImages[stringType.STRING6][Globals.stringNote6 - 52].set("visible", true);
+	if(Globals.g_stringNote6 >= 52 && Globals.g_stringNote6 <= 73){
+		fretImages[stringType.STRING6][Globals.g_stringNote6 - 52].set("visible", true);
 	}
 	
-	if(Globals.stringNote5 >= 57 && Globals.stringNote5 <= 78){
-		fretImages[stringType.STRING5][Globals.stringNote5 - 57].set("visible", true);
+	if(Globals.g_stringNote5 >= 57 && Globals.g_stringNote5 <= 78){
+		fretImages[stringType.STRING5][Globals.g_stringNote5 - 57].set("visible", true);
 	}
 	
-	if(Globals.stringNote4 >= 62 && Globals.stringNote4 <= 83){
-		fretImages[stringType.STRING4][Globals.stringNote4 - 62].set("visible", true);
+	if(Globals.g_stringNote4 >= 62 && Globals.g_stringNote4 <= 83){
+		fretImages[stringType.STRING4][Globals.g_stringNote4 - 62].set("visible", true);
 	}
 	
-	if(Globals.stringNote3 >= 67 && Globals.stringNote3 <= 88){
-		fretImages[stringType.STRING3][Globals.stringNote3 - 67].set("visible", true);
+	if(Globals.g_stringNote3 >= 67 && Globals.g_stringNote3 <= 88){
+		fretImages[stringType.STRING3][Globals.g_stringNote3 - 67].set("visible", true);
 	}
 	
-	if(Globals.stringNote2 >= 71 && Globals.stringNote2 <= 92){
-		fretImages[stringType.STRING2][Globals.stringNote2 - 71].set("visible", true);
+	if(Globals.g_stringNote2 >= 71 && Globals.g_stringNote2 <= 92){
+		fretImages[stringType.STRING2][Globals.g_stringNote2 - 71].set("visible", true);
 	}
 	
-	if(Globals.stringNote1 >= 76 && Globals.stringNote1 <= 97){
-		fretImages[stringType.STRING1][Globals.stringNote1 - 76].set("visible", true);
+	if(Globals.g_stringNote1 >= 76 && Globals.g_stringNote1 <= 97){
+		fretImages[stringType.STRING1][Globals.g_stringNote1 - 76].set("visible", true);
 	}
 	
-	handPositionFretLabel.set("text", Globals.handPositionFret != -1 ? Globals.handPositionFret : "");
+	handPositionFretLabel.set("text", Globals.g_handPositionFret != -1 ? Globals.g_handPositionFret : "");
 	
 	
-	if(Globals.forcedHandPositionFret != -1)
+	if(Globals.g_forcedHandPositionFret != -1)
 	{
-		moveFretBorder(Globals.forcedHandPositionFret);
+		moveFretBorder(Globals.g_forcedHandPositionFret);
 	
 	}else
 	{
-		moveFretBorder(Globals.handPositionFret);
+		moveFretBorder(Globals.g_handPositionFret);
 	}
 	
 	updateStringRRLabels();

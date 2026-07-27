@@ -38,3 +38,10 @@
  	const var NATURAL = 1;
  	const var MELODY = 2;
  }
+ 
+ 
+ namespace RRBehaviour{
+	 const var SEPARATE = 0;
+	 const var RANDOM = 1;
+	 const var LINEAR = 2;
+ }

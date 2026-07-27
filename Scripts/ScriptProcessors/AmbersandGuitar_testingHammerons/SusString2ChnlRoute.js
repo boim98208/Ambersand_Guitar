@@ -19,7 +19,7 @@ reg noteVelocity = 60;
 //const var releaseAddition = [-2, -3, -4, -5, -6];
 
 const var startReleaseVolume = 15;
-var releaseVolumeOverTime = Globals.releaseVolume;
+var releaseVolumeOverTime = Globals.g_releaseVolume;
 
 
 //note to self, figure out if you can fade between your pseudo releases
@@ -41,7 +41,7 @@ function onNoteOn()
 		        releaseId = -99;
 		}
 		    
-		Globals.string2ActiveRR = Sampler.getActiveRRGroup();
+		Globals.g_string2ActiveRR = Sampler.getActiveRRGroup();
 		noteVelocity = Message.getVelocity();
 		id = Message.getEventId();
 		
@@ -63,8 +63,8 @@ function onNoteOn()
 	}else{
 		isReleased = true;
 		noteReleased = Message.getNoteNumber();
-		releaseVolumeOverTime = Globals.releaseVolume;
-		Globals.string2ActiveRR = "not playing";
+		releaseVolumeOverTime = Globals.g_releaseVolume;
+		Globals.g_string2ActiveRR = "not playing";
 		Synth.startTimer(0.01);
 		Synth.noteOffByEventId(id);
 	}
@@ -78,7 +78,7 @@ function onNoteOn()
 local releaseNote;
 local numOfReleases;
 
- if(!Globals.emulatedReleasesOn){
+ if(!Globals.g_emulatedReleasesOn){
 	 return;
  
 	}

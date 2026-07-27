@@ -5,7 +5,7 @@
 		Message.ignoreEvent(true);
 	}else{
 		//is now playing the note and updates	
-		Globals.string4ActiveRR = Sampler.getActiveRRGroup();
+		Globals.g_string4ActiveRR = Sampler.getActiveRRGroup();
 	}
 }
  function onNoteOff()
@@ -17,7 +17,7 @@
 	}else{
 		Console.print("should be releasing");
 	
-		Globals.string4ActiveRR = "not playing";
+		Globals.g_string4ActiveRR = "not playing";
 	}
 }
  function onController()

@@ -52,8 +52,8 @@ function onNoteOn()
 	local rawVal;
 
 	if(Message.getControllerNumber() == timeStretchCCChannel){
-		Globals.timeStretchRatio = mapTimeStretchRatio(Message.getControllerValue());
-		changeTimestretchRatio(Globals.timeStretchRatio);
+		Globals.g_timeStretchRatio = mapTimeStretchRatio(Message.getControllerValue());
+		changeTimestretchRatio(Globals.g_timeStretchRatio);
 	};
 }
  function onTimer()

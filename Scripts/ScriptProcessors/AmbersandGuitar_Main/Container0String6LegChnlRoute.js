@@ -60,7 +60,7 @@ function onNoteOn()
 local releaseNote;
 local numOfReleases;
 
- if(!Globals.emulatedReleasesOn){
+ if(!Globals.g_emulatedReleasesOn){
 	 return;
  
 	}
