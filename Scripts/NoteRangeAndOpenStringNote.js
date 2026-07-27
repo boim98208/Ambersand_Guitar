@@ -7,7 +7,7 @@
  const var OPENSTRING6NOTE = 52;
  const var OPENSTRING5NOTE = 57;
  const var OPENSTRING4NOTE = 62;
- const var OPENSTRING3NOTE = 67;;
+ const var OPENSTRING3NOTE = 67;
  const var OPENSTRING2NOTE = 71;
  const var OPENSTRING1NOTE = 76;
  

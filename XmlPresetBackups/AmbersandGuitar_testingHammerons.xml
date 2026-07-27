@@ -150,7 +150,7 @@
                     <Processor Type="MidiMuter" ID="MuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -166,7 +166,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -270,7 +270,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -347,7 +347,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -424,7 +424,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -501,7 +501,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -578,7 +578,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1MuteSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -674,7 +674,7 @@
                     <Processor Type="MidiMuter" ID="SusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -690,10 +690,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="2.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string6_denoise_1_0_0">
@@ -955,7 +955,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -1169,13 +1169,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string4_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string4">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -1391,13 +1391,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string3_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string3">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -1609,13 +1609,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string2_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string2">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -1827,13 +1827,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string1_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string1">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -2080,7 +2080,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="2.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -2184,7 +2184,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -2261,7 +2261,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -2338,7 +2338,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -2415,7 +2415,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -2492,7 +2492,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1HarmonicSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4383,7 +4383,7 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
                            PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
@@ -4648,7 +4648,7 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
@@ -4862,13 +4862,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string4_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string4">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -5084,13 +5084,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string3_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string3">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -5302,13 +5302,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string2_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string2">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>
@@ -5520,13 +5520,13 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1SusSampler" Bypassed="0"
-                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
                            OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
-                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string1_denoise_1_0_0">
+                           Group5Table="" Group6Table="" Group7Table="" SampleMapID="sustain_string1">
                   <ChildProcessors>
                     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                       <ChildProcessors>

@@ -973,11 +973,13 @@ for(i = 0; i < SFXAHDSRModulators.length; i++){
 
 
 // setting up purging
+// wont seem to work no matter what I do so I won't use it yet
+
 // I can purge articulations from memory but I can't seem to get articulations back into playing
 
-
 /*
-const var purgeAttributeIndex;
+
+const var purgeAttributeIndex = 12;
 
 
 
@@ -992,13 +994,14 @@ inline function purgeAllSamplersInArray(samplerArray){
 }
 
 // gets all the samples from samplers into RAM
-inline function loadAllSamplersInArray(samplerArray){
-	local samplerToLoad;
-
-	for(i = 0; i < samplerArray.length; i++){
-		samplerToLoad = samplerArray[i];
-		samplerToLoad.setAttribute(12, false);
-	}
+inline function loadAllSamplersInArray(samplerArray)
+{
+    for (i = 0; i < samplerArray.length; i++)
+    {
+        samplerArray[i].setAttribute(12, 0);
+        // Force samplemap reload after unpurge
+        samplerArray[i].asSampler().loadSampleMap(samplerArray[i].asSampler().getCurrentSampleMapId());
+    }
 }
 
 // Lazy load works like kontakt purge where everything is purged until it's played
@@ -1154,9 +1157,9 @@ inline function onPurgeTremoloBtnControl(component, value)
 
 Content.getComponent("PurgeTremoloBtn").setControlCallback(onPurgeTremoloBtnControl);
 
+*/
 
-
-
+/*
 const var allSFXSamplerNames = ["BackBodyHit"]
 AllSFXSamplers.reserve(AllLeftSFXSamplers.length + AllRightSFXSamplers);
 
@@ -1167,8 +1170,8 @@ inline function onPurgeSFXBtnControl(component, value)
 };
 
 Content.getComponent("PurgeSFXBtn").setControlCallback(onPurgeSFXBtnControl);
- */
  
+ */
  
  
 // setting up the keyboard
@@ -1192,7 +1195,7 @@ for(var i = FIRSTPERCUSSION; i < LASTPERCUSSION + 1; i++){
 }
 
 
-Engine.setKeyColour(LEGATOKEYSWITCHNOTE, KeyboardColors.LEGATO);
+Engine.setKeyColour(legatoKeySwitchNote, KeyboardColors.LEGATO);
 Engine.setKeyColour(FORCEFRETMODEKEYSWITCH, KeyboardColors.FORCEFRETHAND);
 Engine.setKeyColour(AUTOFRETMODEKEYSWITCH, KeyboardColors.FORCEFRETHAND);
 

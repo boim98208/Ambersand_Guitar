@@ -5,7 +5,7 @@
  const var TREMOLOKEYSWITCHNOTE = 39;
  const var SFXKEYSWITCHNOTE = 40;
  
- const var LEGATOKEYSWITCHNOTE = 49; //Db4 in cakewalk
+ const var legatoKeySwitchNote = 49; //Db4 in cakewalk
  
  const var FIRSTKEYSWITCH = SUSTAINKEYSWITCHNOTE;
  const var LASTKEYSWITCH = SFXKEYSWITCHNOTE;
