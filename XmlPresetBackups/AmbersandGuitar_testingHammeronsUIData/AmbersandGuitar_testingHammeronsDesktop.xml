@@ -7,7 +7,7 @@
              height="800" fileName="{PROJECT_FOLDER}PlayingMode_BG.png" scale="0.699999988079071">
     <Component type="ScriptLabel" id="CurrArticulationPlayingLabel" x="530"
                y="490" width="100" height="34" parentComponent="PlayingModeBG"
-               text="Sustain" textColour="4278190080" fontName="Shehroz" fontSize="18.0"
+               text="Mute" textColour="4278190080" fontName="Shehroz" fontSize="18.0"
                alignment="left"/>
     <Component type="ScriptLabel" id="ArticulationPlayingLabel" x="430" y="490"
                width="100" height="34" parentComponent="PlayingModeBG" text="Articulation:"

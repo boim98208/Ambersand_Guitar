@@ -150,7 +150,7 @@
                     <Processor Type="MidiMuter" ID="MuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -2588,7 +2588,7 @@
                     <Processor Type="MidiMuter" ID="TremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
