@@ -48,8 +48,8 @@
             <Control type="ScriptButton" id="PurgeSFXBtn" value="1.0"/>
             <Control type="ScriptButton" id="NextPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
-            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1.0"/>
-            <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
+            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1"/>
+            <Control type="ScriptButton" id="ShowArticulationsButton" value="0.0"/>
             <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
           </Content>
           <UIData Source="AmbersandGuitar_testingHammeronsUIData"/>
@@ -86,7 +86,7 @@
       <ChildProcessors>
         <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
           <ChildProcessors>
-            <Processor Type="ScriptProcessor" ID="FrettingEngine" Bypassed="0">
+            <Processor Type="ScriptProcessor" ID="NoteEngines" Bypassed="0">
               <ChildProcessors/>
               <Content>
                 <Control type="ScriptButton" id="Button1" value="1.0"/>
@@ -714,7 +714,7 @@
                         <Processor Type="AHDSR" ID="SusAHDSR" Bypassed="0" Monophonic="0.0" Retrigger="1.0"
                                    Intensity="1.0" AttackCurve="0.5" DecayCurve="0.4173228442668915"
                                    Attack="0.0" AttackLevel="0.0" Hold="1.785698413848877" Decay="1.0"
-                                   Sustain="0.0" Release="38.04982376098633" EcoMode="1.0">
+                                   Sustain="0.0" Release="151.0" EcoMode="1.0">
                           <ChildProcessors>
                             <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                               <ChildProcessors/>
@@ -2592,7 +2592,7 @@
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
-                    <Processor Type="ScriptProcessor" ID="TremoloContainerTimeStretch" Bypassed="0">
+                    <Processor Type="ScriptProcessor" ID="LeftTremoloContainerTimeStretch" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptSlider" id="Knob1" value="0.5"/>
@@ -7590,7 +7590,7 @@
     <macro name="Macro 8" value="54.39242172241211" midi_cc="-1"/>
   </macro_controls>
   <MidiAutomation>
-    <Controller Controller="2" Channel="-1" Processor="TremoloContainerTimeStretch"
+    <Controller Controller="2" Channel="-1" Processor="LeftTremoloContainerTimeStretch"
                 MacroIndex="-1" Start="0.5" End="2.0" FullStart="0.5" FullEnd="2.0"
                 Skew="0.6309297535714574" Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADf..."
                 Attribute="Knob1" Inverted="0"/>

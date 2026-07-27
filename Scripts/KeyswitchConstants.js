@@ -30,3 +30,11 @@
  	const var NUMOFPERFORMANCES = 7;
  	//SFX will just be separate keys down low... maybe
  }
+ 
+ namespace FrettingEngine
+ {
+ 	//make sure this lines up with the item list from the combo box
+ 
+ 	const var NATURAL = 1;
+ 	const var MELODY = 2;
+ }

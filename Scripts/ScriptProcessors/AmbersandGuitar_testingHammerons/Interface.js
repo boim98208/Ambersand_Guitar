@@ -17,7 +17,7 @@ include("NoteRangeAndOpenStringNote.js");
 
 Globals.resetNotes = false;
 
-Globals.frettingEngine = 1;
+Globals.frettingEngine = FrettingEngine.NATURAL;
 Globals.legatoRange = 2;
 
 Globals.releaseVolume = 5;
@@ -974,7 +974,6 @@ for(i = 0; i < SFXAHDSRModulators.length; i++){
 
 // setting up purging
 // wont seem to work no matter what I do so I won't use it yet
-
 // I can purge articulations from memory but I can't seem to get articulations back into playing
 
 /*

@@ -1,6 +1,8 @@
  Synth.deferCallbacks(false);
  
  
+ reg i = 0;
+ 
  //Emulated releases didn't go as well as planned. But I'll keep it here for now
  Globals.emulatedReleasesOn = false;
  
@@ -39,13 +41,6 @@ var legatoKeySwitchPlaying = false;
  }
  
  
- namespace FrettingEngine
- {
-	//make sure this lines up with the item list from the combo box
-
- 	const var NATURAL = 1;
- 	const var MELODY = 2;
- }
  
  
  var legatoKeySwitchPlaying = false;
@@ -363,7 +358,7 @@ inline function forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange)
 		}
 	else
 		{
-	// originally condition was greater than 17, still not sure why it needs this cap
+	// originally condition was greater than 17. still not sure why it bugs out without the cap
 		if(newFretFromForceString > NOTESPERSTRING - 5)
 			return NOTESPERSTRING - 5;
 		else
@@ -383,7 +378,7 @@ Designed for leads interspersed with chords or simple voicings in the "Natural" 
 Will change fret position if polyphony leads to a really far fret
 */
 
-// the function returns the next fret for the algorithm
+// the function returns the next fret for the algorithm and sets the message's midi channel
 inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 {
 	
@@ -471,7 +466,6 @@ Designed for timbre jumps in lead or melody playing, especially when monophonic.
 Stiiiiill kinda rough tho. It likes to skip strings a little too much it seems. 
 The logic on choosing between strings needs to weigh the closer strings more than the closest fret
 
-todo: make sure it changes fret images to legato if needed
 */
 
 inline function melodyFretting1_0_0(notePlayed, currentHandPos)
@@ -636,9 +630,10 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
  
  // setting up RR handling. Primarily just here to make double tracking between left and right.
  // Maybe make it randomized later
- 
 
-inline function createAllLeftArticSamplerArray(articName, lowBound, highBound, hasDoubleTrack){
+
+
+inline function createAllLeftArticSamplerArray(articName, lowBound, highBound){
 	
 	local samplerArrayToReturn = [];
 	local samplerToPush;
@@ -647,7 +642,7 @@ inline function createAllLeftArticSamplerArray(articName, lowBound, highBound, h
 	samplerArrayToReturn.reserve(numOfSamplers);
 	
 	for(i = lowBound; i <= highBound; i++){
-		samplerToPush = Synth.getSampler("LeftString" + i + articName + "Sampler");
+		samplerToPush = Synth.getChildSynth("LeftString" + i + articName + "Sampler");
 		samplerArrayToReturn.push(samplerToPush);
 	}
 
@@ -656,7 +651,7 @@ inline function createAllLeftArticSamplerArray(articName, lowBound, highBound, h
 }
 
 
-inline function createAllRightArticSamplerArray(articName, lowBound, highBound, hasDoubleTrack){
+inline function createAllRightArticSamplerArray(articName, lowBound, highBound){
 	
 	local samplerArrayToReturn = [];
 	local samplerToPush;
@@ -665,19 +660,134 @@ inline function createAllRightArticSamplerArray(articName, lowBound, highBound, 
 	samplerArrayToReturn.reserve(numOfSamplers);
 	
 	for(i = lowBound; i <= highBound; i++){
-		samplerToPush = Synth.getSampler("RightString" + i + articName + "Sampler");
+		samplerToPush = Synth.getChildSynth("RightString" + i + articName + "Sampler");
 		samplerArrayToReturn.push(samplerToPush);
 	}
 
 	return samplerArrayToReturn;
 	
 }
- 
- 
 
-// const var AllSusSamplers = createAllArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
+
+const var susSamplerName = "Sus";
+const var susSamplerLowestStringNum = 1;
+const var susSamplerHighestStringNum = NUMOFSTRINGS;
+ 
+const var AllSusLeftSamplers = createAllLeftArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
+
+const var AllSusRightSamplers = createAllRightArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
 
  
+ 
+ const var muteSamplerName = "Mute";
+ const var muteSamplerLowestStringNum = 1;
+ const var muteSamplerHighestStringNum = NUMOFSTRINGS;
+ 
+ const var AllMuteLeftSamplers = createAllLeftArticSamplerArray(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum);
+ 
+ const var AllMuteRightSamplers = createAllRightArticSamplerArray(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum);
+ 
+ 
+ 
+ const var harmonicSamplerName = "Harmonic";
+ const var harmonicSamplerLowestStringNum = 1;
+ const var harmonicSamplerHighestStringNum = NUMOFSTRINGS;
+ 
+ const var AllHarmonicLeftSamplers = createAllLeftArticSamplerArray(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum);
+ 
+ const var AllHarmonicRightSamplers = createAllRightArticSamplerArray(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum);
+ 
+ 
+const var tremoloSamplerName = "Tremolo";
+const var tremoloSamplerLowestStringNum = 1;
+const var tremoloSamplerHighestStringNum = NUMOFSTRINGS;
+
+const var AllTremoloLeftSamplers = createAllLeftArticSamplerArray(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum);
+
+const var AllTremoloRightSamplers = createAllRightArticSamplerArray(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum);
+
+
+// skipping SFX samplers for now. Do later
+ 
+const var AllLeftSamplers = [];
+AllLeftSamplers.reserve(PerformanceType.NUMOFPERFORMANCES);
+
+const var AllRightSamplers = [];
+AllRightSamplers.reserve(PerformanceType.NUMOFPERFORMANCES);
+
+for(i = 0; i < PerformanceType.NUMOFPERFORMANCES; i++){
+	AllLeftSamplers.push(-1);
+	AllRightSamplers.push(-1);
+}
+
+AllLeftSamplers[PerformanceType.SUSTAIN] = AllSusLeftSamplers;
+AllLeftSamplers[PerformanceType.MUTE] = AllMuteLeftSamplers;
+AllLeftSamplers[PerformanceType.HARMONIC] = AllHarmonicLeftSamplers;
+AllLeftSamplers[PerformanceType.TREMOLO] = AllTremoloLeftSamplers;
+
+
+
+AllRightSamplers[PerformanceType.SUSTAIN] = AllSusRightSamplers;
+AllRightSamplers[PerformanceType.MUTE] = AllMuteRightSamplers;
+AllRightSamplers[PerformanceType.HARMONIC] = AllHarmonicRightSamplers;
+AllRightSamplers[PerformanceType.TREMOLO] = AllTremoloRightSamplers;
+
+
+var curr
+
+// Need to disable round robin behaviour for randomization
+inline function disableStandardRRBehaviour(){
+
+	for(i = 0; i < AllLeftSamplers.length; i++){
+		if(AllLeftSamplers[i] != -1){
+	
+			for(var j = 0; j < AllLeftSamplers[i].length; j++){
+				AllLeftSamplers[i][j].asSampler().enableRoundRobin(false);
+				AllRightSamplers[i][j].asSampler().enableRoundRobin(false);
+			}
+		}
+	}
+}
+
+
+// keep in mind that the right samplers still need disabled RRs as it needs to very precisely be incremented from the left
+
+inline function enableStandardRRBehaviour(){
+	for(i = 0; i < AllLeftSamplers.length; i++){
+		if(AllLeftSamplers[i] != -1){
+	
+			for(var j = 0; j < AllLeftSamplers[i].length; j++){
+				AllLeftSamplers[i][j].asSampler().enableRoundRobin(true);
+				AllRightSamplers[i][j].asSampler().enableRoundRobin(false);
+			}
+		}
+	}
+}
+
+
+
+const var numOfRRs = [];
+numOfRRs.reserve(PerformanceType.NUMOFPERFORMANCES);
+
+for(i = 0; i < PerformanceType.NUMOFPERFORMANCES; i++){
+	numOfRRs.push(-1);
+}
+
+
+// I'd rather do this manually but the functions are bugging out on me for some reason
+// will need to look into getNumActiveGroups and getRRGroupsForMessage
+
+numOfRRs[PerformanceType.SUSTAIN] = 6;
+numOfRRs[PerformanceType.MUTE] = 6;
+numOfRRs[PerformanceType.HARMONIC] = 2;
+numOfRRs[PerformanceType.TREMOLO] = 1;
+
+inline function linearRR_setRightSamplersRR(){
+	Console.print()
+}
+
+
+
  
  function onNoteOn()
 {
