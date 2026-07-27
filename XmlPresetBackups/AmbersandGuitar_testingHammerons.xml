@@ -48,8 +48,8 @@
             <Control type="ScriptButton" id="PurgeSFXBtn" value="1.0"/>
             <Control type="ScriptButton" id="NextPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
-            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1.0"/>
-            <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
+            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1"/>
+            <Control type="ScriptButton" id="ShowArticulationsButton" value="0.0"/>
             <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
           </Content>
           <UIData Source="AmbersandGuitar_testingHammeronsUIData"/>
@@ -89,7 +89,7 @@
             <Processor Type="ScriptProcessor" ID="NoteEngines" Bypassed="0">
               <ChildProcessors/>
               <Content>
-                <Control type="ScriptButton" id="Button1" value="1.0"/>
+                <Control type="ScriptButton" id="Button1" value="0.0"/>
               </Content>
               <UIData>
                 <ContentProperties DeviceType="Desktop">
@@ -147,7 +147,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="MuteContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="LeftMuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
@@ -671,7 +671,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="SusContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="LeftSusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -2061,7 +2061,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="HarmonicContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="LeftHarmonicContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -2585,7 +2585,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="TremoloContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="LeftTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -3141,7 +3141,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="SFXContainerMute" Bypassed="1">
+                    <Processor Type="MidiMuter" ID="LeftSFXContainerMute" Bypassed="1">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -3840,7 +3840,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="MuteContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="RightMuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -4364,7 +4364,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="SusContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="RightSusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
@@ -5754,7 +5754,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="HarmonicContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="RightHarmonicContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -6278,7 +6278,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="TremoloContainerMute" Bypassed="0">
+                    <Processor Type="MidiMuter" ID="RightTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
@@ -6835,7 +6835,7 @@
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors>
-                    <Processor Type="MidiMuter" ID="SFXContainerMute" Bypassed="1">
+                    <Processor Type="MidiMuter" ID="RightSFXContainerMute" Bypassed="1">
                       <ChildProcessors/>
                       <Content>
                         <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
