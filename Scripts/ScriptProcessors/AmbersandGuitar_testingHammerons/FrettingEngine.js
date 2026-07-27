@@ -677,7 +677,7 @@ inline function createAllRightArticSamplerArray(articName, lowBound, highBound){
  const var susSamplerLowestStringNum = 1;
  const var susSamplerHighestStringNum = NUMOFSTRINGS;
  
- const var AllSusSamplers = createAllArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum, susHasDoubleTrack);
+// const var AllSusSamplers = createAllArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
  
  
  function onNoteOn()

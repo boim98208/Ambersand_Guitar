@@ -18,37 +18,37 @@
             <Control type="ScriptSlider" id="VibratoDepthKnob" value="0.0"/>
             <Control type="ScriptSlider" id="VibratoFreqKnob" value="8.5"/>
             <Control type="ScriptSlider" id="PitchBendRangeKnob" value="2.0"/>
-            <Control type="ScriptButton" id="DoubleTrackingBtn" value="1.0"/>
+            <Control type="ScriptButton" id="DoubleTrackingBtn" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsSustain" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsRelease" value="151.0"/>
-            <Control type="ScriptButton" id="PurgeSustainBtn" value="0.0"/>
+            <Control type="ScriptButton" id="PurgeSustainBtn" value="1.0"/>
             <Control type="ScriptSlider" id="MuteModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="MuteModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="MuteModulatorsMute" value="0.0"/>
             <Control type="ScriptSlider" id="MuteModulatorsRelease" value="151.0"/>
-            <Control type="ScriptButton" id="PurgeMuteBtn" value="0.0"/>
+            <Control type="ScriptButton" id="PurgeMuteBtn" value="1.0"/>
             <Control type="ScriptSlider" id="HarmonicModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="HarmonicModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="HarmonicModulatorsHarmonic" value="0.0"/>
             <Control type="ScriptSlider" id="HarmonicModulatorsRelease" value="151.0"/>
-            <Control type="ScriptButton" id="PurgeHarmonicBtn" value="0.0"/>
+            <Control type="ScriptButton" id="PurgeHarmonicBtn" value="1.0"/>
             <Control type="ScriptButton" id="EnableTremStretchButton" value="0.0"/>
             <Control type="ScriptSlider" id="TremoloModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="TremoloModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="TremoloModulatorsTremolo" value="-1.100000023841858"/>
             <Control type="ScriptSlider" id="TremoloModulatorsRelease" value="151.0"/>
             <Control type="ScriptSlider" id="TremoloTimestretchKnob" value="2.0"/>
-            <Control type="ScriptButton" id="PurgeTremoloBtn" value="0.0"/>
+            <Control type="ScriptButton" id="PurgeTremoloBtn" value="1.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsSFX" value="0.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsRelease" value="151.0"/>
-            <Control type="ScriptButton" id="PurgeSFXBtn" value="0.0"/>
+            <Control type="ScriptButton" id="PurgeSFXBtn" value="1.0"/>
             <Control type="ScriptButton" id="NextPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
-            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1"/>
+            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1.0"/>
             <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
             <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
           </Content>
@@ -123,7 +123,7 @@
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
                 <Processor Type="SimpleGain" ID="LeftGuitarGain" Bypassed="0" Gain="0.0"
-                           Delay="0.0" Width="100.0" Balance="-100.0" InvertPolarity="0.0">
+                           Delay="0.0" Width="100.0" Balance="0.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
                       <ChildProcessors/>
@@ -166,10 +166,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string6">
@@ -270,10 +270,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string5">
@@ -347,10 +347,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string4">
@@ -424,10 +424,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string3">
@@ -501,10 +501,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string2">
@@ -578,10 +578,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string1">
@@ -690,10 +690,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="2.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string6_denoise_1_0_0">
@@ -955,10 +955,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string5_denoise_1_0_0">
@@ -1169,10 +1169,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string4_denoise_1_0_0">
@@ -1391,10 +1391,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string3_denoise_1_0_0">
@@ -1609,10 +1609,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string2_denoise_1_0_0">
@@ -1827,10 +1827,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string1_denoise_1_0_0">
@@ -2080,10 +2080,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="2.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string6">
@@ -2184,10 +2184,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string5">
@@ -2261,10 +2261,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string4">
@@ -2338,10 +2338,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string3">
@@ -2415,10 +2415,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string2">
@@ -2492,10 +2492,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string1">
@@ -2624,10 +2624,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString6TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string6">
@@ -2730,10 +2730,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString5TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ffffffff" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string5">
@@ -2809,10 +2809,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString4TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string4">
@@ -2888,10 +2888,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString3TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string3">
@@ -2967,10 +2967,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString2TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string2">
@@ -3046,10 +3046,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="LeftString1TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string1">
@@ -3801,7 +3801,7 @@
                 <Processor Type="MidiMuter" ID="RightContainerMute" Bypassed="0">
                   <ChildProcessors/>
                   <Content>
-                    <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                    <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                     <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                   </Content>
                 </Processor>
@@ -3815,7 +3815,7 @@
             </Processor>
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
-                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="0.0"
+                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="-100.0"
                            Delay="0.0" Width="100.0" Balance="100.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
@@ -3859,10 +3859,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string6">
@@ -3963,10 +3963,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string5">
@@ -4040,10 +4040,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string4">
@@ -4117,10 +4117,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string3">
@@ -4194,10 +4194,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string2">
@@ -4271,10 +4271,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1MuteSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="mute_string1">
@@ -4383,10 +4383,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="6.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string6_denoise_1_0_0">
@@ -4648,10 +4648,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string5_denoise_1_0_0">
@@ -4862,10 +4862,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string4_denoise_1_0_0">
@@ -5084,10 +5084,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string3_denoise_1_0_0">
@@ -5302,10 +5302,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string2_denoise_1_0_0">
@@ -5520,10 +5520,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1SusSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="6.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Denoised/sustain_string1_denoise_1_0_0">
@@ -5773,10 +5773,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff898989" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="2.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string6">
@@ -5877,10 +5877,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string5">
@@ -5954,10 +5954,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string4">
@@ -6031,10 +6031,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string3">
@@ -6108,10 +6108,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string2">
@@ -6185,10 +6185,10 @@
                   </channels>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1HarmonicSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="2.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="harmonic_string1">
@@ -6318,10 +6318,10 @@
                   <ChildProcessors/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString6TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string6">
@@ -6424,10 +6424,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString5TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ffffffff" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string5">
@@ -6503,10 +6503,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString4TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="ff000000" PreloadSize="8192.0" BufferSize="4096.0"
                            VoiceAmount="256.0" SamplerRepeatMode="3.0" RRGroupAmount="1.0"
-                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0"
+                           PitchTracking="1.0" OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0"
                            Reversed="0.0" NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string4">
@@ -6582,10 +6582,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString3TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string3">
@@ -6661,10 +6661,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString2TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string2">
@@ -6740,10 +6740,10 @@
                                       SourceBPM="0.0" PreferredEngine=""/>
                 </Processor>
                 <Processor Type="StreamingSampler" ID="RightString1TremoloSampler" Bypassed="0"
-                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           Gain="0.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
                            IconColour="0" PreloadSize="8192.0" BufferSize="4096.0" VoiceAmount="256.0"
                            SamplerRepeatMode="3.0" RRGroupAmount="1.0" PitchTracking="1.0"
-                           OneShot="0.0" CrossfadeGroups="0.0" Purged="1.0" Reversed="0.0"
+                           OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                            NumChannels="1" UseStaticMatrix="0.0" LowPassEnvelopeOrder="0.0"
                            Group0Table="" Group1Table="" Group2Table="" Group3Table="" Group4Table=""
                            Group5Table="" Group6Table="" Group7Table="" SampleMapID="Looped/tremolo_string1">

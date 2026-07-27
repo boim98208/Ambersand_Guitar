@@ -973,8 +973,11 @@ for(i = 0; i < SFXAHDSRModulators.length; i++){
 
 
 // setting up purging
+// I can purge articulations from memory but I can't seem to get articulations back into playing
 
-const var samplerForEnums = Synth.getChildSynth("LeftString1SusSampler");
+
+/*
+const var purgeAttributeIndex;
 
 
 
@@ -984,7 +987,7 @@ inline function purgeAllSamplersInArray(samplerArray){
 
 	for(i = 0; i < samplerArray.length; i++){
 		samplerToPurge = samplerArray[i];
-		samplerToPurge.setAttribute(samplerForEnums.Purged, true);
+		samplerToPurge.setAttribute(purgeAttributeIndex, true);
 	}
 }
 
@@ -994,7 +997,7 @@ inline function loadAllSamplersInArray(samplerArray){
 
 	for(i = 0; i < samplerArray.length; i++){
 		samplerToLoad = samplerArray[i];
-		samplerToLoad.setAttribute(samplerForEnums.Purged, false);
+		samplerToLoad.setAttribute(12, false);
 	}
 }
 
@@ -1005,7 +1008,7 @@ inline function lazyLoadAllSamplersInArray(samplerArray){
 	
 	for(i = 0; i < samplerArray.length; i++){
 		samplerToLoad = samplerArray[i];
-		samplerToLoad.setAttribute(samplerForEnums.Purged, false);
+		samplerToLoad.setAttribute(purgeAttributeIndex, false);
 	}
 
 }
@@ -1013,15 +1016,16 @@ inline function lazyLoadAllSamplersInArray(samplerArray){
 
 inline function purgeArticButtonFunction(value, articSamplerArray){
 
-	if(value){
+	if(value == 1){
 		loadAllSamplersInArray(articSamplerArray);
-	}else{
+	}else if (value == 0){
 		purgeAllSamplersInArray(articSamplerArray);
 	}
 }
 
 // this helper function follows the assumption of samplers following the strings
 // and that the samplers follow convention of Left/RightString[Num][Artic]Sampler or String[Num][Artic]Sampler
+
 inline function createAllArticSamplerArray(articName, lowBound, highBound, hasDoubleTrack){
 	
 
@@ -1054,12 +1058,42 @@ inline function createAllArticSamplerArray(articName, lowBound, highBound, hasDo
 }
 
 
+
+inline function createAllArticSamplerArrayAsChildSynth(articName, lowBound, highBound, hasDoubleTrack)
+{
+    local samplerArrayToReturn = [];
+    local numOfSamplers = highBound - lowBound + 1;
+    
+    if (hasDoubleTrack)
+        samplerArrayToReturn.reserve(numOfSamplers * 2);
+    else
+        samplerArrayToReturn.reserve(numOfSamplers);
+    
+    if (hasDoubleTrack)
+    {
+        for (i = lowBound; i <= highBound; i++)
+        {
+            samplerArrayToReturn.push(Synth.getChildSynth("LeftString" + i + articName + "Sampler"));
+            samplerArrayToReturn.push(Synth.getChildSynth("RightString" + i + articName + "Sampler"));
+        }
+    }
+    else
+    {
+        for (i = lowBound; i <= highBound; i++)
+        {
+            samplerArrayToReturn.push(Synth.getChildSynth("String" + i + articName + "Sampler"));
+        }
+    }
+    
+    return samplerArrayToReturn;
+}
+
 const var susSamplerName = "Sus";
 const var susSamplerLowestStringNum = 1;
 const var susSamplerHighestStringNum = NUMOFSTRINGS;
 const var susHasDoubleTrack = true;
 
-const var AllSusSamplers = createAllArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum, susHasDoubleTrack);
+const var AllSusSamplers = createAllArticSamplerArrayAsChildSynth(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum, susHasDoubleTrack);
 
 
 inline function onPurgeSustainBtnControl(component, value)
@@ -1076,7 +1110,7 @@ const var muteSamplerLowestStringNum = 1;
 const var muteSamplerHighestStringNum = NUMOFSTRINGS;
 const var muteHasDoubleTrack = true;
 
-const var AllMuteSamplers = createAllArticSamplerArray(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum, muteHasDoubleTrack);
+const var AllMuteSamplers = createAllArticSamplerArrayAsChildSynth(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum, muteHasDoubleTrack);
 
 
 inline function onPurgeMuteBtnControl(component, value)
@@ -1093,7 +1127,7 @@ const var harmonicSamplerLowestStringNum = 1;
 const var harmonicSamplerHighestStringNum = NUMOFSTRINGS;
 const var harmonicHasDoubleTrack = true;
 
-const var AllHarmonicSamplers = createAllArticSamplerArray(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum, harmonicHasDoubleTrack);
+const var AllHarmonicSamplers = createAllArticSamplerArrayAsChildSynth(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum, harmonicHasDoubleTrack);
 
 
 inline function onPurgeHarmonicBtnControl(component, value)
@@ -1102,15 +1136,15 @@ inline function onPurgeHarmonicBtnControl(component, value)
 };
 
 Content.getComponent("PurgeHarmonicBtn").setControlCallback(onPurgeHarmonicBtnControl);
- 
- 
+
+
  
 const var tremoloSamplerName = "Tremolo";
 const var tremoloSamplerLowestStringNum = 1;
 const var tremoloSamplerHighestStringNum = NUMOFSTRINGS;
 const var tremoloHasDoubleTrack = true;
 
-const var AllTremoloSamplers = createAllArticSamplerArray(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum, tremoloHasDoubleTrack);
+const var AllTremoloSamplers = createAllArticSamplerArrayAsChildSynth(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum, tremoloHasDoubleTrack);
 
 
 inline function onPurgeTremoloBtnControl(component, value)
@@ -1123,7 +1157,6 @@ Content.getComponent("PurgeTremoloBtn").setControlCallback(onPurgeTremoloBtnCont
 
 
 
-/*
 const var allSFXSamplerNames = ["BackBodyHit"]
 AllSFXSamplers.reserve(AllLeftSFXSamplers.length + AllRightSFXSamplers);
 
@@ -1134,8 +1167,10 @@ inline function onPurgeSFXBtnControl(component, value)
 };
 
 Content.getComponent("PurgeSFXBtn").setControlCallback(onPurgeSFXBtnControl);
- 
  */
+ 
+ 
+ 
 // setting up the keyboard
 
 // reset the keyboard

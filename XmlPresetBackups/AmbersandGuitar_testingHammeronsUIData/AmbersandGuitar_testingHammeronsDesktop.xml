@@ -137,19 +137,19 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String5Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Tremolo.png"
                  parentComponent="String5FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String5Fret1Marker" x="289" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String5FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String5Fret2Marker" x="327" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String5FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String5Fret3Marker" x="359" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Tremolo.png"
                  parentComponent="String5FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String5Fret4Marker" x="390" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String5FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String5Fret5Marker" x="415" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
@@ -207,19 +207,19 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String4Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String4FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String4Fret1Marker" x="289" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String4FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String4Fret2Marker" x="327" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Tremolo.png"
                  parentComponent="String4FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String4Fret3Marker" x="359" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String4FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String4Fret4Marker" x="390" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Tremolo.png"
                  parentComponent="String4FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String4Fret5Marker" x="415" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
@@ -277,16 +277,16 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String3Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String3FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String3Fret1Marker" x="289" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
                  parentComponent="String3FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String3Fret2Marker" x="327" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String3FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String3Fret3Marker" x="359" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String3FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String3Fret4Marker" x="390" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
@@ -347,16 +347,16 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String2Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String2FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String2Fret1Marker" x="289" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String2FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String2Fret2Marker" x="327" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String2FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String2Fret3Marker" x="359" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Mute.png"
                  parentComponent="String2FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String2Fret4Marker" x="390" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
@@ -417,10 +417,10 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String1Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Harmonic.png"
                  parentComponent="String1FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String1Fret1Marker" x="289" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Harmonic.png"
                  parentComponent="String1FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String1Fret2Marker" x="327" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
@@ -562,7 +562,11 @@
   </Component>
   <Component type="ScriptPanel" id="DebugPanel" x="160" y="0" itemColour="0"
              itemColour2="0" bgColour="16777215" textColour="16777215" borderSize="0.0"
-             width="606" height="112" visible="0">
+             width="606" height="102" visible="0">
+    <Component type="ScriptFloatingTile" id="SettingsTile" x="-40" y="-6" width="654"
+               height="536" parentComponent="DebugPanel" ContentType="CustomSettings"
+               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: true,&#10;  &quot;Device&quot;: true,&#10;  &quot;Output&quot;: true,&#10;  &quot;BufferSize&quot;: true,&#10;  &quot;SampleRate&quot;: true,&#10;  &quot;GlobalBPM&quot;: true,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: true,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+               textColour="4278190080" updateAfterInit="0" visible="0"/>
     <Component type="ScriptImage" id="NerdDetails_BG" x="3" y="3" width="597"
                height="100" parentComponent="DebugPanel" fileName="{PROJECT_FOLDER}PlayingMode_NerdDetails_BG.png"/>
     <Component type="ScriptLabel" id="handPositionFretLabel" x="388" y="9" width="39"
@@ -586,10 +590,6 @@
     <Component type="ScriptLabel" id="String6RRLabel" x="4" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
-    <Component type="ScriptFloatingTile" id="SettingsTile" x="-40" y="-6" width="654"
-               height="536" parentComponent="DebugPanel" ContentType="CustomSettings"
-               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: true,&#10;  &quot;Device&quot;: true,&#10;  &quot;Output&quot;: true,&#10;  &quot;BufferSize&quot;: true,&#10;  &quot;SampleRate&quot;: true,&#10;  &quot;GlobalBPM&quot;: true,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: true,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-               textColour="4278190080" updateAfterInit="0" enabled="0" visible="0"/>
   </Component>
   <Component type="ScriptImage" id="ArticulationBG" x="0" y="-60" width="1020"
              height="600" fileName="{PROJECT_FOLDER}Articulations_BG.png"
@@ -624,7 +624,7 @@
       <Component type="ScriptButton" id="PurgeSustainBtn" x="259" y="18" width="30"
                  height="30" parentComponent="SustainModulatorsPnl" text="Enable speed change"
                  filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
-                 scaleFactor="0.5" defaultValue="1"/>
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="MuteModulatorsPnl" x="7" y="206" width="723"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
@@ -652,7 +652,7 @@
                  mode="Time" defaultValue="151.0" macroControl="No MacroControl"/>
       <Component type="ScriptButton" id="PurgeMuteBtn" x="259" y="18" width="30"
                  height="30" parentComponent="MuteModulatorsPnl" text="Bruh" filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
-                 scaleFactor="0.5" defaultValue="1"/>
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="HarmonicModulatorsPnl" x="14" y="266"
                width="723" height="60" parentComponent="ArticulationBG" itemColour="0"
@@ -684,7 +684,7 @@
       <Component type="ScriptButton" id="PurgeHarmonicBtn" x="259" y="18" width="30"
                  height="30" parentComponent="HarmonicModulatorsPnl" text="Enable speed change"
                  filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
-                 scaleFactor="0.5" defaultValue="1"/>
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="TremoloModulatorsPnl" x="20" y="325" width="1000"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
@@ -726,7 +726,7 @@
       <Component type="ScriptButton" id="PurgeTremoloBtn" x="259" y="18" width="30"
                  height="30" parentComponent="TremoloModulatorsPnl" text="Enable speed change"
                  filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
-                 scaleFactor="0.5" defaultValue="1"/>
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="SFXModulatorsPnl" x="29" y="387" width="952"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
@@ -753,7 +753,7 @@
       <Component type="ScriptButton" id="PurgeSFXBtn" x="259" y="18" width="30"
                  height="30" parentComponent="SFXModulatorsPnl" text="Enable speed change"
                  filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
-                 scaleFactor="0.5" defaultValue="1"/>
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptButton" id="NextPageBtn" x="50" y="80" width="25"
                height="28" parentComponent="ArticulationBG" isMomentary="1"
