@@ -4,8 +4,7 @@
   <Component type="ScriptImage" id="CreditsBG" x="0" y="-60" width="1020"
              height="800" fileName="{PROJECT_FOLDER}Credits_BG.png" scale="0.699999988079071"/>
   <Component type="ScriptImage" id="PlayingModeBG" x="0" y="-60" width="1020"
-             height="800" fileName="{PROJECT_FOLDER}PlayingMode_BG.png" scale="0.699999988079071"
-             visible="0">
+             height="800" fileName="{PROJECT_FOLDER}PlayingMode_BG.png" scale="0.699999988079071">
     <Component type="ScriptLabel" id="CurrArticulationPlayingLabel" x="530"
                y="490" width="100" height="34" parentComponent="PlayingModeBG"
                text="Mute" textColour="4278190080" fontName="Shehroz" fontSize="18.0"

@@ -1,4 +1,5 @@
  Synth.deferCallbacks(false);
+ Synth.setFixNoteOnAfterNoteOff(true);
  
  
  reg i = 0;
@@ -45,10 +46,12 @@ var legatoKeySwitchPlaying = false;
  
  var legatoKeySwitchPlaying = false;
  
+ // setting up keyswitches to mute samplers
+ 
 inline function createAllMutersArray(articulationName){
 	local arrayToReturn = [];
-	local LeftMuter = Synth.getMidiProcessor("Left" + articulationName + "ContainerMute")
-	local RightMuter = Synth.getMidiProcessor("Right" + articulationName + "ContainerMute")
+	local LeftMuter = Synth.getMidiProcessor("Left" + articulationName + "ContainerMute");
+	local RightMuter = Synth.getMidiProcessor("Right" + articulationName + "ContainerMute");
 	
 	arrayToReturn.reserve(2);
 	
@@ -67,7 +70,7 @@ const var harmonicSamplerName = "Harmonic";
 const var tremoloSamplerName = "Tremolo";
 
  
- // skipping SFX samplers for now. Do later
+ // skipping SFX samplers for now. Do later if it exists
  
 const var AllSusMuters = createAllMutersArray(susSamplerName);
 const var AllMuteMuters = createAllMutersArray(muteSamplerName);
@@ -77,7 +80,7 @@ const var AllTremoloMuters = createAllMutersArray(tremoloSamplerName);
  
 
 //sfxcontainermute has been disabled because I might just have it be constantly available
-const var SFXContainerMute = Synth.getMidiProcessor("SFXContainerMute");
+
 
 const var AllContainerMuters = [];
 AllContainerMuters.reserve(PerformanceType.NUMOFPERFORMANCES);
@@ -90,6 +93,7 @@ AllContainerMuters[PerformanceType.SUSTAIN] = AllSusMuters;
 AllContainerMuters[PerformanceType.MUTE] = AllMuteMuters;
 AllContainerMuters[PerformanceType.HARMONIC] = AllHarmonicMuters;
 AllContainerMuters[PerformanceType.TREMOLO] = AllTremoloMuters;
+
 
 const var NUMOFKEYSWITCHES = 4;
 
@@ -110,7 +114,8 @@ const var NUMOFKEYSWITCHES = 4;
 		 Console.print("articulation doesn't have muter or doesn't exist");
 	 }else{
 		 for(i = 0; i < AllContainerMuters[articulationIndex].length; i++){
-			 
+		 
+			 	AllContainerMuters[articulationIndex][i].setAttribute("Bypass", false);
 		 }
 	 }
  }
@@ -120,35 +125,35 @@ const var NUMOFKEYSWITCHES = 4;
  inline function detectKeySwitch(notePlayed){
 	 
  
-	if(!isBetweenIncl(notePlayed, SUSTAINKEYSWITCHNOTE, SUSTAINKEYSWITCHNOTE + NUMOFKEYSWITCHES)){
+	if(!isBetweenIncl(notePlayed, SUSTAINKEYSWITCHNOTE, SUSTAINKEYSWITCHNOTE + NUMOFKEYSWITCHES - 1)){
 		//keyswitch was not pressed
 		return 0;
 	}
 	
 	
-	setAllContainersMuted();
+	setAllSamplersMuted();
 	 
 	 //emulated releases probably only work on sustains so set off by default
 	 Globals.g_emulatedReleasesOn = false;
 	 
 	 if(notePlayed == SUSTAINKEYSWITCHNOTE){
+	 Console.print("are you coming here");
 	 
-		 SusContainerMute.setAttribute("Bypass", false);
-		 Globals.g_currArticulationPlaying = PerformanceType.SUSTAIN;
-		 
+		 setSamplerUnmuted(PerformanceType.SUSTAIN);
+		Globals.g_currArticulationPlaying = PerformanceType.SUSTAIN; 
 		 Globals.g_emulatedReleasesOn = true;
 	 }else if(notePlayed == MUTEKEYSWITCHNOTE){
 	 
-		 MuteContainerMute.setAttribute("Bypass", false);
+		 setSamplerUnmuted(PerformanceType.MUTE);
 		 Globals.g_currArticulationPlaying = PerformanceType.MUTE;
 		 
 	 }else if(notePlayed == HARMONICKEYSWITCHNOTE){
 		 
-		 HarmonicContainerMute.setAttribute("Bypass", false);
+		 setSamplerUnmuted(PerformanceType.HARMONIC);
 		 Globals.g_currArticulationPlaying = PerformanceType.HARMONIC;
 	 }else if(notePlayed == TREMOLOKEYSWITCHNOTE){
 		 
-		 TremoloContainerMute.setAttribute("Bypass", false);
+		 setSamplerUnmuted(PerformanceType.TREMOLO);
 		 Globals.g_currArticulationPlaying = PerformanceType.TREMOLO;
 	 }else if(notePlayed == SFXKEYSWITCHNOTE){
 	 
@@ -815,7 +820,6 @@ inline function enableSeparateRRBehaviour(){
 			for(var j = 0; j < AllLeftSamplers[i].length; j++){
 				AllLeftSamplers[i][j].asSampler().enableRoundRobin(true);
 				AllRightSamplers[i][j].asSampler().enableRoundRobin(false);
-				Console.print("bruh");
 			}
 		}
 	}
@@ -860,6 +864,9 @@ inline function linearRR_setRightSamplersRR(stringPlaying){
 	rightSamplerToIncrement.asSampler().setActiveGroup(RRForRightSampler);
 }
 
+
+setAllSamplersMuted();
+setSamplerUnmuted(PerformanceType.HARMONIC);
  
  function onNoteOn()
 {

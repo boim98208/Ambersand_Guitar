@@ -48,8 +48,8 @@
             <Control type="ScriptButton" id="PurgeSFXBtn" value="1.0"/>
             <Control type="ScriptButton" id="NextPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
-            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1"/>
-            <Control type="ScriptButton" id="ShowArticulationsButton" value="0.0"/>
+            <Control type="ScriptButton" id="ShowPlayingModeButton" value="1.0"/>
+            <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
             <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
           </Content>
           <UIData Source="AmbersandGuitar_testingHammeronsUIData"/>
@@ -714,7 +714,7 @@
                         <Processor Type="AHDSR" ID="SusAHDSR" Bypassed="0" Monophonic="0.0" Retrigger="1.0"
                                    Intensity="1.0" AttackCurve="0.5" DecayCurve="0.4173228442668915"
                                    Attack="0.0" AttackLevel="0.0" Hold="1.785698413848877" Decay="1.0"
-                                   Sustain="0.0" Release="38.04982376098633" EcoMode="1.0">
+                                   Sustain="0.0" Release="151.0" EcoMode="1.0">
                           <ChildProcessors>
                             <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                               <ChildProcessors/>
@@ -3843,7 +3843,7 @@
                     <Processor Type="MidiMuter" ID="RightMuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -5757,7 +5757,7 @@
                     <Processor Type="MidiMuter" ID="RightHarmonicContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -6281,7 +6281,7 @@
                     <Processor Type="MidiMuter" ID="RightTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
