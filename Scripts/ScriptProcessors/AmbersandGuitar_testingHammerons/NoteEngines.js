@@ -45,22 +45,73 @@ var legatoKeySwitchPlaying = false;
  
  var legatoKeySwitchPlaying = false;
  
+inline function createAllMutersArray(articulationName){
+	local arrayToReturn = [];
+	local LeftMuter = Synth.getMidiProcessor("Left" + articulationName + "ContainerMute")
+	local RightMuter = Synth.getMidiProcessor("Right" + articulationName + "ContainerMute")
+	
+	arrayToReturn.reserve(2);
+	
+	arrayToReturn.push(LeftMuter);
+	arrayToReturn.push(RightMuter);
+
+	return arrayToReturn;
+}
  
-const var SusContainerMute = Synth.getMidiProcessor("SusContainerMute");
-const var MuteContainerMute = Synth.getMidiProcessor("MuteContainerMute");
-const var HarmonicContainerMute = Synth.getMidiProcessor("HarmonicContainerMute");
-const var TremoloContainerMute = Synth.getMidiProcessor("TremoloContainerMute");
+const var susSamplerName = "Sus";
+  
+const var muteSamplerName = "Mute";
+
+const var harmonicSamplerName = "Harmonic";
+  
+const var tremoloSamplerName = "Tremolo";
+
+ 
+ // skipping SFX samplers for now. Do later
+ 
+const var AllSusMuters = createAllMutersArray(susSamplerName);
+const var AllMuteMuters = createAllMutersArray(muteSamplerName);
+const var AllHarmonicMuters = createAllMutersArray(harmonicSamplerName);
+const var AllTremoloMuters = createAllMutersArray(tremoloSamplerName);
+ 
+ 
 
 //sfxcontainermute has been disabled because I might just have it be constantly available
 const var SFXContainerMute = Synth.getMidiProcessor("SFXContainerMute");
 
-const var ContainerMutes = [SusContainerMute, MuteContainerMute, HarmonicContainerMute, TremoloContainerMute];
-const var NUMOFKEYSWITCHES = ContainerMutes.length;
+const var AllContainerMuters = [];
+AllContainerMuters.reserve(PerformanceType.NUMOFPERFORMANCES);
+
+for(i = 0; i < PerformanceType.NUMOFPERFORMANCES; i++){
+	AllContainerMuters.push(-1);
+}
+
+AllContainerMuters[PerformanceType.SUSTAIN] = AllSusMuters;
+AllContainerMuters[PerformanceType.MUTE] = AllMuteMuters;
+AllContainerMuters[PerformanceType.HARMONIC] = AllHarmonicMuters;
+AllContainerMuters[PerformanceType.TREMOLO] = AllTremoloMuters;
+
+const var NUMOFKEYSWITCHES = 4;
 
  
- inline function setAllContainersMuted(){
-	 for(var i = 0; i < ContainerMutes.length; i++){
-		 ContainerMutes[i].setAttribute("Bypass", true);
+ inline function setAllSamplersMuted(){
+ 
+	 for(i = 0; i < AllContainerMuters.length; i++){ 
+		if(AllContainerMuters[i] != -1){
+			for(var j = 0; j < AllContainerMuters[i].length; i++){
+				AllContainerMuters[i][j].setAttribute("Bypass", true);
+			}
+		}
+	 }
+ }
+ 
+ inline function setSamplerUnmuted(articulationIndex){
+	 if(AllContainerMuters[articulationIndex] == -1){
+		 Console.print("articulation doesn't have muter or doesn't exist");
+	 }else{
+		 for(i = 0; i < AllContainerMuters[articulationIndex].length; i++){
+			 
+		 }
 	 }
  }
  
@@ -75,7 +126,7 @@ const var NUMOFKEYSWITCHES = ContainerMutes.length;
 	}
 	
 	
-	 setAllContainersMuted();
+	setAllContainersMuted();
 	 
 	 //emulated releases probably only work on sustains so set off by default
 	 Globals.g_emulatedReleasesOn = false;
@@ -667,19 +718,28 @@ inline function createAllRightArticSamplerArray(articName, lowBound, highBound){
 }
 
 
-const var susSamplerName = "Sus";
 const var susSamplerLowestStringNum = 1;
 const var susSamplerHighestStringNum = NUMOFSTRINGS;
+  
+const var muteSamplerLowestStringNum = 1;
+const var muteSamplerHighestStringNum = NUMOFSTRINGS;
+
+
+
+ const var harmonicSamplerLowestStringNum = 1;
+ const var harmonicSamplerHighestStringNum = NUMOFSTRINGS;
+  
+  
+const var tremoloSamplerLowestStringNum = 1;
+const var tremoloSamplerHighestStringNum = NUMOFSTRINGS;
+
  
 const var AllSusLeftSamplers = createAllLeftArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
 
 const var AllSusRightSamplers = createAllRightArticSamplerArray(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum);
 
  
- 
- const var muteSamplerName = "Mute";
- const var muteSamplerLowestStringNum = 1;
- const var muteSamplerHighestStringNum = NUMOFSTRINGS;
+
  
  const var AllMuteLeftSamplers = createAllLeftArticSamplerArray(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum);
  
@@ -687,18 +747,14 @@ const var AllSusRightSamplers = createAllRightArticSamplerArray(susSamplerName, 
  
  
  
- const var harmonicSamplerName = "Harmonic";
- const var harmonicSamplerLowestStringNum = 1;
- const var harmonicSamplerHighestStringNum = NUMOFSTRINGS;
+
+
  
  const var AllHarmonicLeftSamplers = createAllLeftArticSamplerArray(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum);
  
  const var AllHarmonicRightSamplers = createAllRightArticSamplerArray(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum);
  
- 
-const var tremoloSamplerName = "Tremolo";
-const var tremoloSamplerLowestStringNum = 1;
-const var tremoloSamplerHighestStringNum = NUMOFSTRINGS;
+
 
 const var AllTremoloLeftSamplers = createAllLeftArticSamplerArray(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum);
 
