@@ -9,7 +9,7 @@
         <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
           <ChildProcessors/>
           <Content>
-            <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="1.0"/>
+            <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="-1"/>
             <Control type="ScriptSlider" id="StringForceKnob" value="1.0"/>
             <Control type="ScriptComboBox" id="FrettingEngineComboBox" value="1.0"/>
             <Control type="ScriptButton" id="ResetGlobalRRButton" value="0.0"/>
@@ -150,7 +150,7 @@
                     <Processor Type="MidiMuter" ID="LeftMuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -674,7 +674,7 @@
                     <Processor Type="MidiMuter" ID="LeftSusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -3843,7 +3843,7 @@
                     <Processor Type="MidiMuter" ID="RightMuteContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -5757,7 +5757,7 @@
                     <Processor Type="MidiMuter" ID="RightHarmonicContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -6281,7 +6281,7 @@
                     <Processor Type="MidiMuter" ID="RightTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>

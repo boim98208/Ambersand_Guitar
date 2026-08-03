@@ -3,6 +3,7 @@
  
  
  reg i = 0;
+ reg rrCounter = 1;
  
  //Emulated releases didn't go as well as planned. But I'll keep it here for now
  Globals.g_emulatedReleasesOn = false;
@@ -79,6 +80,7 @@ const var AllTremoloMuters = createAllMutersArray(tremoloSamplerName);
  
  
 
+
 //sfxcontainermute has been disabled because I might just have it be constantly available
 
 
@@ -102,7 +104,7 @@ const var NUMOFKEYSWITCHES = 4;
  
 	 for(i = 0; i < AllContainerMuters.length; i++){ 
 		if(AllContainerMuters[i] != -1){
-			for(var j = 0; j < AllContainerMuters[i].length; i++){
+			for(var j = 0; j < AllContainerMuters[i].length; j++){
 				AllContainerMuters[i][j].setAttribute("Bypass", true);
 			}
 		}
@@ -166,7 +168,7 @@ const var NUMOFKEYSWITCHES = 4;
  
  
  
- 
+ detectKeySwitch(SUSTAINKEYSWITCHNOTE);
  
 
  
@@ -818,7 +820,7 @@ inline function enableSeparateRRBehaviour(){
 		if(AllLeftSamplers[i] != -1){
 	
 			for(var j = 0; j < AllLeftSamplers[i].length; j++){
-				AllLeftSamplers[i][j].asSampler().enableRoundRobin(true);
+				AllLeftSamplers[i][j].asSampler().enableRoundRobin(false);
 				AllRightSamplers[i][j].asSampler().enableRoundRobin(false);
 			}
 		}
@@ -843,30 +845,32 @@ numOfRRs[PerformanceType.MUTE] = 6;
 numOfRRs[PerformanceType.HARMONIC] = 2;
 numOfRRs[PerformanceType.TREMOLO] = 1;
 
-inline function linearRR_setRightSamplersRR(stringPlaying){
-	local samplerToIncrementFrom;
+inline function linearRR_setSamplersRR(stringPlaying){
+
+
 	local rightSamplerToIncrement;
+	local leftSamplerToIncrement;
 	local RRFromLeftSampler;
 	local RRForRightSampler;
 	local currArticulation;
 	
 	
 	currArticulation = Globals.g_currArticulationPlaying;
-	samplerToIncrementFrom = AllLeftSamplers[currArticulation][stringPlaying];
 	
 	rightSamplerToIncrement = AllRightSamplers[currArticulation][stringPlaying];
+	leftSamplerToIncrement = AllLeftSamplers[currArticulation][stringPlaying];
 	
-	RRFromLeftSampler = samplerToIncrementFrom.asSampler().getActiveRRGroup();
+	rrCounter = (rrCounter % numOfRRs[currArticulation]) + 1;
+	
+	
+	RRFromLeftSampler = rrCounter;
 	
 	// % makes sure it doesn't loop around and the final + 1 because 0th RR passes error
-	RRForRightSampler = ((RRFromLeftSampler + 1) % numOfRRs[currArticulation]) + 1;
+	RRForRightSampler = (RRFromLeftSampler % numOfRRs[currArticulation]) + 1;
 	
 	rightSamplerToIncrement.asSampler().setActiveGroup(RRForRightSampler);
+	leftSamplerToIncrement.asSampler().setActiveGroup(RRFromLeftSampler);
 }
-
-
-setAllSamplersMuted();
-setSamplerUnmuted(PerformanceType.HARMONIC);
  
  function onNoteOn()
 {
@@ -902,7 +906,9 @@ setSamplerUnmuted(PerformanceType.HARMONIC);
 	}
 	
 
-	linearRR_setRightSamplersRR(StringType.STRING6);
+
+	// eventualy put this for the string chosen
+	linearRR_setSamplersRR(StringType.STRING6);
 	
 }function onNoteOff()
 {
