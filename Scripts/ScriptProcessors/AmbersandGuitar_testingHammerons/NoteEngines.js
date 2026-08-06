@@ -139,7 +139,6 @@ const var NUMOFKEYSWITCHES = 4;
 	 Globals.g_emulatedReleasesOn = false;
 	 
 	 if(notePlayed == SUSTAINKEYSWITCHNOTE){
-	 Console.print("are you coming here");
 	 
 		 setSamplerUnmuted(PerformanceType.SUSTAIN);
 		Globals.g_currArticulationPlaying = PerformanceType.SUSTAIN; 
@@ -159,7 +158,6 @@ const var NUMOFKEYSWITCHES = 4;
 		 Globals.g_currArticulationPlaying = PerformanceType.TREMOLO;
 	 }else if(notePlayed == SFXKEYSWITCHNOTE){
 	 
-	 Console.print("are you coming here");
 		 Globals.g_currArticulationPlaying = PerformanceType.SFX;
 		 
 	 }
@@ -233,6 +231,8 @@ Content.getComponent("Button1").setControlCallback(onButton1Control);
 // this should only take the Stringtype enum
 inline function playString(stringToPlay){
 	
+	
+	// consider refactoring stringNote to be updated here rather than the melody fretting point
 	stringNoteId[stringToPlay] = Message.getEventId();
 	
 	
@@ -245,6 +245,8 @@ inline function playString(stringToPlay){
 
 inline function noteOffString(stringToOff){
 	// adding 1 because the enum starts on 0 but channels start on 1
+	Synth.noteOffByEventId(stringNoteId[stringToOff]);
+	
 	stringNote[stringToOff] = NO_NOTE;
 	stringNoteId[stringToOff] = NO_NOTE;
 	Message.setChannel(stringToOff + 1);
@@ -297,32 +299,32 @@ inline function noteOffString(stringToOff){
  
  inline function primitiveFretting(notePlayed){
  
-	 if (stringNote[Stringtype.STRING6] == -1){
+	 if (stringNote[Stringtype.STRING6] == NO_NOTE){
 	 	playString6();
 	 	stringNote[Stringtype.STRING6] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING5] == -1){
+	 }else if (stringNote[Stringtype.STRING5] == NO_NOTE){
 	 	playString5();
 	 	stringNote[Stringtype.STRING5] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING4] == -1){
+	 }else if (stringNote[Stringtype.STRING4] == NO_NOTE){
 	 	playString4();
 	 	stringNote[Stringtype.STRING4] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING3] == -1){
+	 }else if (stringNote[Stringtype.STRING3] == NO_NOTE){
 	 	playString3();
 	 	stringNote[Stringtype.STRING3] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING2] == -1){
+	 }else if (stringNote[Stringtype.STRING2] == NO_NOTE){
 	 	playString2();
 	 	stringNote[Stringtype.STRING2] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING1] == -1){
+	 }else if (stringNote[Stringtype.STRING1] == NO_NOTE){
 	 	playString1();
 	 	stringNote[Stringtype.STRING1] = notePlayed;
 	 	updateGlobals();
@@ -457,8 +459,12 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 
 	local distBetweenNewFretAndAutoFret = 0;
 	local newFretFromPolyphony;
+	
+	// I've completely forgotten what fretSpaceToChange was
+	// but I think it has to do polyphony
 	local fretSpaceToChange = 2;
 	local stringToPlay;
+	local newHandPos;
 	local forceStringLowBound;
 	local forceStringHighBound;
 	
@@ -509,14 +515,20 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	
 		if(stringToPlay == Stringtype.STRING1){
 			if(notePlayed - currentHandPos < OPENSTRING1NOTE + 5)
-	            return currentHandPos;
+	       		return currentHandPos;
 	        else
-	            return notePlayed - OPENSTRING1NOTE - 4;
+	        {
+	        	newHandPos = notePlayed - OPENSTRING1NOTE - 4;
+	            return newHandPos;
+	         }
 		}
 		
 		if(stringToPlay == Stringtype.STRING6){
-			if(notePlayed < currentHandPos + OPENSTRING6NOTE)
-			            return notePlayed - OPENSTRING6NOTE;
+			if(notePlayed < currentHandPos + OPENSTRING6NOTE){
+				newHandPos = notePlayed - OPENSTRING6NOTE;
+				return newHandPos;
+			
+			}
 		}
 	
 	}
@@ -554,6 +566,7 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	local newFretFromPolyphony;
 	local fretSpaceToChange = 5;
 	local stringToPlay;
+	local newHandPos;
 	
 	if(!isBetweenIncl(notePlayed, LOWESTNOTE, HIGHESTNOTE)){
 	    return currentHandPos;
@@ -564,7 +577,7 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	if(Globals.g_forcedString != -1)
 	{
 
-		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.g_forcedString] == -1)
+		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.g_forcedString] == NO_NOTE)
 		{
 		
 			return forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange);
@@ -595,10 +608,12 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	
 	if(distBetweenNewFretAndAutoFret < fretSpaceToChange + 2)
 	{
+		
+	// PLEASE TRY FIGURING OUT WHERE THE HAND MOVES FIRST BEFORE FIXING THE STRING TO CHOOSE
 		return currentHandPos;
 	}else
 	{
-		return newFretFromPolyphony;
+		return currentHandPos;
 	}
 }
 
@@ -606,6 +621,9 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
  
  inline function isEventStillPlaying(eventId)
  {
+// I dont think this is actually used like.... at all bruh	
+	
+
      for (var i = 0; i < 128; i++)
      {
          if (activeIds.getValue(i) == eventId)

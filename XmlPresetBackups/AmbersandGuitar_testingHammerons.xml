@@ -11,14 +11,14 @@
           <Content>
             <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="1.0"/>
             <Control type="ScriptSlider" id="StringForceKnob" value="1.0"/>
-            <Control type="ScriptComboBox" id="FrettingEngineComboBox" value="1.0"/>
+            <Control type="ScriptComboBox" id="FrettingEngineComboBox" value="2.0"/>
             <Control type="ScriptButton" id="ResetGlobalRRButton" value="0.0"/>
             <Control type="ScriptSlider" id="IRMixKnob" value="0.6000000238418579"/>
             <Control type="ScriptComboBox" id="cmbIr" value="1.0"/>
             <Control type="ScriptSlider" id="VibratoDepthKnob" value="0.0"/>
             <Control type="ScriptSlider" id="VibratoFreqKnob" value="8.5"/>
             <Control type="ScriptSlider" id="PitchBendRangeKnob" value="2.0"/>
-            <Control type="ScriptButton" id="DoubleTrackingBtn" value="1.0"/>
+            <Control type="ScriptButton" id="DoubleTrackingBtn" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsSustain" value="0.0"/>
@@ -50,7 +50,7 @@
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="ShowPlayingModeButton" value="1"/>
             <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
-            <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
+            <Control type="ScriptButton" id="ShowDebugPanelButton" value="1.0"/>
           </Content>
           <UIData Source="AmbersandGuitar_testingHammeronsUIData"/>
         </Processor>
@@ -124,7 +124,7 @@
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
                 <Processor Type="SimpleGain" ID="LeftGuitarGain" Bypassed="0" Gain="0.0"
-                           Delay="0.0" Width="100.0" Balance="-100.0" InvertPolarity="0.0">
+                           Delay="0.0" Width="100.0" Balance="0.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
                       <ChildProcessors/>
@@ -715,7 +715,7 @@
                         <Processor Type="AHDSR" ID="SusAHDSR" Bypassed="0" Monophonic="0.0" Retrigger="1.0"
                                    Intensity="1.0" AttackCurve="0.5" DecayCurve="0.4173228442668915"
                                    Attack="0.0" AttackLevel="0.0" Hold="1.785698413848877" Decay="1.0"
-                                   Sustain="0.0" Release="151.0" EcoMode="1.0">
+                                   Sustain="0.0" Release="38.04982376098633" EcoMode="1.0">
                           <ChildProcessors>
                             <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                               <ChildProcessors/>
@@ -3821,7 +3821,7 @@
                 <Processor Type="MidiMuter" ID="RightContainerMute" Bypassed="0">
                   <ChildProcessors/>
                   <Content>
-                    <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                    <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                     <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                   </Content>
                 </Processor>
@@ -3835,7 +3835,7 @@
             </Processor>
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
-                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="0.0"
+                <Processor Type="SimpleGain" ID="RightGuitarGain" Bypassed="0" Gain="-100.0"
                            Delay="0.0" Width="100.0" Balance="100.0" InvertPolarity="0.0">
                   <ChildProcessors>
                     <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
