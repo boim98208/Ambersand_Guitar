@@ -190,11 +190,12 @@ const var NUMOFKEYSWITCHES = 4;
     string 5 (the low string)
  */
 var stringNote = [];
-var stringId = [];
+var stringNoteId = [];
 
 stringNote.reserve(NUMOFSTRINGS);
 for(i = 0; i < NUMOFSTRINGS * 2; i++){
 	stringNote.push(NO_NOTE);
+	stringNoteId.push(NO_NOTE);
 }
 
 
@@ -230,10 +231,21 @@ Content.getComponent("Button1").setControlCallback(onButton1Control);
 
 // functions to ensure only one sampler plays a voice at a time
 // this should only take the Stringtype enum
-inline function playString(theStringType){
+inline function playString(stringToPlay){
+	
+	stringNoteId[stringToPlay] = Message.getEventId();
+	
 	
 	// adding 1 because the enum starts on 0 but channels start on 1
-	Message.setChannel(theStringType + 1);
+	Message.setChannel(stringToPlay + 1);
+	if(Globals.g_currRRBehaviour == RRBehaviour.LINEAR){
+		linearRR_setSamplersRR(stringToPlay);
+	}
+}
+
+inline function noteOffString(stringToOff){
+	// adding 1 because the enum starts on 0 but channels start on 1
+	Message.setChannel(stringToOff + 1);
 }
  
 
@@ -445,6 +457,8 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	local newFretFromPolyphony;
 	local fretSpaceToChange = 2;
 	local stringToPlay;
+	local forceStringLowBound;
+	local forceStringHighBound;
 	
 	if(!isBetweenIncl(notePlayed, LOWESTNOTE, HIGHESTNOTE)){
 	    return currentHandPos;
@@ -455,7 +469,12 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	if(Globals.g_forcedString != -1)
 	{
 
-		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.g_forcedString] == -1)
+
+	// Yes, that -1 of NOTESPERSTRING is needed.
+	forceStringLowBound = OPENSTRINGNOTES[Globals.g_forcedString];
+	forceStringHighBound = OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1;
+	
+		if(isBetweenIncl(notePlayed, forceStringLowBound, forceStringHighBound) && stringNote[Globals.g_forcedString] == -1)
 		{
 		
 			return forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange);
@@ -794,7 +813,7 @@ AllRightSamplers[PerformanceType.HARMONIC] = AllHarmonicRightSamplers;
 AllRightSamplers[PerformanceType.TREMOLO] = AllTremoloRightSamplers;
 
 
-Globals.g_currRRBehaviour = RRBehaviour.SEPARATE;
+Globals.g_currRRBehaviour = RRBehaviour.LINEAR;
 
 
 
@@ -815,7 +834,7 @@ inline function disableStandardRRBehaviour(){
 
 // keep in mind that the right samplers still need disabled RRs as it needs to very precisely be incremented from the left
 
-inline function enableSeparateRRBehaviour(){
+inline function enableLinearRRBehaviour(){
 	for(i = 0; i < AllLeftSamplers.length; i++){
 		if(AllLeftSamplers[i] != -1){
 	
@@ -827,7 +846,7 @@ inline function enableSeparateRRBehaviour(){
 	}
 }
 
-enableSeparateRRBehaviour();
+enableLinearRRBehaviour();
 
 const var numOfRRs = [];
 numOfRRs.reserve(PerformanceType.NUMOFPERFORMANCES);
@@ -843,9 +862,12 @@ for(i = 0; i < PerformanceType.NUMOFPERFORMANCES; i++){
 numOfRRs[PerformanceType.SUSTAIN] = 6;
 numOfRRs[PerformanceType.MUTE] = 6;
 numOfRRs[PerformanceType.HARMONIC] = 2;
+
+// Make sure any sampler that only has 1 RR does transposition trick to not go down to mono
 numOfRRs[PerformanceType.TREMOLO] = 1;
 
 inline function linearRR_setSamplersRR(stringPlaying){
+
 
 
 	local rightSamplerToIncrement;
@@ -860,6 +882,9 @@ inline function linearRR_setSamplersRR(stringPlaying){
 	rightSamplerToIncrement = AllRightSamplers[currArticulation][stringPlaying];
 	leftSamplerToIncrement = AllLeftSamplers[currArticulation][stringPlaying];
 	
+	
+	if(numOfRRs[currArticulation] >= 2){
+	
 	rrCounter = (rrCounter % numOfRRs[currArticulation]) + 1;
 	
 	
@@ -870,7 +895,18 @@ inline function linearRR_setSamplersRR(stringPlaying){
 	
 	rightSamplerToIncrement.asSampler().setActiveGroup(RRForRightSampler);
 	leftSamplerToIncrement.asSampler().setActiveGroup(RRFromLeftSampler);
+	}else{
+		
+		// make sure any sampler for this does the transposition trick for whatever RR needs it
+	
+		rightSamplerToIncrement.asSampler().setActiveGroup(1);
+		leftSamplerToIncrement.asSampler().setActiveGroup(1);
+	}
 }
+
+
+
+
  
  function onNoteOn()
 {
@@ -908,7 +944,7 @@ inline function linearRR_setSamplersRR(stringPlaying){
 
 
 	// eventualy put this for the string chosen
-	linearRR_setSamplersRR(StringType.STRING6);
+}
 	
 }function onNoteOff()
 {
@@ -925,7 +961,7 @@ inline function linearRR_setSamplersRR(stringPlaying){
 		    {
 
 		        stringNote[i] = NO_NOTE;
-		        playString(i);
+		        noteOffString(i);
 		        noteFound = true;
 		        
 		    }
@@ -938,7 +974,7 @@ inline function linearRR_setSamplersRR(stringPlaying){
 			    {
 	
 			        stringNote[i] = NO_NOTE;
-			        playString(i);
+			        noteOffString(i);
 			        noteFoundInLegato = true;
 			    }
 			}

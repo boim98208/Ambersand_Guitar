@@ -9,7 +9,7 @@
         <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
           <ChildProcessors/>
           <Content>
-            <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="-1"/>
+            <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="1.0"/>
             <Control type="ScriptSlider" id="StringForceKnob" value="1.0"/>
             <Control type="ScriptComboBox" id="FrettingEngineComboBox" value="1.0"/>
             <Control type="ScriptButton" id="ResetGlobalRRButton" value="0.0"/>
@@ -50,7 +50,7 @@
             <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
             <Control type="ScriptButton" id="ShowPlayingModeButton" value="1.0"/>
             <Control type="ScriptButton" id="ShowArticulationsButton" value="0"/>
-            <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
+            <Control type="ScriptButton" id="ShowDebugPanelButton" value="1.0"/>
           </Content>
           <UIData Source="AmbersandGuitar_testingHammeronsUIData"/>
         </Processor>
@@ -93,7 +93,8 @@
               </Content>
               <UIData>
                 <ContentProperties DeviceType="Desktop">
-                  <Component type="ScriptButton" id="Button1" x="81" y="7" text="print out strings"/>
+                  <Component type="ScriptButton" id="Button1" x="81" y="7" text="print out strings"
+                             isMomentary="1"/>
                 </ContentProperties>
               </UIData>
             </Processor>
@@ -674,7 +675,7 @@
                     <Processor Type="MidiMuter" ID="LeftSusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -2588,7 +2589,7 @@
                     <Processor Type="MidiMuter" ID="LeftTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -3132,6 +3133,25 @@
                   </channels>
                   <TimestretchOptions Tonality="0.0" SkipLatency="0" Mode="TimeVariant" NumQuarters="0.0"
                                       SourceBPM="0.0" PreferredEngine=""/>
+                </Processor>
+                <Processor Type="SynthChain" ID="LeftTimeStretchTremoloContainer" Bypassed="0"
+                           Gain="1.0" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+                           IconColour="0">
+                  <ChildProcessors>
+                    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
                 </Processor>
               </ChildProcessors>
               <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
@@ -4367,7 +4387,7 @@
                     <Processor Type="MidiMuter" ID="RightSusContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -6281,7 +6301,7 @@
                     <Processor Type="MidiMuter" ID="RightTremoloContainerMute" Bypassed="0">
                       <ChildProcessors/>
                       <Content>
-                        <Control type="ScriptButton" id="ignoreButton" value="1.0"/>
+                        <Control type="ScriptButton" id="ignoreButton" value="0.0"/>
                         <Control type="ScriptButton" id="fixStuckNotes" value="1.0"/>
                       </Content>
                     </Processor>
@@ -6298,6 +6318,13 @@
                                      showValuePopup="Right" middlePosition="1.0" defaultValue="1.0"
                                      mode="Discrete"/>
                         </ContentProperties>
+                      </UIData>
+                    </Processor>
+                    <Processor Type="ScriptProcessor" ID="TransposeTrickScript" Bypassed="0">
+                      <ChildProcessors/>
+                      <Content/>
+                      <UIData>
+                        <ContentProperties DeviceType="Desktop"/>
                       </UIData>
                     </Processor>
                   </ChildProcessors>
