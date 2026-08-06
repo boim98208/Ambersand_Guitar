@@ -245,6 +245,8 @@ inline function playString(stringToPlay){
 
 inline function noteOffString(stringToOff){
 	// adding 1 because the enum starts on 0 but channels start on 1
+	stringNote[stringToOff] = NO_NOTE;
+	stringNoteId[stringToOff] = NO_NOTE;
 	Message.setChannel(stringToOff + 1);
 }
  
@@ -949,18 +951,17 @@ inline function linearRR_setSamplersRR(stringPlaying){
 }function onNoteOff()
 {
     local releasedNote = Message.getNoteNumber();
+    local releasedNoteId = Message.getEventId();
     local noteFound = false;
     local noteFoundInLegato = false;
 
 	if(releasedNote == legatoKeySwitchNote)
 		legatoKeySwitchPlaying = false;
 
-    for (var i = 0; i < NUMOFSTRINGS && !noteFound; i++)
+    for (i = 0; i < NUMOFSTRINGS && !noteFound; i++)
 		{
-		    if (stringNote[i] == releasedNote)
+		    if (stringNoteId[i] == releasedNoteId)
 		    {
-
-		        stringNote[i] = NO_NOTE;
 		        noteOffString(i);
 		        noteFound = true;
 		        
@@ -970,7 +971,9 @@ inline function linearRR_setSamplersRR(stringPlaying){
 		
 	for (var i = Stringtype.LEGATOOFFSET; i < stringNote.length && !noteFoundInLegato; i++)
 			{
-			    if (stringNote[i] == releasedNote)
+	//Not tested yet with noteId because I lowkey forgor how to do legato. Will need to try later
+
+			    if (stringNoteId[i] == releasedNote)
 			    {
 	
 			        stringNote[i] = NO_NOTE;
