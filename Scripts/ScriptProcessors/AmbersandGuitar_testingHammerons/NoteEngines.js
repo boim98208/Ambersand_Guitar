@@ -609,8 +609,10 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	if(distBetweenNewFretAndAutoFret < fretSpaceToChange + 2)
 	{
 		
-	// PLEASE TRY FIGURING OUT WHERE THE HAND MOVES FIRST BEFORE FIXING THE STRING TO CHOOSE
-		return currentHandPos;
+		// Figure out the stringWithMelodyNote first and then figure where the fret position changes
+		if(notePlayed > OPENSTRINGNOTES[stringToPlay] + 3){
+			return currentHandPos;
+		}
 	}else
 	{
 		return currentHandPos;
