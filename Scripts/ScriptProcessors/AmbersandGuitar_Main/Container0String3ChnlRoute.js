@@ -1,6 +1,6 @@
 const var releaseAddition = [10, 11, 10];
 const var releaseAdditionWhenHigh = [-3, -4, -5];
-const var emulatedReleasesOn = Globals.emulatedReleasesOn;
+const var emulatedReleasesOn = Globals.g_emulatedReleasesOn;
 const var OPENSTRINGNOTE = 67;
 const var NOTEPERSTRING = 22;
 const var POINTTOCHANGERELEASE = OPENSTRINGNOTE + (NOTEPERSTRING/2);
@@ -33,7 +33,7 @@ function onNoteOn()
 		Message.ignoreEvent(true);
 	}else{
 		//is now playing the note and updates	
-		Globals.string3ActiveRR = Sampler.getActiveRRGroup();
+		Globals.g_string3ActiveRR = Sampler.getActiveRRGroup();
 		noteVelocity = Message.getVelocity();
 		
 	}
@@ -48,7 +48,7 @@ function onNoteOn()
 		noteReleased = Message.getNoteNumber();
 		isReleased = true;
 		Synth.startTimer(0.01);
-		Globals.string3ActiveRR = "not playing";
+		Globals.g_string3ActiveRR = "not playing";
 	}
 }
  function onController()
@@ -60,7 +60,7 @@ function onNoteOn()
 local releaseNote;
 local numOfReleases;
 
- if(!Globals.emulatedReleasesOn){
+ if(!Globals.g_emulatedReleasesOn){
 	 return;
  
 	}

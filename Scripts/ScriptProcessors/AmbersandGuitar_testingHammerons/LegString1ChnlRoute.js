@@ -21,7 +21,7 @@ Synth.stopTimer();
 //const var releaseAddition = [-2, -3, -4, -5, -6];
 
 const var startReleaseVolume = 1;
-var releaseVolumeOverTime = Globals.releaseVolume;
+var releaseVolumeOverTime = Globals.g_releaseVolume;
 //note to self, figure out if you can fade between your pseudo releases
 const var releaseTimeSeconds = .01;
 function onNoteOn()
@@ -34,7 +34,7 @@ function onNoteOn()
         Synth.stopTimer();        
         isReleased = false;
         releaseAdditionIndex = 0;
-        releaseVolumeOverTime = Globals.releaseVolume;
+        releaseVolumeOverTime = Globals.g_releaseVolume;
 
         if(id != -99){
             Synth.noteOffByEventId(id); 
@@ -51,7 +51,7 @@ function onNoteOn()
 	    Synth.noteOffByEventId(id); 
     
         noteReleased = Message.getNoteNumber();
-        releaseVolumeOverTime = Globals.releaseVolume;
+        releaseVolumeOverTime = Globals.g_releaseVolume;
         isReleased = true;
         Synth.startTimer(0.01);
     }
@@ -64,7 +64,7 @@ function onNoteOn()
 local releaseNote;
 local numOfReleases;
 
- if(!Globals.emulatedReleasesOn){
+ if(!Globals.g_emulatedReleasesOn){
 	 return;
  
 	}

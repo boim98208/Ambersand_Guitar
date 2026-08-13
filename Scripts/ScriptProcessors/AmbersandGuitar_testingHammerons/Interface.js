@@ -1,12 +1,12 @@
-Globals.forcedHandPositionFret = -1;
-Globals.forcedString = -1;
-Globals.handPositionFret = 0;
+Globals.g_forcedHandPositionFret = -1;
+Globals.g_forcedString = -1;
+Globals.g_handPositionFret = 0;
 
-Globals.stringNote1 = -1;
-Globals.stringNote2 = -1;
-Globals.stringNote3 = -1;
-Globals.stringNote4 = -1;
-Globals.stringNote6 = -1;
+Globals.g_stringNote1 = -1;
+Globals.g_stringNote2 = -1;
+Globals.g_stringNote3 = -1;
+Globals.g_stringNote4 = -1;
+Globals.g_stringNote6 = -1;
 reg i = 0;
 
 
@@ -15,14 +15,14 @@ include("KeyswitchConstants.js");
 include("NoteRangeAndOpenStringNote.js");
 
 
-Globals.resetNotes = false;
+Globals.g_resetNotes = false;
 
-Globals.frettingEngine = 1;
-Globals.legatoRange = 2;
+Globals.g_frettingEngine = FrettingEngine.NATURAL;
+Globals.g_legatoRange = 2;
 
-Globals.releaseVolume = 5;
+Globals.g_releaseVolume = 5;
 
-Globals.timeStretchRatio = 1;
+Globals.g_timeStretchRatio = 1;
 var timeStretchRatioBeforeDisabling = 1;
 
 const var NOTESPERSTRING = 22;
@@ -31,15 +31,7 @@ const var NUMOFSTRINGS = 6;
 const var NONOTE = -1;
 
 
-namespace StringType
-{
-    const var STRING1 = 0;
-    const var STRING2 = 1;
-    const var STRING3 = 2;
-    const var STRING4 = 3;
-    const var STRING5 = 4;
-    const var STRING6 = 5;
-}
+
 
 
 namespace KeyboardColors{
@@ -52,10 +44,10 @@ namespace KeyboardColors{
 
 
 
-Globals.stringPerformance = [];
-Globals.stringPerformance.reserve(NUMOFSTRINGS);
+Globals.g_stringPerformance = [];
+Globals.g_stringPerformance.reserve(NUMOFSTRINGS);
 for(var i = 0; i < NUMOFSTRINGS; i++){
-	Globals.stringPerformance[i] = PerformanceType.SUSTAIN;
+	Globals.g_stringPerformance[i] = PerformanceType.SUSTAIN;
 }
 
 
@@ -99,36 +91,34 @@ inline function displayFret(fretImg, stringNum)
 	
 	// something isn't getting updated or some strings just wont update?
 
-	Console.print(Globals.stringPerformance[stringNum]);
 
-
-	if(Globals.stringPerformance[stringNum] == PerformanceType.SUSTAIN)
+	if(Globals.g_stringPerformance[stringNum] == PerformanceType.SUSTAIN)
 	{
 
 		fretImg.set("fileName", stringPerformanceImgs[PerformanceType.SUSTAIN]);
 	}
-	else if(Globals.stringPerformance[stringNum] == PerformanceType.MUTE)
+	else if(Globals.g_stringPerformance[stringNum] == PerformanceType.MUTE)
 	{
 
 		fretImg.set("fileName", stringPerformanceImgs[PerformanceType.MUTE]);
 	}
-	else if(Globals.stringPerformance[stringNum] == PerformanceType.LEGATOUP)
+	else if(Globals.g_stringPerformance[stringNum] == PerformanceType.LEGATOUP)
 	{
 		fretImg.set("fileName", stringPerformanceImgs[PerformanceType.LEGATOUP]);
 	}
-	else if(Globals.stringPerformance[stringNum] == PerformanceType.LEGATODOWN)
+	else if(Globals.g_stringPerformance[stringNum] == PerformanceType.LEGATODOWN)
 	{
 
 		fretImg.set("fileName", stringPerformanceImgs[PerformanceType.LEGATODOWN]);
 		
 	}	
-	else if(Globals.stringPerformance[stringNum] == PerformanceType.HARMONIC)
+	else if(Globals.g_stringPerformance[stringNum] == PerformanceType.HARMONIC)
 	{
 
 
 		fretImg.set("fileName", stringPerformanceImgs[PerformanceType.HARMONIC]);
 		
-	}else if(Globals.stringPerformance[stringNum] == PerformanceType.TREMOLO)
+	}else if(Globals.g_stringPerformance[stringNum] == PerformanceType.TREMOLO)
 	{
 
 
@@ -148,16 +138,16 @@ inline function displayFret(fretImg, stringNum)
 inline function onResetGlobalRRButtonControl(component, value)
 {
 	if(value){
-		Globals.stringNote1 = -1;
-		Globals.stringNote2 = -1;
-		Globals.stringNote3 = -1;
-		Globals.stringNote4 = -1;
-		Globals.stringNote5 = -1;
-		Globals.stringNote6 = -1; 
+		Globals.g_stringNote1 = -1;
+		Globals.g_stringNote2 = -1;
+		Globals.g_stringNote3 = -1;
+		Globals.g_stringNote4 = -1;
+		Globals.g_stringNote5 = -1;
+		Globals.g_stringNote6 = -1; 
 		
 		//some notes have a problem of just hanging and not getting off the stringNote array in FrettingEngine
-		Globals.resetNotes = true;
-		//Globals.resetNotes is put back to false in FrettingEngine after it recognizes it
+		Globals.g_resetNotes = true;
+		//Globals.g_resetNotes is put back to false in FrettingEngine after it recognizes it
 	}
 	
 	Engine.allNotesOff();
@@ -195,35 +185,67 @@ const var xPosOfFretBorder = [0, 5, 50, 87, 116, 146, //0
 
 
 
-Globals.string6ActiveRR = "not playing";
-Globals.string5ActiveRR = "not playing";
-Globals.string4ActiveRR = "not playing";
-Globals.string3ActiveRR = "not playing";
-Globals.string2ActiveRR = "not playing";
-Globals.string1ActiveRR = "not playing";
+Globals.g_string6ActiveRR = "not playing";
+Globals.g_string5ActiveRR = "not playing";
+Globals.g_string4ActiveRR = "not playing";
+Globals.g_string3ActiveRR = "not playing";
+Globals.g_string2ActiveRR = "not playing";
+Globals.g_string1ActiveRR = "not playing";
 
 
 Synth.deferCallbacks(true);
  Content.makeFrontInterface(1020, 600);
  
-//connecting with fret markers on the UI
+// connecting with fret markers on the UI
 
 const var NOTESPERSTRING = 22;
-Globals.NUMOFSTRINGS = 6;
-Globals.pitchBendOffset = 0;
+Globals.g_NUMOFSTRINGS = 6;
+Globals.g_pitchBendOffset = 0;
+
+
+
+// Setting up Double Tracking
+
+const var LeftGuitarGain = Synth.getEffect("LeftGuitarGain");
+
+const var RightGuitarGain = Synth.getEffect("RightGuitarGain");
+
+const var RightContainerMute = Synth.getMidiProcessor("RightContainerMute");
+
+
+inline function onDoubleTrackingBtnControl(component, value)
+{
+	if(value){
+		LeftGuitarGain.setAttribute(LeftGuitarGain.Balance, -100.0);
+	
+		RightContainerMute.setAttribute("Bypass", false);
+		RightGuitarGain.setAttribute(RightGuitarGain.Gain, 0.0);
+	}else{
+		
+		LeftGuitarGain.setAttribute(LeftGuitarGain.Balance, 0.0);
+	
+		RightContainerMute.setAttribute("Bypass", true);
+		RightGuitarGain.setAttribute(RightGuitarGain.Gain, -100.0);
+	}
+};
+
+Content.getComponent("DoubleTrackingBtn").setControlCallback(onDoubleTrackingBtnControl);
+
+
+
+
+// Setting up playing mode GUI
 
 
 
 const var handPositionFretLabel = Content.getComponent("handPositionFretLabel");
 
 
-
-
 const var HandPositionFretForceKnob = Content.getComponent("HandPositionFretForceKnob");
 
 inline function handPositionFretForceKnobChange(value){
 
-	Globals.forcedHandPositionFret = value - 2;
+	Globals.g_forcedHandPositionFret = value - 2;
 	
 	
 
@@ -243,9 +265,9 @@ const var StringForceKnob = Content.getComponent("StringForceKnob");
 
 inline function onStringForceKnobControl(component, value)
 {
-	Globals.forcedString = value - 2;
-	moveForceString(Globals.forcedString);
-	//Console.print(Globals.forcedString);
+	Globals.g_forcedString = value - 2;
+	moveForceString(Globals.g_forcedString);
+	//Console.print(Globals.g_forcedString);
 };
 
 Content.getComponent("StringForceKnob").setControlCallback(onStringForceKnobControl);
@@ -258,7 +280,7 @@ const var FrettingEngineComboBox = Content.getComponent("FrettingEngineComboBox"
 
 inline function onFrettingEngineComboBoxControl(component, value)
 {
-	Globals.frettingEngine = value;
+	Globals.g_frettingEngine = value;
 };
 
 Content.getComponent("FrettingEngineComboBox").setControlCallback(onFrettingEngineComboBoxControl);
@@ -277,6 +299,29 @@ const var DebugPanel = Content.getComponent("DebugPanel");
 const var PlayingModeBG = Content.getComponent("PlayingModeBG");
 
 const var ShowArticulationsButton = Content.getComponent("ShowArticulationsButton");
+
+
+const var CurrArticulationPlayingLabel = Content.getComponent("CurrArticulationPlayingLabel");
+
+inline function updateCurrArticPlayingLabel(){
+	
+
+	if(Globals.g_currArticulationPlaying == PerformanceType.SUSTAIN)
+		CurrArticulationPlayingLabel.set("text", "Sustain");
+	else if(Globals.g_currArticulationPlaying == PerformanceType.MUTE)
+		CurrArticulationPlayingLabel.set("text", "Mute");
+	else if(Globals.g_currArticulationPlaying == PerformanceType.HARMONIC)
+		CurrArticulationPlayingLabel.set("text", "Harmonic");
+	else if(Globals.g_currArticulationPlaying == PerformanceType.TREMOLO)
+		CurrArticulationPlayingLabel.set("text", "Tremolo");
+	else if(Globals.g_currArticulationPlaying == PerformanceType.SFX)
+			CurrArticulationPlayingLabel.set("text", "SFX");
+	
+}
+
+
+
+
 
 // setting up the buttons that show the GUI
 
@@ -344,7 +389,7 @@ Content.getComponent("ShowArticulationsButton").setControlCallback(onShowArticul
 //setting up fretMarkers
 
 var fretImages = [];
-for (var str = 0; str < Globals.NUMOFSTRINGS; str++){
+for (var str = 0; str < Globals.g_NUMOFSTRINGS; str++){
 	
 	var row = [];
 	
@@ -355,7 +400,7 @@ for (var str = 0; str < Globals.NUMOFSTRINGS; str++){
 }
 
 
-for (var i = 0; i < Globals.NUMOFSTRINGS; i++){
+for (var i = 0; i < Globals.g_NUMOFSTRINGS; i++){
 	for (var j = 0; j < NOTESPERSTRING; j++){
 		fretImages[i][j].set("fileName", "{PROJECT_FOLDER}PlayingMode_FretIndicator.png");
 		fretImages[i][j].set("visible", false);
@@ -367,12 +412,12 @@ inline function updateStringRRLabels()
 {
 	//looks like there's a way do global arrays. Look into later
 
-	StringRRLabel[0].set("text", Globals.string1ActiveRR);
-	StringRRLabel[1].set("text", Globals.string2ActiveRR);
-	StringRRLabel[2].set("text", Globals.string3ActiveRR);
-	StringRRLabel[3].set("text", Globals.string4ActiveRR);
-	StringRRLabel[4].set("text", Globals.string5ActiveRR);
-	StringRRLabel[5].set("text", Globals.string6ActiveRR);
+	StringRRLabel[0].set("text", Globals.g_string1ActiveRR);
+	StringRRLabel[1].set("text", Globals.g_string2ActiveRR);
+	StringRRLabel[2].set("text", Globals.g_string3ActiveRR);
+	StringRRLabel[3].set("text", Globals.g_string4ActiveRR);
+	StringRRLabel[4].set("text", Globals.g_string5ActiveRR);
+	StringRRLabel[5].set("text", Globals.g_string6ActiveRR);
 	
 
 }
@@ -382,7 +427,7 @@ inline function updateStringRRLabels()
 
 inline function hideAll()
 {
-    for (var i = 0; i < Globals.NUMOFSTRINGS; i++)
+    for (var i = 0; i < Globals.g_NUMOFSTRINGS; i++)
         for (var j = 0; j < NOTESPERSTRING; j++)
             fretImages[i][j].set("visible", false);
 }
@@ -416,8 +461,8 @@ inline function keyswitchForceFret(notePlayed, velocity)
 	newFretPosition = velocity % 18;
 
 		HandPositionFretForceKnob.setValue(newFretPosition);
-		Globals.forcedHandPositionFret = newFretPosition;
-		Globals.handPositionFret = newFretPosition;
+		Globals.g_forcedHandPositionFret = newFretPosition;
+		Globals.g_handPositionFret = newFretPosition;
 		
 		
 	}else if(notePlayed == AUTOFRETMODEKEYSWITCH)
@@ -425,7 +470,7 @@ inline function keyswitchForceFret(notePlayed, velocity)
 	 Console.print("keyswitch for auto fret change is hit");
 
 		HandPositionFretForceKnob.setValue(-1);
-		Globals.forcedHandPositionFret = -1;
+		Globals.g_forcedHandPositionFret = -1;
 		
 	}
 }
@@ -515,7 +560,7 @@ inline function moveFretBorder(fretPos){
 	
 	posOfCenter = xPosOfFretBorder[lowFret] + (distBetweenFrets/2);
 
-	if(Globals.forcedHandPositionFret != -1)
+	if(Globals.g_forcedHandPositionFret != -1)
 	{
 		FretBorderLowForced.set("visible", true);
 		FretBorderHighForced.set("visible", true);
@@ -695,7 +740,6 @@ inline function onVibratoDepthKnobControl(component, value)
 	//SourceVibratoLFO.setIntensity(value);
 	SourceVibratoLFO.setIntensity(value);
 	changeVibratoDepth(value, VibratoLFOs);
-	Console.print(value);
 };
 
 Content.getComponent("VibratoDepthKnob").setControlCallback(onVibratoDepthKnobControl);
@@ -849,8 +893,7 @@ for(i = 0; i < TremoloAHDSRModulators.length; i++){
 
 inline function onTremoloTimestretchKnobControl(component, value)
 {
-	Globals.timeStretchRatio = value;
-	Console.print(value);
+	Globals.g_timeStretchRatio = value;
 };
 
 
@@ -875,11 +918,11 @@ I keep crashing with this. Figure out if you want implementations of this anothe
 inline function onEnableTremStretchButtonControl(component, value)
 {
 	if(value){
-		Globals.timeStretchRatio = timeStretchRatioBeforeDisabling;
+		Globals.g_timeStretchRatio = timeStretchRatioBeforeDisabling;
 	}else{
 		
-		timeStretchRatioBeforeDisabling = Globals.timeStretchRatio;
-		Globals.timeStretchRatio = -1;
+		timeStretchRatioBeforeDisabling = Globals.g_timeStretchRatio;
+		Globals.g_timeStretchRatio = -1;
 	}
 };
 
@@ -921,11 +964,215 @@ for(i = 0; i < SFXAHDSRModulators.length; i++){
 }
 
 
+// setting up purging
+// wont seem to work no matter what I do so I won't use it yet
+// I can purge articulations from memory but I can't seem to get articulations back into playing
+
+/*
+
+const var purgeAttributeIndex = 12;
+
+
+
+// purges all the samples from samplers from RAM
+inline function purgeAllSamplersInArray(samplerArray){
+	local samplerToPurge;
+
+	for(i = 0; i < samplerArray.length; i++){
+		samplerToPurge = samplerArray[i];
+		samplerToPurge.setAttribute(purgeAttributeIndex, true);
+	}
+}
+
+// gets all the samples from samplers into RAM
+inline function loadAllSamplersInArray(samplerArray)
+{
+    for (i = 0; i < samplerArray.length; i++)
+    {
+        samplerArray[i].setAttribute(12, 0);
+        // Force samplemap reload after unpurge
+        samplerArray[i].asSampler().loadSampleMap(samplerArray[i].asSampler().getCurrentSampleMapId());
+    }
+}
+
+// Lazy load works like kontakt purge where everything is purged until it's played
+// not implemented yet
+inline function lazyLoadAllSamplersInArray(samplerArray){
+	local samplerToLoad;
+	
+	for(i = 0; i < samplerArray.length; i++){
+		samplerToLoad = samplerArray[i];
+		samplerToLoad.setAttribute(purgeAttributeIndex, false);
+	}
+
+}
+
+
+inline function purgeArticButtonFunction(value, articSamplerArray){
+
+	if(value == 1){
+		loadAllSamplersInArray(articSamplerArray);
+	}else if (value == 0){
+		purgeAllSamplersInArray(articSamplerArray);
+	}
+}
+
+// this helper function follows the assumption of samplers following the strings
+// and that the samplers follow convention of Left/RightString[Num][Artic]Sampler or String[Num][Artic]Sampler
+
+inline function createAllArticSamplerArray(articName, lowBound, highBound, hasDoubleTrack){
+	
+
+	local samplerArrayToReturn = [];
+	local samplerToPush;
+	local numOfSamplers = highBound - lowBound + 1;
+
+	if(hasDoubleTrack){
+		samplerArrayToReturn.reserve(numOfSamplers * 2);
+	}else{
+		samplerArrayToReturn.reserve(numOfSamplers);
+	}
+	
+	if(hasDoubleTrack){
+		for(i = lowBound; i <= highBound; i++){
+			samplerToPush = Synth.getSampler("LeftString" + i + articName + "Sampler");
+			samplerArrayToReturn.push(samplerToPush);
+			
+			samplerToPush = Synth.getSampler("RightString" + i + articName + "Sampler");
+			samplerArrayToReturn.push(samplerToPush);
+		}
+	}else{
+		for(i = lowBound; i <= highBound; i++){
+			samplerToPush = Synth.getSampler("String" + i + articName + "Sampler");
+		}
+	}
+	
+	return samplerArrayToReturn;
+	
+}
+
+
+
+inline function createAllArticSamplerArrayAsChildSynth(articName, lowBound, highBound, hasDoubleTrack)
+{
+    local samplerArrayToReturn = [];
+    local numOfSamplers = highBound - lowBound + 1;
+    
+    if (hasDoubleTrack)
+        samplerArrayToReturn.reserve(numOfSamplers * 2);
+    else
+        samplerArrayToReturn.reserve(numOfSamplers);
+    
+    if (hasDoubleTrack)
+    {
+        for (i = lowBound; i <= highBound; i++)
+        {
+            samplerArrayToReturn.push(Synth.getChildSynth("LeftString" + i + articName + "Sampler"));
+            samplerArrayToReturn.push(Synth.getChildSynth("RightString" + i + articName + "Sampler"));
+        }
+    }
+    else
+    {
+        for (i = lowBound; i <= highBound; i++)
+        {
+            samplerArrayToReturn.push(Synth.getChildSynth("String" + i + articName + "Sampler"));
+        }
+    }
+    
+    return samplerArrayToReturn;
+}
+
+const var susSamplerName = "Sus";
+const var susSamplerLowestStringNum = 1;
+const var susSamplerHighestStringNum = NUMOFSTRINGS;
+const var susHasDoubleTrack = true;
+
+const var AllSusSamplers = createAllArticSamplerArrayAsChildSynth(susSamplerName, susSamplerLowestStringNum, susSamplerHighestStringNum, susHasDoubleTrack);
+
+
+inline function onPurgeSustainBtnControl(component, value)
+{
+	purgeArticButtonFunction(value, AllSusSamplers);
+};
+
+Content.getComponent("PurgeSustainBtn").setControlCallback(onPurgeSustainBtnControl);
+
+
+
+const var muteSamplerName = "Mute";
+const var muteSamplerLowestStringNum = 1;
+const var muteSamplerHighestStringNum = NUMOFSTRINGS;
+const var muteHasDoubleTrack = true;
+
+const var AllMuteSamplers = createAllArticSamplerArrayAsChildSynth(muteSamplerName, muteSamplerLowestStringNum, muteSamplerHighestStringNum, muteHasDoubleTrack);
+
+
+inline function onPurgeMuteBtnControl(component, value)
+{
+	purgeArticButtonFunction(value, AllMuteSamplers);
+};
+
+Content.getComponent("PurgeMuteBtn").setControlCallback(onPurgeMuteBtnControl);
+
+
+
+const var harmonicSamplerName = "Harmonic";
+const var harmonicSamplerLowestStringNum = 1;
+const var harmonicSamplerHighestStringNum = NUMOFSTRINGS;
+const var harmonicHasDoubleTrack = true;
+
+const var AllHarmonicSamplers = createAllArticSamplerArrayAsChildSynth(harmonicSamplerName, harmonicSamplerLowestStringNum, harmonicSamplerHighestStringNum, harmonicHasDoubleTrack);
+
+
+inline function onPurgeHarmonicBtnControl(component, value)
+{
+	purgeArticButtonFunction(value, AllHarmonicSamplers);
+};
+
+Content.getComponent("PurgeHarmonicBtn").setControlCallback(onPurgeHarmonicBtnControl);
 
 
  
+const var tremoloSamplerName = "Tremolo";
+const var tremoloSamplerLowestStringNum = 1;
+const var tremoloSamplerHighestStringNum = NUMOFSTRINGS;
+const var tremoloHasDoubleTrack = true;
+
+const var AllTremoloSamplers = createAllArticSamplerArrayAsChildSynth(tremoloSamplerName, tremoloSamplerLowestStringNum, tremoloSamplerHighestStringNum, tremoloHasDoubleTrack);
+
+
+inline function onPurgeTremoloBtnControl(component, value)
+{
+	purgeArticButtonFunction(value, AllTremoloSamplers);
+};
+
+Content.getComponent("PurgeTremoloBtn").setControlCallback(onPurgeTremoloBtnControl);
+
+*/
+
+/*
+const var allSFXSamplerNames = ["BackBodyHit"]
+AllSFXSamplers.reserve(AllLeftSFXSamplers.length + AllRightSFXSamplers);
+
+
+inline function onPurgeSFXBtnControl(component, value)
+{
+	purgeArticButtonFunction(value, AllSFXSamplers);
+};
+
+Content.getComponent("PurgeSFXBtn").setControlCallback(onPurgeSFXBtnControl);
  
-// Coloring up the keyboard
+ */
+ 
+ 
+// setting up the keyboard
+
+// reset the keyboard
+for(i = 0; i < 127; i++){
+	Engine.setKeyColour(i, Colours.withAlpha(Colours.red, 0.0));
+}
+
+
 for(var i = LOWESTNOTE; i < HIGHESTNOTE + 1; i++){
 	Engine.setKeyColour(i, KeyboardColors.NOTES);
 }
@@ -960,7 +1207,7 @@ function onNoteOn()
 	
 	keyswitchForceFret(notePlayed, velocityPlayed);
 	
-	moveForceString(Globals.forcedString);
+	moveForceString(Globals.g_forcedString);
 	
 	Synth.startTimer(0.05);
 	
@@ -990,8 +1237,8 @@ function onController()
 	        normalized = (raw - 8192) / 8192.0;
 	
 	        // Convert to pixel offset
-	        Globals.pitchBendOffset = normalized * MAX_BEND_PIXELS;
-			Console.print(Globals.pitchBendOffset);
+	        Globals.g_pitchBendOffset = normalized * MAX_BEND_PIXELS;
+			Console.print(Globals.g_pitchBendOffset);
 
 	    }
 	    
@@ -1008,54 +1255,55 @@ function onController()
 	
 	hideAll();
 
-	if(Globals.stringNote6 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING6][Globals.stringNote6 - OPENSTRING6NOTE];
+	if(Globals.g_stringNote6 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING6][Globals.g_stringNote6 - OPENSTRING6NOTE];
 		displayFret(fretImgToControl, StringType.STRING6);
 		
 	}
 	
-	if(Globals.stringNote5 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING5][Globals.stringNote5 - OPENSTRING5NOTE];
+	if(Globals.g_stringNote5 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING5][Globals.g_stringNote5 - OPENSTRING5NOTE];
 		displayFret(fretImgToControl, StringType.STRING5);
 	}
 	
-	if(Globals.stringNote4 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING4][Globals.stringNote4 - OPENSTRING4NOTE];
+	if(Globals.g_stringNote4 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING4][Globals.g_stringNote4 - OPENSTRING4NOTE];
 		displayFret(fretImgToControl, StringType.STRING4);
 	}
 	
-	if(Globals.stringNote3 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING3][Globals.stringNote3 - OPENSTRING3NOTE];
+	if(Globals.g_stringNote3 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING3][Globals.g_stringNote3 - OPENSTRING3NOTE];
 		displayFret(fretImgToControl, StringType.STRING3);
 	}
 	
-	if(Globals.stringNote2 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING2][Globals.stringNote2 - OPENSTRING2NOTE];
+	if(Globals.g_stringNote2 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING2][Globals.g_stringNote2 - OPENSTRING2NOTE];
 		displayFret(fretImgToControl, StringType.STRING2);
 	}
 	
-	if(Globals.stringNote1 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING1][Globals.stringNote1 - OPENSTRING1NOTE];
+	if(Globals.g_stringNote1 != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING1][Globals.g_stringNote1 - OPENSTRING1NOTE];
 		displayFret(fretImgToControl, StringType.STRING1);
 	}
 	
 	
 	
-	handPositionFretLabel.set("text", Globals.handPositionFret != -1 ? Globals.handPositionFret : "");
+	handPositionFretLabel.set("text", Globals.g_handPositionFret != -1 ? Globals.g_handPositionFret : "");
 	
 	
-	if(Globals.forcedHandPositionFret != -1)
+	if(Globals.g_forcedHandPositionFret != -1)
 	{
-		moveFretBorder(Globals.forcedHandPositionFret);
+		moveFretBorder(Globals.g_forcedHandPositionFret);
 	
 	}else
 	{
-		moveFretBorder(Globals.handPositionFret);
+		moveFretBorder(Globals.g_handPositionFret);
 	}
 	
 	updateStringRRLabels();
+	updateCurrArticPlayingLabel();
 	
-	TremoloTimestretchKnob.setValue(Globals.timeStretchRatio);
+	TremoloTimestretchKnob.setValue(Globals.g_timeStretchRatio);
 	
 	
 	

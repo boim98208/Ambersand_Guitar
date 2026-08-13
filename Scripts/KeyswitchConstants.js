@@ -25,7 +25,23 @@
  	const var MUTE = 3;
  	const var HARMONIC = 4;
  	const var TREMOLO = 5;
+ 	const var SFX = 6;
  	
- 	const var NUMOFPERFORMANCES = 6;
- 	//SFX will just be separate keys down low
+ 	const var NUMOFPERFORMANCES = 7;
+ 	//SFX will just be separate keys down low... maybe
+ }
+ 
+ namespace FrettingEngine
+ {
+ 	//make sure this lines up with the item list from the combo box
+ 
+ 	const var NATURAL = 1;
+ 	const var MELODY = 2;
+ }
+ 
+ 
+ namespace RRBehaviour{
+	 const var SEPARATE = 0;
+	 const var RANDOM = 1;
+	 const var LINEAR = 2;
  }

@@ -5,28 +5,32 @@
              height="800" fileName="{PROJECT_FOLDER}Credits_BG.png" scale="0.699999988079071"/>
   <Component type="ScriptImage" id="PlayingModeBG" x="0" y="-60" width="1020"
              height="800" fileName="{PROJECT_FOLDER}PlayingMode_BG.png" scale="0.699999988079071">
-    <Component type="ScriptLabel" id="ArticulationPlayingLabel" x="430" y="430"
-               width="100" height="100" parentComponent="PlayingModeBG" text="test"
-               textColour="4278190080"/>
+    <Component type="ScriptLabel" id="CurrArticulationPlayingLabel" x="530"
+               y="490" width="100" height="34" parentComponent="PlayingModeBG"
+               text="Harmonic" textColour="4278190080" fontName="Shehroz" fontSize="18.0"
+               alignment="left"/>
+    <Component type="ScriptLabel" id="ArticulationPlayingLabel" x="430" y="490"
+               width="100" height="34" parentComponent="PlayingModeBG" text="Articulation:"
+               textColour="4278190080" fontName="Shehroz" fontSize="18.0"/>
     <Component type="ScriptPanel" id="FretBorderPanel" x="260" y="240" itemColour="0"
                itemColour2="0" textColour="16777215" bgColour="16777215" width="450"
                parentComponent="PlayingModeBG">
-      <Component type="ScriptImage" id="FretBorderLow" x="0" y="25" parentComponent="FretBorderPanel"
+      <Component type="ScriptImage" id="FretBorderLow" x="364" y="25" parentComponent="FretBorderPanel"
                  fileName="{PROJECT_FOLDER}PlayingMode_HandBorder.png" scale="0.25"
                  height="15" width="10" text="FretBorderLowForced"/>
-      <Component type="ScriptImage" id="FretBorderLowForced" x="0" y="25" parentComponent="FretBorderPanel"
+      <Component type="ScriptImage" id="FretBorderLowForced" x="364" y="25" parentComponent="FretBorderPanel"
                  fileName="{PROJECT_FOLDER}PlayingMode_HandBorder_Forced.png"
                  scale="0.25" height="15" width="10" visible="0"/>
-      <Component type="ScriptImage" id="FretBorderHigh" x="146" y="25" parentComponent="FretBorderPanel"
+      <Component type="ScriptImage" id="FretBorderHigh" x="432" y="25" parentComponent="FretBorderPanel"
                  fileName="{PROJECT_FOLDER}PlayingMode_HandBorder.png" scale="0.25"
                  height="15" width="10" text="FretBorderLowForced"/>
-      <Component type="ScriptImage" id="FretBorderHighForced" x="146" y="25" parentComponent="FretBorderPanel"
+      <Component type="ScriptImage" id="FretBorderHighForced" x="432" y="25" parentComponent="FretBorderPanel"
                  fileName="{PROJECT_FOLDER}PlayingMode_HandBorder_Forced.png"
-                 scale="0.25" height="15" width="10"/>
-      <Component type="ScriptImage" id="FretBorderCenter" x="73" y="23" parentComponent="FretBorderPanel"
+                 scale="0.25" height="15" width="10" visible="0"/>
+      <Component type="ScriptImage" id="FretBorderCenter" x="398" y="23" parentComponent="FretBorderPanel"
                  fileName="{PROJECT_FOLDER}PlayingMode_HandCenter.png" height="15"
                  width="15" text="FretBorderLowForced" scale="0.4000000059604645"/>
-      <Component type="ScriptImage" id="FretBorderCenterForced" x="73" y="23"
+      <Component type="ScriptImage" id="FretBorderCenterForced" x="398" y="23"
                  parentComponent="FretBorderPanel" fileName="{PROJECT_FOLDER}PlayingMode_HandCenter_Forced.png"
                  height="15" width="15" text="FretBorderLowForced" scale="0.4000000059604645"
                  visible="0"/>
@@ -38,14 +42,12 @@
                  text="Fret: Auto" width="726" mode="Discrete" stepSize="1.0"
                  middlePosition="10.0" min="1.0" max="19.0" parentComponent="PerformanceOptionsPanel"
                  filmstripImage="{PROJECT_FOLDER}ForceFretPosition_Knob_Filmstrip.png"
-                 height="47" scaleFactor="0.25" numStrips="19.0" mouseSensitivity="0.699999988079071"
-                 showValuePopup="Above"/>
+                 height="47" scaleFactor="0.25" numStrips="19.0" mouseSensitivity="0.699999988079071"/>
       <Component type="ScriptSlider" id="StringForceKnob" x="224" y="62" width="185"
                  text="string: 6.0" mode="Discrete" stepSize="1.0" middlePosition="4.0"
                  max="7.0" min="1.0" defaultValue="1.0" parentComponent="PerformanceOptionsPanel"
                  filmstripImage="{PROJECT_FOLDER}ForceString_Knob_Filmstrip.png"
-                 numStrips="7.0" scaleFactor="0.25" mouseSensitivity="0.699999988079071"
-                 showValuePopup="Below"/>
+                 numStrips="7.0" scaleFactor="0.25" mouseSensitivity="0.699999988079071"/>
       <Component type="ScriptComboBox" id="FrettingEngineComboBox" x="230" y="122"
                  max="2" items="Natural&#10;Melody" enableMidiLearn="1" parentComponent="PerformanceOptionsPanel"/>
       <Component type="ScriptLabel" id="FrettingModeLabel" x="50" y="122" width="130"
@@ -57,7 +59,7 @@
       <Component type="ScriptLabel" id="ForceFretPositionLabel" x="10" y="12"
                  parentComponent="PerformanceOptionsPanel" text="Force Fret Position:"
                  fontSize="30.0" width="210" height="30" visible="0" enabled="0"/>
-      <Component type="ScriptButton" id="ResetGlobalRRButton" x="110" y="80" width="100"
+      <Component type="ScriptButton" id="ResetGlobalRRButton" x="110" y="50" width="100"
                  height="25" parentComponent="PerformanceOptionsPanel" isMomentary="1"
                  text="Midi Panic"/>
     </Component>
@@ -506,9 +508,9 @@
     <Component type="ScriptPanel" id="DSPPanel" x="280" y="130" width="557"
                height="100" parentComponent="PlayingModeBG" itemColour="3355443"
                itemColour2="1118481" textColour="16777215" bgColour="16777215">
-      <Component type="ScriptSlider" id="IRMixKnob" x="10" y="30" width="100"
+      <Component type="ScriptSlider" id="IRMixKnob" x="30" y="30" width="125"
                  height="30" parentComponent="DSPPanel" middlePosition="0.5"/>
-      <Component type="ScriptComboBox" id="cmbIr" x="150" y="40" width="131" height="21"
+      <Component type="ScriptComboBox" id="cmbIr" x="170" y="40" width="131" height="21"
                  parentComponent="DSPPanel" text="Load Impulse" items="&#10;Ample M (rec 50 perc)&#10;Ample SJ (rec 43 percent)&#10;Ample T (rec 50 percent)"
                  max="3"/>
     </Component>
@@ -516,7 +518,7 @@
                width="1020" height="73" parentComponent="PlayingModeBG" ContentType="Keyboard"
                bgColour="4294967295" itemColour="4294967295" itemColour2="4294967295"
                textColour="0" Data="{&#10;  &quot;KeyWidth&quot;: 14,&#10;  &quot;DisplayOctaveNumber&quot;: true,&#10;  &quot;LowKey&quot;: 0,&#10;  &quot;HiKey&quot;: 127,&#10;  &quot;CustomGraphics&quot;: false,&#10;  &quot;DefaultAppearance&quot;: false,&#10;  &quot;BlackKeyRatio&quot;: 0.699999988079071,&#10;  &quot;ToggleMode&quot;: false,&#10;  &quot;MidiChannel&quot;: 1,&#10;  &quot;UseVectorGraphics&quot;: true,&#10;  &quot;UseFlatStyle&quot;: false,&#10;  &quot;MPEKeyboard&quot;: false,&#10;  &quot;MPEStartChannel&quot;: 2,&#10;  &quot;MPEEndChannel&quot;: 16&#10;}"/>
-    <Component type="ScriptPanel" id="VibratoPnl" x="30" y="200" width="150"
+    <Component type="ScriptPanel" id="VibratoPnl" x="120" y="140" width="150"
                height="100" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptSlider" id="VibratoDepthKnob" x="20" y="0" width="36"
@@ -535,7 +537,7 @@
                  height="40" parentComponent="VibratoPnl" text="Frequency" textColour="4278190080"
                  fontName="Shehroz" fontSize="18.0"/>
     </Component>
-    <Component type="ScriptPanel" id="PitchBendRangePnl" x="290" y="220" width="102"
+    <Component type="ScriptPanel" id="PitchBendRangePnl" x="590" y="110" width="102"
                height="86" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptLabel" id="PitchBendRangeLabel" x="0" y="10" width="100"
@@ -546,14 +548,29 @@
                  numStrips="100.0" scaleFactor="0.2000000029802322" mouseSensitivity="0.5"
                  max="12.0" stepSize="1.0" defaultValue="2.0" showValuePopup="Above"/>
     </Component>
+    <Component type="ScriptPanel" id="DoubleTrackingPnl" x="810" y="470" width="186"
+               height="71" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
+               textColour="16777215" bgColour="16777215">
+      <Component type="ScriptButton" id="DoubleTrackingBtn" x="-1" y="17" width="32"
+                 height="29" parentComponent="DoubleTrackingPnl" filmstripImage="{PROJECT_FOLDER}Checkbox_Filmstrip.png"
+                 scaleFactor="0.5"/>
+      <Component type="ScriptLabel" id="DoubleTrackingLabel" x="20" y="-20" width="120"
+                 height="100" parentComponent="DoubleTrackingPnl" fontName="Shehroz"
+                 textColour="4278190080" text="Double Tracking" fontSize="26.0"
+                 editable="0"/>
+    </Component>
   </Component>
   <Component type="ScriptPanel" id="DebugPanel" x="160" y="0" itemColour="0"
              itemColour2="0" bgColour="16777215" textColour="16777215" borderSize="0.0"
-             width="606" height="112">
+             width="606" height="102" visible="0">
+    <Component type="ScriptFloatingTile" id="SettingsTile" x="-40" y="-6" width="654"
+               height="536" parentComponent="DebugPanel" ContentType="CustomSettings"
+               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: true,&#10;  &quot;Device&quot;: true,&#10;  &quot;Output&quot;: true,&#10;  &quot;BufferSize&quot;: true,&#10;  &quot;SampleRate&quot;: true,&#10;  &quot;GlobalBPM&quot;: true,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: true,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+               textColour="4278190080" updateAfterInit="0" visible="0"/>
     <Component type="ScriptImage" id="NerdDetails_BG" x="3" y="3" width="597"
                height="100" parentComponent="DebugPanel" fileName="{PROJECT_FOLDER}PlayingMode_NerdDetails_BG.png"/>
     <Component type="ScriptLabel" id="handPositionFretLabel" x="388" y="9" width="39"
-               fontSize="20.0" height="13" text="0" parentComponent="DebugPanel"
+               fontSize="20.0" height="13" text="17" parentComponent="DebugPanel"
                textColour="4278190080"/>
     <Component type="ScriptLabel" id="String1RRLabel" x="498" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
@@ -573,17 +590,10 @@
     <Component type="ScriptLabel" id="String6RRLabel" x="4" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
-    <Component type="ScriptFloatingTile" id="SettingsTile" x="-40" y="-6" width="654"
-               height="536" parentComponent="DebugPanel" ContentType="CustomSettings"
-               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: true,&#10;  &quot;Device&quot;: true,&#10;  &quot;Output&quot;: true,&#10;  &quot;BufferSize&quot;: true,&#10;  &quot;SampleRate&quot;: true,&#10;  &quot;GlobalBPM&quot;: true,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: true,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-               textColour="4278190080" updateAfterInit="0" enabled="0" visible="0"/>
   </Component>
   <Component type="ScriptImage" id="ArticulationBG" x="0" y="-60" width="1020"
              height="600" fileName="{PROJECT_FOLDER}Articulations_BG.png"
              visible="0">
-    <Component type="ScriptLabel" id="TremSpeedLabel" x="0" y="120" width="100"
-               height="100" parentComponent="ArticulationBG" text="Trem Speed"
-               textColour="4278190080"/>
     <Component type="ScriptPanel" id="SustainModulatorsPnl" x="0" y="150" width="723"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
@@ -611,6 +621,10 @@
                  scaleFactor="0.25" max="20000.0" mouseSensitivity="0.5" showValuePopup="Left"
                  middlePosition="150.0" parentComponent="SustainModulatorsPnl"
                  width="52" mode="Time" defaultValue="151.0" macroControl="No MacroControl"/>
+      <Component type="ScriptButton" id="PurgeSustainBtn" x="259" y="18" width="30"
+                 height="30" parentComponent="SustainModulatorsPnl" text="Enable speed change"
+                 filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="MuteModulatorsPnl" x="7" y="206" width="723"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
@@ -636,6 +650,9 @@
                  scaleFactor="0.25" max="20000.0" mouseSensitivity="0.5" showValuePopup="Left"
                  middlePosition="150.0" parentComponent="MuteModulatorsPnl" width="52"
                  mode="Time" defaultValue="151.0" macroControl="No MacroControl"/>
+      <Component type="ScriptButton" id="PurgeMuteBtn" x="259" y="18" width="30"
+                 height="30" parentComponent="MuteModulatorsPnl" text="Bruh" filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="HarmonicModulatorsPnl" x="14" y="266"
                width="723" height="60" parentComponent="ArticulationBG" itemColour="0"
@@ -664,14 +681,18 @@
                  scaleFactor="0.25" max="20000.0" mouseSensitivity="0.5" showValuePopup="Left"
                  middlePosition="150.0" parentComponent="HarmonicModulatorsPnl"
                  width="52" mode="Time" defaultValue="151.0" macroControl="No MacroControl"/>
+      <Component type="ScriptButton" id="PurgeHarmonicBtn" x="259" y="18" width="30"
+                 height="30" parentComponent="HarmonicModulatorsPnl" text="Enable speed change"
+                 filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="TremoloModulatorsPnl" x="20" y="325" width="1000"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
-      <Component type="ScriptButton" id="EnableTremStretchButton" x="740" y="17"
+      <Component type="ScriptButton" id="EnableTremStretchButton" x="697" y="40"
                  width="100" height="30" parentComponent="TremoloModulatorsPnl"
-                 text="Enable speed change" filmstripImage="{PROJECT_FOLDER}Checkbox_Filmstrip.png"
-                 scaleFactor="0.5"/>
+                 text="Enable speed change" filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.4000000059604645"/>
       <Component type="ScriptLabel" id="TremoloModulatorsPnlLabel" x="16" y="-16"
                  width="207" height="100" parentComponent="TremoloModulatorsPnl"
                  fontName="Shehroz" text="Tremolo" fontSize="46.0" fontStyle="Regular"
@@ -702,10 +723,10 @@
                  showValuePopup="Left" middlePosition="1.0" defaultValue="1.0"
                  mode="NormalizedPercentage" parentComponent="TremoloModulatorsPnl"
                  width="48"/>
-      <Component type="ScriptLabel" id="EnableTimeStretchLabel" x="769" y="-21"
-                 width="184" height="100" parentComponent="TremoloModulatorsPnl"
-                 fontName="Shehroz" text="Enable Speed Control" fontSize="24.0"
-                 fontStyle="Regular" textColour="4278190080" alignment="right"/>
+      <Component type="ScriptButton" id="PurgeTremoloBtn" x="259" y="18" width="30"
+                 height="30" parentComponent="TremoloModulatorsPnl" text="Enable speed change"
+                 filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptPanel" id="SFXModulatorsPnl" x="29" y="387" width="952"
                height="60" parentComponent="ArticulationBG" itemColour="0" itemColour2="0"
@@ -729,6 +750,10 @@
                  numStrips="100.0" scaleFactor="0.25" max="20000.0" mouseSensitivity="0.5"
                  showValuePopup="Left" middlePosition="150.0" parentComponent="SFXModulatorsPnl"
                  width="52" mode="Time" defaultValue="151.0" macroControl="No MacroControl"/>
+      <Component type="ScriptButton" id="PurgeSFXBtn" x="259" y="18" width="30"
+                 height="30" parentComponent="SFXModulatorsPnl" text="Enable speed change"
+                 filmstripImage="{PROJECT_FOLDER}Articulation_PurgeButton_Filmstrip.png"
+                 scaleFactor="0.5" defaultValue="1.0"/>
     </Component>
     <Component type="ScriptButton" id="NextPageBtn" x="50" y="80" width="25"
                height="28" parentComponent="ArticulationBG" isMomentary="1"
@@ -737,6 +762,10 @@
                height="28" parentComponent="ArticulationBG" isMomentary="1"
                filmstripImage="{PROJECT_FOLDER}Previous_Button_Filmstrip.png"
                scaleFactor="0.25"/>
+    <Component type="ScriptLabel" id="PurgeLabel" x="237" y="103" width="60"
+               height="50" parentComponent="ArticulationBG" fontName="Shehroz"
+               textColour="4294211876" text="Purge" fontSize="25.0" itemColour2="4294211876"
+               itemColour="16777215" editable="0"/>
   </Component>
   <Component type="ScriptButton" id="ShowPlayingModeButton" x="259" y="478"
              text="Show Main Playing Controls" width="188" filmstripImage="{PROJECT_FOLDER}PlayingMode_Button_Filmstrip.png"

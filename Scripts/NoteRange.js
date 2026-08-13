@@ -1,10 +1,10 @@
  Synth.deferCallbacks(false);
  //for some reason global releases wont turn off mid-script so I'm keeping it off for now
- Globals.emulatedReleasesOn = true;
+ Globals.g_emulatedReleasesOn = true;
  
  const var POSINFINITY = 1/0;
  
- const var NUMOFSTRINGS = Globals.NUMOFSTRINGS;
+ const var NUMOFSTRINGS = Globals.g_NUMOFSTRINGS;
  const var LOWESTNOTE = 52;
  const var HIGHESTNOTE = 97;
  
@@ -104,12 +104,12 @@ const var NUMOFKEYSWITCHES = ContainerMutes.length;
 	 setAllContainersMuted();
 	 
 	 //emulated releases probably only work on sustains so set off by default
-	 Globals.emulatedReleasesOn = false;
+	 Globals.g_emulatedReleasesOn = false;
 	 
 	 if(notePlayed == SUSTAINKEYSWITCHNOTE){
 	 
 		 SusContainerMute.setAttribute("Bypass", false);
-		 Globals.emulatedReleasesOn = true;
+		 Globals.g_emulatedReleasesOn = true;
 	 }else if(notePlayed == MUTEKEYSWITCHNOTE){
 	 
 		 MuteContainerMute.setAttribute("Bypass", false);
@@ -137,13 +137,13 @@ const var NUMOFKEYSWITCHES = ContainerMutes.length;
  */
  
  //variables to correspond with the Fretdisplay
- Globals.stringNote1 = NO_NOTE;
- Globals.stringNote2 = NO_NOTE;
- Globals.stringNote3 = NO_NOTE;
- Globals.stringNote4 = NO_NOTE;
- Globals.stringNote5 = NO_NOTE;
- Globals.stringNote6 = NO_NOTE;
- Globals.handPositionFret = 0;
+ Globals.g_stringNote1 = NO_NOTE;
+ Globals.g_stringNote2 = NO_NOTE;
+ Globals.g_stringNote3 = NO_NOTE;
+ Globals.g_stringNote4 = NO_NOTE;
+ Globals.g_stringNote5 = NO_NOTE;
+ Globals.g_stringNote6 = NO_NOTE;
+ Globals.g_handPositionFret = 0;
 
  /*
      stringNotes holds the note played by each string
@@ -201,35 +201,35 @@ inline function playString(theStringType){
  inline function updateGlobals(){
  
  	if(stringNote[Stringtype.STRING1LEG] == NO_NOTE)
-		Globals.stringNote1 = stringNote[Stringtype.STRING1];
+		Globals.g_stringNote1 = stringNote[Stringtype.STRING1];
 	else
-		Globals.stringNote1 = stringNote[Stringtype.STRING1LEG];
+		Globals.g_stringNote1 = stringNote[Stringtype.STRING1LEG];
 		
 	if(stringNote[Stringtype.STRING2LEG] == NO_NOTE)
-		Globals.stringNote2 = stringNote[Stringtype.STRING2];
+		Globals.g_stringNote2 = stringNote[Stringtype.STRING2];
 	else
-		Globals.stringNote2 = stringNote[Stringtype.STRING2LEG];
+		Globals.g_stringNote2 = stringNote[Stringtype.STRING2LEG];
 		
 	if(stringNote[Stringtype.STRING3LEG] == NO_NOTE)
-		Globals.stringNote3 = stringNote[Stringtype.STRING3];
+		Globals.g_stringNote3 = stringNote[Stringtype.STRING3];
 	else
-		Globals.stringNote3 = stringNote[Stringtype.STRING3LEG];
+		Globals.g_stringNote3 = stringNote[Stringtype.STRING3LEG];
 		
 	if(stringNote[Stringtype.STRING4LEG] == NO_NOTE)
-		Globals.stringNote4 = stringNote[Stringtype.STRING4];
+		Globals.g_stringNote4 = stringNote[Stringtype.STRING4];
 	else{
-		Globals.stringNote4 = stringNote[Stringtype.STRING4LEG];
+		Globals.g_stringNote4 = stringNote[Stringtype.STRING4LEG];
 		}
 		
 	if(stringNote[Stringtype.STRING5LEG] == NO_NOTE)
-		Globals.stringNote5 = stringNote[Stringtype.STRING5];
+		Globals.g_stringNote5 = stringNote[Stringtype.STRING5];
 	else
-		Globals.stringNote5 = stringNote[Stringtype.STRING5LEG];
+		Globals.g_stringNote5 = stringNote[Stringtype.STRING5LEG];
 		
 	if(stringNote[Stringtype.STRING6LEG] == NO_NOTE)
-		Globals.stringNote6 = stringNote[Stringtype.STRING6];
+		Globals.g_stringNote6 = stringNote[Stringtype.STRING6];
 	else
-		Globals.stringNote6 = stringNote[Stringtype.STRING6LEG];
+		Globals.g_stringNote6 = stringNote[Stringtype.STRING6LEG];
 
  }
  
@@ -358,18 +358,18 @@ inline function forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange)
 	local newFretFromForceString;
 	local distanceBetweenForceAndAutoFret;
 
-	if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.forcedString], OPENSTRINGNOTES[Globals.forcedString] + (NOTESPERSTRING - 1)) && stringNote[Globals.forcedString] == -1)
+	if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + (NOTESPERSTRING - 1)) && stringNote[Globals.g_forcedString] == -1)
 	{
 	
 	
 	
-	stringNote[Globals.forcedString] = notePlayed; 
+	stringNote[Globals.g_forcedString] = notePlayed; 
 	
 	updateGlobals(); 
-	playString(Globals.forcedString);
-	Globals.stringPerformance[Globals.forcedString] = PerformanceType.SUSTAIN;
+	playString(Globals.g_forcedString);
+	Globals.g_stringPerformance[Globals.g_forcedString] = PerformanceType.SUSTAIN;
 	
-	newFretFromForceString = notePlayed - OPENSTRINGNOTES[Globals.forcedString];
+	newFretFromForceString = notePlayed - OPENSTRINGNOTES[Globals.g_forcedString];
 	distanceBetweenForceAndAutoFret = Math.abs(newFretFromForceString - currentHandPos);
 	
 	//changes fret position if forceString's frets go a certain distance
@@ -414,10 +414,10 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	
 	
 	//Going to force string mode
-	if(Globals.forcedString != -1)
+	if(Globals.g_forcedString != -1)
 	{
 
-		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.forcedString], OPENSTRINGNOTES[Globals.forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.forcedString] == -1)
+		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.g_forcedString] == -1)
 		{
 		
 			return forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange);
@@ -431,7 +431,7 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	
 	stringToPlay = stringWithClosestNote(notePlayed, currentHandPos);
 	stringNote[stringToPlay] = notePlayed;
-	Globals.stringPerformance[stringToPlay] = PerformanceType.SUSTAIN;
+	Globals.g_stringPerformance[stringToPlay] = PerformanceType.SUSTAIN;
 	playString(stringToPlay);
 	
 	
@@ -503,10 +503,10 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	
 	
 	//Going to force string mode
-	if(Globals.forcedString != -1)
+	if(Globals.g_forcedString != -1)
 	{
 
-		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.forcedString], OPENSTRINGNOTES[Globals.forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.forcedString] == -1)
+		if(isBetweenIncl(notePlayed, OPENSTRINGNOTES[Globals.g_forcedString], OPENSTRINGNOTES[Globals.g_forcedString] + NOTESPERSTRING - 1) && stringNote[Globals.g_forcedString] == -1)
 		{
 		
 			return forceStringLogic(notePlayed, currentHandPos, fretSpaceToChange);
@@ -584,13 +584,13 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
  	 for( var i = 0; i < NUMOFSTRINGS && !noteInRange; i++){
  	 
  	 
-	 	 if(isBetweenIncl(notePlayed, stringNote[i] - Globals.legatoRange, stringNote[i] + Globals.legatoRange)){
+	 	 if(isBetweenIncl(notePlayed, stringNote[i] - Globals.g_legatoRange, stringNote[i] + Globals.g_legatoRange)){
 	 	 	 	 isNoteInRange = true;
 	 	 	 	 
 	 	 	 	 if(notePlayed > stringNote[i])
-	 	 	 	 	Globals.stringPerformance[i] = PerformanceType.LEGATOUP;
+	 	 	 	 	Globals.g_stringPerformance[i] = PerformanceType.LEGATOUP;
 	 	 	 	 else
-	 	 	 	 	Globals.stringPerformance[i] = PerformanceType.LEGATODOWN;
+	 	 	 	 	Globals.g_stringPerformance[i] = PerformanceType.LEGATODOWN;
 	 	 	 	 
 
 	 	 	 	stringNote[i] = notePlayed;
@@ -615,35 +615,35 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
  
  inline function playNextNoteOnNewString(notePlayed, velocityPlayed){
 	 
- 	if(Globals.frettingEngine == FrettingEngine.NATURAL)
+ 	if(Globals.g_frettingEngine == FrettingEngine.NATURAL)
  			{
  		
- 				if(Globals.forcedHandPositionFret == -1)
+ 				if(Globals.g_forcedHandPositionFret == -1)
  				{
  		
- 					Globals.handPositionFret = naturalFretting2_2_1(notePlayed, Globals.handPositionFret);
+ 					Globals.g_handPositionFret = naturalFretting2_2_1(notePlayed, Globals.g_handPositionFret);
  					
  				}else{
  					
  	
- 					Globals.handPositionFret = naturalFretting2_2_1(notePlayed, Globals.forcedHandPositionFret);
+ 					Globals.g_handPositionFret = naturalFretting2_2_1(notePlayed, Globals.g_forcedHandPositionFret);
  				}
- 			}else if(Globals.frettingEngine == FrettingEngine.MELODY)
+ 			}else if(Globals.g_frettingEngine == FrettingEngine.MELODY)
  			{
  		
- 				if(Globals.forcedHandPositionFret == -1)
+ 				if(Globals.g_forcedHandPositionFret == -1)
  						{
- 							Globals.handPositionFret = melodyFretting1_0_0(notePlayed, Globals.handPositionFret);
+ 							Globals.g_handPositionFret = melodyFretting1_0_0(notePlayed, Globals.g_handPositionFret);
  							
  						}else
  						{
- 							Globals.handPositionFret = melodyFretting1_0_0(notePlayed, Globals.forcedHandPositionFret);
+ 							Globals.g_handPositionFret = melodyFretting1_0_0(notePlayed, Globals.g_forcedHandPositionFret);
  						}
  			}
  			
  			//Had a bug where handPositionFret became -4 and I have no idea why so I'm normalizing out of caution
- 			if(Globals.handPositionFret < 0){
- 				Globals.handPositionFret = 0;
+ 			if(Globals.g_handPositionFret < 0){
+ 				Globals.g_handPositionFret = 0;
  			}
 	 
  }
@@ -661,7 +661,7 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 
 	detectKeySwitch(notePlayed);
 	
-	if(Globals.resetNotes == true)
+	if(Globals.g_resetNotes == true)
 		resetNotes();
 	
 	if(notePlayed == legatoKeySwitchNote)

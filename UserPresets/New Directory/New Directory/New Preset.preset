@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.0">
+  <Content Processor="Interface">
+    <Control type="ScriptSlider" id="HandPositionFretForceKnob" value="1.0"/>
+    <Control type="ScriptSlider" id="StringForceKnob" value="1.0"/>
+    <Control type="ScriptComboBox" id="FrettingEngineComboBox" value="1.0"/>
+    <Control type="ScriptButton" id="ResetGlobalRRButton" value="0.0"/>
+    <Control type="ScriptSlider" id="IRMixKnob" value="0.6000000238418579"/>
+    <Control type="ScriptComboBox" id="cmbIr" value="1.0"/>
+    <Control type="ScriptSlider" id="VibratoDepthKnob" value="0.0"/>
+    <Control type="ScriptSlider" id="VibratoFreqKnob" value="8.5"/>
+    <Control type="ScriptSlider" id="PitchBendRangeKnob" value="2.0"/>
+    <Control type="ScriptButton" id="DoubleTrackingBtn" value="0.0"/>
+    <Control type="ScriptSlider" id="SustainModulatorsAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="SustainModulatorsDecay" value="0.0"/>
+    <Control type="ScriptSlider" id="SustainModulatorsSustain" value="0.0"/>
+    <Control type="ScriptSlider" id="SustainModulatorsRelease" value="151.0"/>
+    <Control type="ScriptButton" id="PurgeSustainBtn" value="1.0"/>
+    <Control type="ScriptSlider" id="MuteModulatorsAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="MuteModulatorsDecay" value="0.0"/>
+    <Control type="ScriptSlider" id="MuteModulatorsMute" value="0.0"/>
+    <Control type="ScriptSlider" id="MuteModulatorsRelease" value="151.0"/>
+    <Control type="ScriptButton" id="PurgeMuteBtn" value="1.0"/>
+    <Control type="ScriptSlider" id="HarmonicModulatorsAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="HarmonicModulatorsDecay" value="0.0"/>
+    <Control type="ScriptSlider" id="HarmonicModulatorsHarmonic" value="0.0"/>
+    <Control type="ScriptSlider" id="HarmonicModulatorsRelease" value="151.0"/>
+    <Control type="ScriptButton" id="PurgeHarmonicBtn" value="1.0"/>
+    <Control type="ScriptButton" id="EnableTremStretchButton" value="0.0"/>
+    <Control type="ScriptSlider" id="TremoloModulatorsAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="TremoloModulatorsDecay" value="0.0"/>
+    <Control type="ScriptSlider" id="TremoloModulatorsTremolo" value="-1.100000023841858"/>
+    <Control type="ScriptSlider" id="TremoloModulatorsRelease" value="151.0"/>
+    <Control type="ScriptSlider" id="TremoloTimestretchKnob" value="2.0"/>
+    <Control type="ScriptButton" id="PurgeTremoloBtn" value="1.0"/>
+    <Control type="ScriptSlider" id="SFXModulatorsAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="SFXModulatorsDecay" value="0.0"/>
+    <Control type="ScriptSlider" id="SFXModulatorsSFX" value="0.0"/>
+    <Control type="ScriptSlider" id="SFXModulatorsRelease" value="151.0"/>
+    <Control type="ScriptButton" id="PurgeSFXBtn" value="1.0"/>
+    <Control type="ScriptButton" id="NextPageBtn" value="0.0"/>
+    <Control type="ScriptButton" id="PrevPageBtn" value="0.0"/>
+    <Control type="ScriptButton" id="ShowPlayingModeButton" value="0"/>
+    <Control type="ScriptButton" id="ShowArticulationsButton" value="1.0"/>
+    <Control type="ScriptButton" id="ShowDebugPanelButton" value="0.0"/>
+  </Content>
+  <MidiAutomation>
+    <Controller Controller="2" Channel="-1" Processor="TremoloContainerTimeStretch"
+                MacroIndex="-1" Start="0.5" End="2.0" FullStart="0.5" FullEnd="2.0"
+                Skew="0.6309297535714574" Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADf..."
+                Attribute="Knob1" Inverted="0"/>
+  </MidiAutomation>
+  <MPEData Enabled="0"/>
+</Preset>
