@@ -20,7 +20,7 @@
  OPENSTRINGNOTES.push(OPENSTRINGNONOTE);
 
  
- namespace Stringtype
+ namespace StringType
  {
  
      const var STRING1 = 0;
@@ -134,7 +134,7 @@ Message.setChannel(1); }
 */
 
 
-//this should only take the Stringtype enum
+//this should only take the StringType enum
 inline function playString(theStringType){
 	
 	//adding 1 because the enum starts on 0 but channels start on 1
@@ -152,12 +152,12 @@ inline function playString(theStringType){
  inline function updateGlobals(){
 	 //todo: add Globals.g_stringNote to update also for whent the legato notes arent empty
  
-	 Globals.g_stringNote1 = stringNote[Stringtype.STRING1];
-	 Globals.g_stringNote2 = stringNote[Stringtype.STRING2];
-	 Globals.g_stringNote3 = stringNote[Stringtype.STRING3];
-	 Globals.g_stringNote4 = stringNote[Stringtype.STRING4];
-	 Globals.g_stringNote5 = stringNote[Stringtype.STRING5];
-	 Globals.g_stringNote6 = stringNote[Stringtype.STRING6];
+	 Globals.g_stringNote1 = stringNote[StringType.STRING1];
+	 Globals.g_stringNote2 = stringNote[StringType.STRING2];
+	 Globals.g_stringNote3 = stringNote[StringType.STRING3];
+	 Globals.g_stringNote4 = stringNote[StringType.STRING4];
+	 Globals.g_stringNote5 = stringNote[StringType.STRING5];
+	 Globals.g_stringNote6 = stringNote[StringType.STRING6];
  }
  
  inline function isPolyphonyPlaying(){
@@ -169,34 +169,34 @@ inline function playString(theStringType){
  
  inline function primitiveFretting(notePlayed){
  
-	 if (stringNote[Stringtype.STRING6] == -1){
+	 if (stringNote[StringType.STRING6] == -1){
 	 	playString6();
-	 	stringNote[Stringtype.STRING6] = notePlayed;
+	 	stringNote[StringType.STRING6] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING5] == -1){
+	 }else if (stringNote[StringType.STRING5] == -1){
 	 	playString5();
-	 	stringNote[Stringtype.STRING5] = notePlayed;
+	 	stringNote[StringType.STRING5] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING4] == -1){
+	 }else if (stringNote[StringType.STRING4] == -1){
 	 	playString4();
-	 	stringNote[Stringtype.STRING4] = notePlayed;
+	 	stringNote[StringType.STRING4] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING3] == -1){
+	 }else if (stringNote[StringType.STRING3] == -1){
 	 	playString3();
-	 	stringNote[Stringtype.STRING3] = notePlayed;
+	 	stringNote[StringType.STRING3] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING2] == -1){
+	 }else if (stringNote[StringType.STRING2] == -1){
 	 	playString2();
-	 	stringNote[Stringtype.STRING2] = notePlayed;
+	 	stringNote[StringType.STRING2] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING1] == -1){
+	 }else if (stringNote[StringType.STRING1] == -1){
 	 	playString1();
-	 	stringNote[Stringtype.STRING1] = notePlayed;
+	 	stringNote[StringType.STRING1] = notePlayed;
 	 	updateGlobals();
 	 	return;
 	 }
@@ -215,7 +215,7 @@ The main logic for the "Natural" fretting mode in polyphony
 */
 inline function stringWithClosestNote(notePlayed, currentHandPos){
 	
-	local currString = Stringtype.NOSTRING;
+	local currString = StringType.NOSTRING;
 	//arbitrary big number to replace later
 	local currDist = POSINFINITY;
 	local distToCompare;
@@ -248,7 +248,7 @@ inline function stringWithMelodyNote(notePlayed, currentHandPos)
 {
 	
 	
-	local currString = Stringtype.NOSTRING;
+	local currString = StringType.NOSTRING;
 	//arbitrary big number to replace later
 	local currDist = POSINFINITY;
 	local distToCompare;
@@ -366,14 +366,14 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	}else{
 	
 	
-		if(stringToPlay == Stringtype.STRING1){
+		if(stringToPlay == StringType.STRING1){
 			if(notePlayed - currentHandPos < OPENSTRING1NOTE + 5)
 	            return currentHandPos;
 	        else
 	            return notePlayed - OPENSTRING1NOTE - 4;
 		}
 		
-		if(stringToPlay == Stringtype.STRING6){
+		if(stringToPlay == StringType.STRING6){
 			if(notePlayed < currentHandPos + OPENSTRING6NOTE)
 			            return notePlayed - OPENSTRING6NOTE;
 		}
@@ -500,11 +500,11 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
  	 
 	 	 if(isBetweenIncl(notePlayed, stringNote[i] - Globals.g_legatoRange, stringNote[i] + Globals.g_legatoRange)){
 	 	 	 	 isNoteInRange = true;
-	 	 	 	 Console.print(i + Stringtype.LEGATOOFFSET);
-	 	 	 	 stringNote[i + Stringtype.LEGATOOFFSET] = notePlayed;
+	 	 	 	 Console.print(i + StringType.LEGATOOFFSET);
+	 	 	 	 stringNote[i + StringType.LEGATOOFFSET] = notePlayed;
 	 	 	 	 stringNote[i] = notePlayed;
 	 	 	 	 
-	 	 	 	 playString(i + Stringtype.LEGATOOFFSET);
+	 	 	 	 playString(i + StringType.LEGATOOFFSET);
 	 	 	 	 return isNoteInRange;
 	 	  	 }
  	 	
@@ -592,42 +592,42 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
     
 
 
-    if(stringNote[Stringtype.STRING6] == releasedNote){
-        stringNote[Stringtype.STRING6] = -1;
-        playString(Stringtype.STRING6);
-    }else if(stringNote[Stringtype.STRING5] == releasedNote){
-        stringNote[Stringtype.STRING5] = -1;
-        playString(Stringtype.STRING5);
-    }else if(stringNote[Stringtype.STRING4] == releasedNote){
-        stringNote[Stringtype.STRING4] = -1;
-        playString(Stringtype.STRING4);
-    }else if(stringNote[Stringtype.STRING3] == releasedNote){
-        stringNote[Stringtype.STRING3] = -1;
-        playString(Stringtype.STRING3);
-    }else if(stringNote[Stringtype.STRING2] == releasedNote){
-        stringNote[Stringtype.STRING2] = -1;
-        playString(Stringtype.STRING2);
-    }else if(stringNote[Stringtype.STRING1] == releasedNote){
-        stringNote[Stringtype.STRING1] = -1;
-        playString(Stringtype.STRING1);
-    }if(stringNote[Stringtype.STRING6LEG] == releasedNote){
-        stringNote[Stringtype.STRING6LEG] = -1;
-        playString(Stringtype.STRING6LEG);
-    }else if(stringNote[Stringtype.STRING5LEG] == releasedNote){
-        stringNote[Stringtype.STRING5LEG] = -1;
-        playString(Stringtype.STRING5LEG);
-    }else if(stringNote[Stringtype.STRING4LEG] == releasedNote){
-        stringNote[Stringtype.STRING4LEG] = -1;
-        playString(Stringtype.STRING4LEG);
-    }else if(stringNote[Stringtype.STRING3LEG] == releasedNote){
-        stringNote[Stringtype.STRING3LEG] = -1;
-        playString(Stringtype.STRING3LEG);
-    }else if(stringNote[Stringtype.STRING2LEG] == releasedNote){
-        stringNote[Stringtype.STRING2LEG] = -1;
-        playString(Stringtype.STRING2LEG);
-    }else if(stringNote[Stringtype.STRING1LEG] == releasedNote){
-        stringNote[Stringtype.STRING1LEG] = -1;
-        playString(Stringtype.STRING1LEG);
+    if(stringNote[StringType.STRING6] == releasedNote){
+        stringNote[StringType.STRING6] = -1;
+        playString(StringType.STRING6);
+    }else if(stringNote[StringType.STRING5] == releasedNote){
+        stringNote[StringType.STRING5] = -1;
+        playString(StringType.STRING5);
+    }else if(stringNote[StringType.STRING4] == releasedNote){
+        stringNote[StringType.STRING4] = -1;
+        playString(StringType.STRING4);
+    }else if(stringNote[StringType.STRING3] == releasedNote){
+        stringNote[StringType.STRING3] = -1;
+        playString(StringType.STRING3);
+    }else if(stringNote[StringType.STRING2] == releasedNote){
+        stringNote[StringType.STRING2] = -1;
+        playString(StringType.STRING2);
+    }else if(stringNote[StringType.STRING1] == releasedNote){
+        stringNote[StringType.STRING1] = -1;
+        playString(StringType.STRING1);
+    }if(stringNote[StringType.STRING6LEG] == releasedNote){
+        stringNote[StringType.STRING6LEG] = -1;
+        playString(StringType.STRING6LEG);
+    }else if(stringNote[StringType.STRING5LEG] == releasedNote){
+        stringNote[StringType.STRING5LEG] = -1;
+        playString(StringType.STRING5LEG);
+    }else if(stringNote[StringType.STRING4LEG] == releasedNote){
+        stringNote[StringType.STRING4LEG] = -1;
+        playString(StringType.STRING4LEG);
+    }else if(stringNote[StringType.STRING3LEG] == releasedNote){
+        stringNote[StringType.STRING3LEG] = -1;
+        playString(StringType.STRING3LEG);
+    }else if(stringNote[StringType.STRING2LEG] == releasedNote){
+        stringNote[StringType.STRING2LEG] = -1;
+        playString(StringType.STRING2LEG);
+    }else if(stringNote[StringType.STRING1LEG] == releasedNote){
+        stringNote[StringType.STRING1LEG] = -1;
+        playString(StringType.STRING1LEG);
     }
     
     

@@ -23,10 +23,23 @@
  
  namespace StringType
  {
+ 
+ // these dictate the midi channel and array index these values come in at
+ 
      const var STRING1 = 0;
      const var STRING2 = 1;
      const var STRING3 = 2;
      const var STRING4 = 3;
      const var STRING5 = 4;
      const var STRING6 = 5;
+     const var LEGATOOFFSET = NUMOFSTRINGS;
+     
+     const var STRING1LEG = 6;
+     const var STRING2LEG = 7;
+     const var STRING3LEG = 8;
+     const var STRING4LEG = 9;
+     const var STRING5LEG = 10;
+     const var STRING6LEG = 11;
+     const var NOSTRING = 12;
+ 
  }

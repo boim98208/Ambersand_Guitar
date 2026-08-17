@@ -27,7 +27,7 @@
 
 var legatoKeySwitchPlaying = false;
  
- namespace Stringtype
+ namespace StringType
  {
  
      const var STRING1 = 0;
@@ -179,7 +179,7 @@ inline function onButton1Control(component, value)
 	Console.print("~~~ NOTES CORRELATING TO THE STRINGS ~~~");
 
 	for(var i = 0; i < NUMOFSTRINGS; i++){
-		Console.print("String " + (i + 1) + ": " + stringNote[i] +" | legato: " + stringNote[i + Stringtype.LEGATOOFFSET]);
+		Console.print("String " + (i + 1) + ": " + stringNote[i] +" | legato: " + stringNote[i + StringType.LEGATOOFFSET]);
 	}
 };
 
@@ -189,7 +189,7 @@ Content.getComponent("Button1").setControlCallback(onButton1Control);
 
 
 //functions to ensure only one sampler plays a voice at a time
-//this should only take the Stringtype enum
+//this should only take the StringType enum
 inline function playString(theStringType){
 	
 	//adding 1 because the enum starts on 0 but channels start on 1
@@ -200,36 +200,36 @@ inline function playString(theStringType){
  
  inline function updateGlobals(){
  
- 	if(stringNote[Stringtype.STRING1LEG] == NO_NOTE)
-		Globals.g_stringNote1 = stringNote[Stringtype.STRING1];
+ 	if(stringNote[StringType.STRING1LEG] == NO_NOTE)
+		Globals.g_stringNote1 = stringNote[StringType.STRING1];
 	else
-		Globals.g_stringNote1 = stringNote[Stringtype.STRING1LEG];
+		Globals.g_stringNote1 = stringNote[StringType.STRING1LEG];
 		
-	if(stringNote[Stringtype.STRING2LEG] == NO_NOTE)
-		Globals.g_stringNote2 = stringNote[Stringtype.STRING2];
+	if(stringNote[StringType.STRING2LEG] == NO_NOTE)
+		Globals.g_stringNote2 = stringNote[StringType.STRING2];
 	else
-		Globals.g_stringNote2 = stringNote[Stringtype.STRING2LEG];
+		Globals.g_stringNote2 = stringNote[StringType.STRING2LEG];
 		
-	if(stringNote[Stringtype.STRING3LEG] == NO_NOTE)
-		Globals.g_stringNote3 = stringNote[Stringtype.STRING3];
+	if(stringNote[StringType.STRING3LEG] == NO_NOTE)
+		Globals.g_stringNote3 = stringNote[StringType.STRING3];
 	else
-		Globals.g_stringNote3 = stringNote[Stringtype.STRING3LEG];
+		Globals.g_stringNote3 = stringNote[StringType.STRING3LEG];
 		
-	if(stringNote[Stringtype.STRING4LEG] == NO_NOTE)
-		Globals.g_stringNote4 = stringNote[Stringtype.STRING4];
+	if(stringNote[StringType.STRING4LEG] == NO_NOTE)
+		Globals.g_stringNote4 = stringNote[StringType.STRING4];
 	else{
-		Globals.g_stringNote4 = stringNote[Stringtype.STRING4LEG];
+		Globals.g_stringNote4 = stringNote[StringType.STRING4LEG];
 		}
 		
-	if(stringNote[Stringtype.STRING5LEG] == NO_NOTE)
-		Globals.g_stringNote5 = stringNote[Stringtype.STRING5];
+	if(stringNote[StringType.STRING5LEG] == NO_NOTE)
+		Globals.g_stringNote5 = stringNote[StringType.STRING5];
 	else
-		Globals.g_stringNote5 = stringNote[Stringtype.STRING5LEG];
+		Globals.g_stringNote5 = stringNote[StringType.STRING5LEG];
 		
-	if(stringNote[Stringtype.STRING6LEG] == NO_NOTE)
-		Globals.g_stringNote6 = stringNote[Stringtype.STRING6];
+	if(stringNote[StringType.STRING6LEG] == NO_NOTE)
+		Globals.g_stringNote6 = stringNote[StringType.STRING6];
 	else
-		Globals.g_stringNote6 = stringNote[Stringtype.STRING6LEG];
+		Globals.g_stringNote6 = stringNote[StringType.STRING6LEG];
 
  }
  
@@ -246,34 +246,34 @@ inline function playString(theStringType){
  
  inline function primitiveFretting(notePlayed){
  
-	 if (stringNote[Stringtype.STRING6] == -1){
+	 if (stringNote[StringType.STRING6] == -1){
 	 	playString6();
-	 	stringNote[Stringtype.STRING6] = notePlayed;
+	 	stringNote[StringType.STRING6] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING5] == -1){
+	 }else if (stringNote[StringType.STRING5] == -1){
 	 	playString5();
-	 	stringNote[Stringtype.STRING5] = notePlayed;
+	 	stringNote[StringType.STRING5] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING4] == -1){
+	 }else if (stringNote[StringType.STRING4] == -1){
 	 	playString4();
-	 	stringNote[Stringtype.STRING4] = notePlayed;
+	 	stringNote[StringType.STRING4] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING3] == -1){
+	 }else if (stringNote[StringType.STRING3] == -1){
 	 	playString3();
-	 	stringNote[Stringtype.STRING3] = notePlayed;
+	 	stringNote[StringType.STRING3] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING2] == -1){
+	 }else if (stringNote[StringType.STRING2] == -1){
 	 	playString2();
-	 	stringNote[Stringtype.STRING2] = notePlayed;
+	 	stringNote[StringType.STRING2] = notePlayed;
 	 	updateGlobals();
 	 	return;
-	 }else if (stringNote[Stringtype.STRING1] == -1){
+	 }else if (stringNote[StringType.STRING1] == -1){
 	 	playString1();
-	 	stringNote[Stringtype.STRING1] = notePlayed;
+	 	stringNote[StringType.STRING1] = notePlayed;
 	 	updateGlobals();
 	 	return;
 	 }
@@ -292,7 +292,7 @@ The main logic for the "Natural" fretting mode in polyphony
 */
 inline function stringWithClosestNote(notePlayed, currentHandPos){
 	
-	local currString = Stringtype.NOSTRING;
+	local currString = StringType.NOSTRING;
 	//arbitrary big number to replace later
 	local currDist = POSINFINITY;
 	local distToCompare;
@@ -325,7 +325,7 @@ inline function stringWithMelodyNote(notePlayed, currentHandPos)
 {
 	
 	
-	local currString = Stringtype.NOSTRING;
+	local currString = StringType.NOSTRING;
 	//arbitrary big number to replace later
 	local currDist = POSINFINITY;
 	local distToCompare;
@@ -439,7 +439,7 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	
 	
 	//when there's polyphony, virtual guitarist moves hand to wherever the biggest change in pos is
-	if(Synth.getNumPressedKeys() >= 2 && stringToPlay != Stringtype.NOSTRING){
+	if(Synth.getNumPressedKeys() >= 2 && stringToPlay != StringType.NOSTRING){
 	//change fret position to suit the chord fingering more.
 	
 	newFretFromPolyphony = stringNote[stringToPlay] - OPENSTRINGNOTES[stringToPlay];
@@ -448,14 +448,14 @@ inline function naturalFretting2_2_1(notePlayed, currentHandPos)
 	
 	
 	
-		if(stringToPlay == Stringtype.STRING1){
+		if(stringToPlay == StringType.STRING1){
 			if(notePlayed - currentHandPos < OPENSTRING1NOTE + 5)
 	            return currentHandPos;
 	        else
 	            return notePlayed - OPENSTRING1NOTE - 4;
 		}
 		
-		if(stringToPlay == Stringtype.STRING6){
+		if(stringToPlay == StringType.STRING6){
 			if(notePlayed < currentHandPos + OPENSTRING6NOTE)
 			            return notePlayed - OPENSTRING6NOTE;
 		}
@@ -594,8 +594,8 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 	 	 	 	 
 
 	 	 	 	stringNote[i] = notePlayed;
-				stringNote[i + Stringtype.LEGATOOFFSET] = notePlayed;
-	 	 	 	 playString(i + Stringtype.LEGATOOFFSET);
+				stringNote[i + StringType.LEGATOOFFSET] = notePlayed;
+	 	 	 	 playString(i + StringType.LEGATOOFFSET);
 	 	 	 	 updateGlobals();
 	 	 	 	 return isNoteInRange;
 	 	  	 }
@@ -708,7 +708,7 @@ inline function melodyFretting1_0_0(notePlayed, currentHandPos)
 		}
 
 		
-	for (var i = Stringtype.LEGATOOFFSET; i < stringNote.length && !noteFoundInLegato; i++)
+	for (var i = StringType.LEGATOOFFSET; i < stringNote.length && !noteFoundInLegato; i++)
 			{
 			    if (stringNote[i] == releasedNote)
 			    {
