@@ -898,12 +898,13 @@ inline function linearRR_setSamplersRR(stringPlaying){
 	local RRForLeftSampler;
 	local RRForRightSampler;
 	local currArticulation;
+	local stringToPlay = stringPlaying % NUMOFSTRINGS;
 	
 	
 	currArticulation = Globals.g_currArticulationPlaying;
 	
-	rightSamplerToIncrement = AllRightSamplers[currArticulation][stringPlaying];
-	leftSamplerToIncrement = AllLeftSamplers[currArticulation][stringPlaying];
+	rightSamplerToIncrement = AllRightSamplers[currArticulation][stringToPlay];
+	leftSamplerToIncrement = AllLeftSamplers[currArticulation][stringToPlay];
 	
 	
 	if(numOfRRs[currArticulation] >= 2){
