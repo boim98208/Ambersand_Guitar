@@ -67,8 +67,8 @@
                height="54" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215">
       <Component type="ScriptImage" id="String6Fret0Marker" x="264" y="17" width="11"
-                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator_Legatodown.png"
-                 parentComponent="String6FretMarkers" text=""/>
+                 height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
+                 parentComponent="String6FretMarkers" text="" visible="0"/>
       <Component type="ScriptImage" id="String6Fret1Marker" x="289" y="17" width="11"
                  height="40" fileName="{PROJECT_FOLDER}PlayingMode_FretIndicator.png"
                  parentComponent="String6FretMarkers" text="" visible="0"/>
@@ -573,7 +573,7 @@
                fontSize="20.0" height="13" text="0" parentComponent="DebugPanel"
                textColour="4278190080"/>
     <Component type="ScriptLabel" id="String1RRLabel" x="498" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="1" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String2RRLabel" x="400" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
@@ -588,7 +588,7 @@
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String6RRLabel" x="4" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="1" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
   </Component>
   <Component type="ScriptImage" id="ArticulationBG" x="0" y="-60" width="1020"

@@ -45,3 +45,9 @@
 	 const var RANDOM = 1;
 	 const var LINEAR = 2;
  }
+ 
+namespace StrummingDirection{
+	const var notStrumming = 0;
+	const var downStrumming = 1;
+	const var upStrumming = 2;
+}

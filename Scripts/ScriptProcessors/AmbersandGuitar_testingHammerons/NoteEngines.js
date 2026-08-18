@@ -171,6 +171,10 @@ const var NUMOFKEYSWITCHES = 4;
  */
 var stringNote = [];
 var stringNoteId = [];
+var currStrummingDirection = StrummingDirections.notStrumming;
+var downStrumHeld = false;
+var upStrumHeld = false;
+
 
 stringNote.reserve(NUMOFSTRINGS);
 for(i = 0; i < NUMOFSTRINGS * 2; i++){
@@ -928,7 +932,140 @@ inline function linearRR_setSamplersRR(stringPlaying){
 	}
 }
 
+// setting up strumming functions
 
+inline function linMap(value, inMin, inMax, outMin, outMax)
+{
+    return outMin + (value - inMin) * (outMax - outMin) / (inMax - inMin);
+}
+
+inline function strumIfStrumKeyPressed(notePlayed, heldNotes, noteVelocity){
+
+
+	if(notePlayed != StrummingKeyswitch.downStrumKeyswitch && notePlayed != StrummingKeyswitch.upStrumKeyswitch){
+		return false;
+	}
+	
+	Message.delayEvent(1);
+	
+	Message.ignoreEvent(true);
+
+		
+	if(notePlayed == StrummingKeyswitch.downStrumKeyswitch){
+		downStrumHeld = true;
+		currStrummingDirection = StrummingDirections.downStrumming;
+		downStrum(notesFiltered, noteVelocity, currStrummingDirection);
+		return true;
+	}
+	
+	if(notePlayed == StrummingKeyswitch.upStrumKeyswitch){
+		upStrumHeld = true;
+		currStrummingDirection = StrummingDirections.upStrumming;
+		upStrum(notesFiltered, noteVelocity, currStrummingDirection);
+		return true;
+	}
+	
+}
+
+
+
+const var fastestTotalStrumTime = 5;
+const var slowestTotalStrumTime = 350;
+
+
+
+const var fastestStrumRandomizationPercent = 0.45;
+const var slowestStrumRandomizationPercent = 0.1;
+  
+const var notesFilteredForStrum = [];
+notesFilteredForStrum.reserve(NUMOFSTRINGS);
+
+for(i = 0; i < NUMOFSTRINGS; i++){
+	notesFilteredForStrum.push(-1);
+}
+
+const var filteredNoteIds = [];
+filteredNoteIds.reserve(NUMOFSTRINGS);
+
+for(i = 0; i < NUMOFSTRINGS; i++){
+	filteredNoteIds.push(-1);
+}
+
+var numOfNotesPlaying = 0;
+
+inline function updateNumOfNotesPlayingCount(notesPlaying){
+	numOfNotesPlaying = 0;
+
+	for(i = 0; i < notesPlaying.length; i++){
+		if(notesPlaying[i] != NO_NOTE){
+			numOfNotesPlaying++;
+		}
+	}
+}
+
+inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, strummingDirection){
+	local thisStrumDirection = strummingDirection;
+	
+	local totalTimeMS = linMap(noteVelocity, 1, 127, slowestTotalStrumTime, fastestTotalStrumTime);
+	
+	local totalTimeSamples = Engine.getSamplesForMilliSeconds(totalTimeMS);
+	local indivNoteDelay;
+	local indivNoteDelayRandomized;
+	local idToRelease;
+	local numOfStringPlaying = NO_STRING;
+	
+	local randomizedNoteVelocity;
+	
+	local strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
+	
+	updateNumOfNotesPlayingCount(notesToStrum);
+	
+	if(numOfNotesPlaying > 1)
+		indivNoteDelay = totalTimeSamples/(noteCount - 1);
+	else if(numOfNotesPlaying == 1)
+	{
+		for(i = 0; i < NUMOFSTRINGS && numOfStringPlaying == NO_STRING; i++){
+			if(notesToStrum != NO_NOTE){
+				numOfStringPlaying = i;
+			}
+		}
+		
+		
+	}else{
+		
+	}
+	
+}
+
+inline function releaseStrumKeyIfReleased(noteReleased){
+	
+	if(noteReleased == StrummingKeyswitch.downStrumKeyswitch){
+		downStrumHeld = false;
+	}else if(noteReleased == StrummingKeyswitch.upStrumKeyswitch){
+		upStrumHeld = false;
+	}else{
+		return false;
+	}
+	
+	if(downStrumHeld || upStrumHeld){
+		return false;
+	}
+	
+	
+	for(i = 0; i < stringNoteId.length; i++){
+		
+		if(stringNoteId[i] != -1){
+			
+	/*	
+	At the moment , randomizing a delayed off time seems to create hanging heldNotes so I'll just keep with making it a super fast release
+		Synth.noteOffDelayedByEventId(testIds[i], Math.randInt(0, 10) * Engine.getSamplesForMilliSeconds(2));
+	*/
+	
+	Synth.noteOffDelayedByEventId(stringNoteId[i], Math.random() * Engine.getSamplesForMilliSeconds(10));
+		stringNoteId[i] = -1;
+			}
+		}
+}
 
 
  
@@ -995,7 +1132,7 @@ inline function linearRR_setSamplersRR(stringPlaying){
 			{
 	//Not tested yet with noteId because I lowkey forgor how to do legato. Will need to try later
 
-			    if (stringNoteId[i] == releasedNote)
+			    if (stringNoteId[i] == releasedNoteId)
 			    {
 	
 			        stringNote[i] = NO_NOTE;
