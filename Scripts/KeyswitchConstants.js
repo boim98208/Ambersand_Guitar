@@ -51,3 +51,8 @@ namespace StrummingDirection{
 	const var downStrumming = 1;
 	const var upStrumming = 2;
 }
+
+namespace StrummingKeyswitches{
+	const var downStrumKeyswitch = 108; // C7 in HISE
+	const var upStrumKeyswitch = 109;
+}

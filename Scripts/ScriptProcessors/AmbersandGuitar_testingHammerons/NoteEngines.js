@@ -939,7 +939,7 @@ inline function linMap(value, inMin, inMax, outMin, outMax)
     return outMin + (value - inMin) * (outMax - outMin) / (inMax - inMin);
 }
 
-inline function strumIfStrumKeyPressed(notePlayed, heldNotes, noteVelocity){
+inline function strumIfStrumKeyPressed(notePlayed, noteIdsToUpdate, heldNotes, noteVelocity){
 
 
 	if(notePlayed != StrummingKeyswitch.downStrumKeyswitch && notePlayed != StrummingKeyswitch.upStrumKeyswitch){
@@ -954,16 +954,18 @@ inline function strumIfStrumKeyPressed(notePlayed, heldNotes, noteVelocity){
 	if(notePlayed == StrummingKeyswitch.downStrumKeyswitch){
 		downStrumHeld = true;
 		currStrummingDirection = StrummingDirections.downStrumming;
-		downStrum(notesFiltered, noteVelocity, currStrummingDirection);
+		downStrum(notesFiltered, noteIdsToUpdate, noteVelocity, currStrummingDirection);
 		return true;
 	}
 	
+	
+	/*
 	if(notePlayed == StrummingKeyswitch.upStrumKeyswitch){
 		upStrumHeld = true;
 		currStrummingDirection = StrummingDirections.upStrumming;
 		upStrum(notesFiltered, noteVelocity, currStrummingDirection);
 		return true;
-	}
+	}*/
 	
 }
 
@@ -1086,28 +1088,36 @@ inline function releaseStrumKeyIfReleased(noteReleased){
 	if(notePlayed == legatoKeySwitchNote)
 		legatoKeySwitchPlaying = true;
 	
-	if(legatoKeySwitchPlaying){
+	if(isBetweenIncl(notePlayed, LOWESTNOTE, HIGHESTNOTE)){
+		if(legatoKeySwitchPlaying){
+			
+			local didPlayNoteLegato = playNextNoteLegato(notePlayed, velocityPlayed);
+			if(!didPlayNoteLegato){
 		
-		if(!playNextNoteLegato(notePlayed, velocityPlayed)){
-	
-		playNextNoteOnNewString(notePlayed, velocityPlayed);
+			playNextNoteOnNewString(notePlayed, velocityPlayed);
+			
+			}else{
+				//Console.print("legato was played");
+			}
 		
 		}else{
-			//Console.print("legato was played");
-		}
 	
-	}else{
-
-		playNextNoteOnNewString(notePlayed, velocityPlayed);
-		
+			playNextNoteOnNewString(notePlayed, velocityPlayed);
+			
+		}
 	}
 	
-
-
+	
+	
+	
+	if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
+	 // C7 in HISE
+	 
+	}
 	// eventualy put this for the string chosen
 }
 	
-}function onNoteOff()
+function onNoteOff()
 {
     local releasedNote = Message.getNoteNumber();
     local releasedNoteId = Message.getEventId();
