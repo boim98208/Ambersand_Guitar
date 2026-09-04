@@ -993,6 +993,7 @@ for(i = 0; i < NUMOFSTRINGS; i++){
 	filteredNoteIds.push(-1);
 }
 
+/*
 var numOfNotesPlaying = 0;
 
 inline function updateNumOfNotesPlayingCount(notesPlaying){
@@ -1003,6 +1004,38 @@ inline function updateNumOfNotesPlayingCount(notesPlaying){
 			numOfNotesPlaying++;
 		}
 	}
+}*/
+
+inline function stringEnumToMidiChannel(stringEnum){
+	return stringEnum + 1;
+}
+
+//const var notesToTest = [55, 71, 67, 64, 59, 52];
+
+const var notesToTest = [-1, -1, -1, -1, -1, -1];
+const var IdsToTest = [-1, -1, -1, -1, -1, -1];
+
+inline function singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity)
+{
+	Console.print("hellow");
+
+	
+	local numOfStringToStrum = NO_NOTE;
+
+
+		for(i = 0; i < NUMOFSTRINGS && numOfStringToStrum == NO_STRING; i++){
+			Console.print(i);
+		
+			if(notesToStrum[i] != NO_NOTE){
+				numOfStringToStrum = i;
+			}
+		}
+		
+		local midiChannelToPlay = stringEnumToMidiChannel(numOfStringToStrum);
+		
+		// + 1 because enums start at 0 but 
+		noteIdsToUpdate[i] = Synth.addNoteOn(midiChannelToPlay, notesToStrum, noteVelocity, 0);		
+		
 }
 
 inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, strummingDirection){
@@ -1015,27 +1048,39 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, strumming
 	local indivNoteDelayRandomized;
 	local idToRelease;
 	local numOfStringPlaying = NO_STRING;
+	local numOfNotesToPlay = 0;
 	
 	local randomizedNoteVelocity;
 	
 	local strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
 	
-	updateNumOfNotesPlayingCount(notesToStrum);
-	
-	if(numOfNotesPlaying > 1)
-		indivNoteDelay = totalTimeSamples/(noteCount - 1);
-	else if(numOfNotesPlaying == 1)
-	{
-		for(i = 0; i < NUMOFSTRINGS && numOfStringPlaying == NO_STRING; i++){
-			if(notesToStrum != NO_NOTE){
-				numOfStringPlaying = i;
-			}
+	for(i = 0; i < notesToStrum.length; i++){
+		if(notesToStrum[i] != NO_NOTE){
+			numOfNotesToPlay++;
 		}
-		
+	}
+	
+	Console.print(numOfNotesToPlay);
+	
+	if(numOfNotesToPlay > 1)
+		indivNoteDelay = totalTimeSamples/(numOfNotesToPlay - 1);
+	else if(numOfNotesToPlay == 1)
+	{
+	
+	// only one note is held
+
+		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
 		
 	}else{
 		
+		// did not down strum
+	
+		return false;
 	}
+	
+	strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
+	
+	
 	
 }
 
@@ -1092,6 +1137,7 @@ inline function releaseStrumKeyIfReleased(noteReleased){
 		if(legatoKeySwitchPlaying){
 			
 			local didPlayNoteLegato = playNextNoteLegato(notePlayed, velocityPlayed);
+			
 			if(!didPlayNoteLegato){
 		
 			playNextNoteOnNewString(notePlayed, velocityPlayed);
@@ -1108,15 +1154,12 @@ inline function releaseStrumKeyIfReleased(noteReleased){
 	}
 	
 	
-	
-	
 	if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
 	 // C7 in HISE
-	 
+	 	downStrum(notesToTest, IdsToTest, 100, StrummingDirection.downStrumming);
 	}
 	// eventualy put this for the string chosen
 }
-	
 function onNoteOff()
 {
     local releasedNote = Message.getNoteNumber();
