@@ -582,13 +582,13 @@
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String4RRLabel" x="202" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="1" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String5RRLabel" x="105" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String6RRLabel" x="4" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="2" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
   </Component>
   <Component type="ScriptImage" id="ArticulationBG" x="0" y="-60" width="1020"

@@ -1255,34 +1255,35 @@ function onController()
 	
 	hideAll();
 
-	if(Globals.g_stringNote6 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING6][Globals.g_stringNote6 - OPENSTRING6NOTE];
+	if(Globals.g_stringNotes[StringType.STRING6] != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING6][ Globals.g_stringNotes[StringType.STRING6] - OPENSTRING6NOTE];
 		displayFret(fretImgToControl, StringType.STRING6);
-		
 	}
 	
-	if(Globals.g_stringNote5 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING5][Globals.g_stringNote5 - OPENSTRING5NOTE];
+	if(Globals.g_stringNotes[StringType.STRING5] != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING5][ Globals.g_stringNotes[StringType.STRING5] - OPENSTRING5NOTE];
 		displayFret(fretImgToControl, StringType.STRING5);
 	}
 	
-	if(Globals.g_stringNote4 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING4][Globals.g_stringNote4 - OPENSTRING4NOTE];
+	if(Globals.g_stringNotes[StringType.STRING4] != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING4][ Globals.g_stringNotes[StringType.STRING4] - OPENSTRING4NOTE];
 		displayFret(fretImgToControl, StringType.STRING4);
 	}
 	
-	if(Globals.g_stringNote3 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING3][Globals.g_stringNote3 - OPENSTRING3NOTE];
+	if(Globals.g_stringNotes[StringType.STRING3] != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING3][ Globals.g_stringNotes[StringType.STRING3] - OPENSTRING3NOTE];
 		displayFret(fretImgToControl, StringType.STRING3);
 	}
 	
-	if(Globals.g_stringNote2 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING2][Globals.g_stringNote2 - OPENSTRING2NOTE];
+	if(Globals.g_stringNotes[StringType.STRING2] != NONOTE){
+		fretImgToControl = fretImages[StringType.STRING2][ Globals.g_stringNotes[StringType.STRING2] - OPENSTRING2NOTE];
 		displayFret(fretImgToControl, StringType.STRING2);
 	}
 	
-	if(Globals.g_stringNote1 != NONOTE){
-		fretImgToControl = fretImages[StringType.STRING1][Globals.g_stringNote1 - OPENSTRING1NOTE];
+	if(Globals.g_stringNotes[StringType.STRING1] != NONOTE){
+		
+	
+		fretImgToControl = fretImages[StringType.STRING1][ Globals.g_stringNotes[StringType.STRING1] - OPENSTRING1NOTE];
 		displayFret(fretImgToControl, StringType.STRING1);
 	}
 	
