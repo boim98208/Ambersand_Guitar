@@ -1012,19 +1012,17 @@ inline function stringEnumToMidiChannel(stringEnum){
 
 //const var notesToTest = [55, 71, 67, 64, 59, 52];
 
-const var notesToTest = [-1, -1, -1, -1, -1, -1];
+const var notesToTest = [-1, -1, -1, -1, -1, 55];
 const var IdsToTest = [-1, -1, -1, -1, -1, -1];
 
 inline function singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity)
 {
-	Console.print("hellow");
 
 	
 	local numOfStringToStrum = NO_NOTE;
 
 
-		for(i = 0; i < NUMOFSTRINGS && numOfStringToStrum == NO_STRING; i++){
-			Console.print(i);
+		for(i = 0; i < NUMOFSTRINGS && numOfStringToStrum == NO_NOTE; i++){
 		
 			if(notesToStrum[i] != NO_NOTE){
 				numOfStringToStrum = i;
@@ -1034,7 +1032,9 @@ inline function singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity)
 		local midiChannelToPlay = stringEnumToMidiChannel(numOfStringToStrum);
 		
 		// + 1 because enums start at 0 but 
-		noteIdsToUpdate[i] = Synth.addNoteOn(midiChannelToPlay, notesToStrum, noteVelocity, 0);		
+		noteIdsToUpdate[numOfStringToStrum] = Synth.addNoteOn(midiChannelToPlay, notesToStrum, noteVelocity, 1);		
+		
+	Console.print(midiChannelToPlay);
 		
 }
 
@@ -1067,6 +1067,7 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, strumming
 	else if(numOfNotesToPlay == 1)
 	{
 	
+
 	// only one note is held
 
 		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
@@ -1156,7 +1157,9 @@ inline function releaseStrumKeyIfReleased(noteReleased){
 	
 	if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
 	 // C7 in HISE
-	 	downStrum(notesToTest, IdsToTest, 100, StrummingDirection.downStrumming);
+	 //	downStrum(notesToTest, IdsToTest, 100, StrummingDirection.downStrumming);
+	 	Synth.addNoteOn(6, 55, 100, 0);
+
 	}
 	// eventualy put this for the string chosen
 }
