@@ -160,7 +160,7 @@ const var NUMOFKEYSWITCHES = 4;
  Globals.g_stringNote5 = NO_NOTE;
  Globals.g_stringNote6 = NO_NOTE;
  Globals.g_handPositionFret = 0;
- Globals.g_stringNotes = [NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE];
+ Globals.g_stringNotes = [NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE];
 
 
  /*
@@ -221,6 +221,7 @@ inline function playString(stringToPlay){
 	// consider refactoring stringNote to be updated here rather than the melody fretting point
 	stringNoteId[stringToPlay] = Message.getEventId();
 	Globals.g_stringNotes[stringToPlay] = Message.getNoteNumber();
+
 	
 	
 	// adding 1 because the enum starts on 0 but channels start on 1
@@ -957,26 +958,28 @@ inline function strumIfStrumKeyPressed(notePlayed, noteIdsToUpdate, notesToStrum
 
 		
 	if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
+		Console.print("hellow");
+	
 		downStrumHeld = true;
 		currStrummingDirection = StrummingDirections.downStrumming;
-	//	downStrum(noteIdsToUpdate, noteVelocity, currStrummingDirection);
+		downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, currStrummingDirection);
 		return true;
 	}
 	
 	
-	/*
-	if(notePlayed == StrummingKeyswitch.upStrumKeyswitch){
+	
+	if(notePlayed == StrummingKeyswitches.upStrumKeyswitch){
 		upStrumHeld = true;
 		currStrummingDirection = StrummingDirections.upStrumming;
-		upStrum(notesFiltered, noteVelocity, currStrummingDirection);
+		upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, currStrummingDirection);
 		return true;
-	}*/
+	}
 	
 }
 
 
 
-const var fastestTotalStrumTime = 5;
+const var fastestTotalStrumTime = 25;
 const var slowestTotalStrumTime = 500;
 
 const var randVelDeviation = 10;
@@ -1050,6 +1053,87 @@ inline function singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity)
 }
 
 
+inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStrummingDirection){
+
+	local thisStrumDirection = playingStrummingDirection;
+	
+	local totalTimeMS = linMap(noteVelocity, 1, 127, slowestTotalStrumTime, fastestTotalStrumTime);
+	
+	Console.print(totalTimeMS);
+	
+	local totalTimeSamples = Engine.getSamplesForMilliSeconds(totalTimeMS);
+	local indivNoteDelay;
+	local indivNoteDelayRandomized;
+	local idToRelease;
+	local numOfStringPlaying = NO_STRING;
+	local numOfNotesToPlay = 0;
+	local numOfNotePlayingInSeq = 0;
+	
+	local stringChannelToSendTo;
+	
+	local randomizedNoteVelocity;
+	
+	local strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
+	
+	for(i = 0; i < notesToStrum.length; i++){
+		if(notesToStrum[i] != NO_NOTE){
+			numOfNotesToPlay++;
+		}
+	}
+	
+	if(numOfNotesToPlay > 1)
+		indivNoteDelay = totalTimeSamples/(numOfNotesToPlay - 1);
+	else if(numOfNotesToPlay == 1)
+	{
+		// only one note is held
+		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
+	}else{
+		// did not down strum because no notes
+		return false;
+	}
+	
+	
+	strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
+	
+	// highest note is the first one in the array, so start there
+	
+	 for(var j = 0; numOfNotePlayingInSeq < NUMOFSTRINGS && thisStrumDirection == playingStrummingDirection && j < notesToStrum.length; j++){
+	 
+	 // thisStrumDirection == playingStrummingDirection is so that a strum can be stopped midway
+	 
+	 
+	 
+		if(notesToStrum[j] != NO_NOTE){
+		
+			indivNoteDelayRandomized = (indivNoteDelay * numOfNotePlayingInSeq) + (Math.random() - 0.5) * strumRandomizationPercent * indivNoteDelay;
+			
+			// making sure no NoteOn message has a negative timestamp
+			indivNoteDelayRandomized = capAtLimits(0, POSINFINITY, indivNoteDelayRandomized);
+			
+			if(noteIdsToUpdate[j] != NO_NOTE){
+				Synth.noteOffDelayedByEventId(noteIdsToUpdate[j], indivNoteDelayRandomized - 1);
+			}
+			
+			randomizedNoteVelocity = noteVelocity + randomAddOrSub(randVelDeviation);
+			
+			randomizedNoteVelocity = capAtLimits(1, 127, randomizedNoteVelocity);
+			
+			stringChannelToSendTo = stringEnumToMidiChannel(j);
+			
+			
+			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
+			
+			Globals.g_stringNotes[j] = notesToStrum[j];
+			
+			numOfNotePlayingInSeq++;
+			
+			
+		}
+		
+	}
+	
+}
+
 inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStrummingDirection){
 
 	local thisStrumDirection = playingStrummingDirection;
@@ -1084,87 +1168,14 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingSt
 		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
 	}else{
 		// did not down strum because no notes
+		Console.print("hello");
 		return false;
 	}
 	
 	
 	strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
 	
-	 for(var j = 0; numOfNotePlayingInSeq < NUMOFSTRINGS && thisStrumDirection == playingStrummingDirection && j < notesToStrum.length; j++){
-	 
-	 // thisStrumDirection == playingStrummingDirection is so that a strum can be stopped midway
-	 
-	 
-	 
-		if(notesToStrum[j] != NO_NOTE){
-		
-			indivNoteDelayRandomized = (indivNoteDelay * numOfNotePlayingInSeq) + (Math.random() - 0.5) * strumRandomizationPercent * indivNoteDelay;
-			
-			// making sure no NoteOn message has a negative timestamp
-			indivNoteDelayRandomized = capAtLimits(0, POSINFINITY, indivNoteDelayRandomized);
-			
-			if(noteIdsToUpdate[j] != NO_NOTE){
-				Synth.noteOffDelayedByEventId(noteIdsToUpdate[j], indivNoteDelayRandomized - 1);
-			}
-			
-			randomizedNoteVelocity = noteVelocity + randomAddOrSub(randVelDeviation);
-			
-			randomizedNoteVelocity = capAtLimits(1, 127, randomizedNoteVelocity);
-			
-			stringChannelToSendTo = stringEnumToMidiChannel(j);
-			
-			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
-			
-			Globals.g_stringNotes[j] = notesToStrum[j];
-			
-			numOfNotePlayingInSeq++;
-			
-			
-		}
-		
-	}
-	
-}
-
-inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStrummingDirection){
-
-	local thisStrumDirection = playingStrummingDirection;
-	
-	local totalTimeMS = linMap(noteVelocity, 1, 127, slowestTotalStrumTime, fastestTotalStrumTime);
-	
-	local totalTimeSamples = Engine.getSamplesForMilliSeconds(totalTimeMS);
-	local indivNoteDelay;
-	local indivNoteDelayRandomized;
-	local idToRelease;
-	local numOfStringPlaying = NO_STRING;
-	local numOfNotesToPlay = 0;
-	local numOfNotePlayingInSeq = 0;
-	
-	local stringChannelToSendTo;
-	
-	local randomizedNoteVelocity;
-	
-	local strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
-	
-	for(i = 0; i < notesToStrum.length; i++){
-		if(notesToStrum[i] != NO_NOTE){
-			numOfNotesToPlay++;
-		}
-	}
-	
-	if(numOfNotesToPlay > 1)
-		indivNoteDelay = totalTimeSamples/(numOfNotesToPlay - 1);
-	else if(numOfNotesToPlay == 1)
-	{
-		// only one note is held
-		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
-	}else{
-		// did not down strum because no notes
-		return false;
-	}
-	
-	
-	strumRandomizationPercent = linMap(noteVelocity, 1, 127, slowestStrumRandomizationPercent, fastestStrumRandomizationPercent);
+	// lowest note is the latest one in the array, so start there
 	
 	 for(var j = NUMOFSTRINGS - 1; numOfNotePlayingInSeq < NUMOFSTRINGS && thisStrumDirection == playingStrummingDirection && j >= 0; j--){
 	 
@@ -1210,7 +1221,6 @@ inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStru
 
 inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 	
-	Console.print(downStrumHeld);
 
 	
 	if(noteReleased == StrummingKeyswitches.downStrumKeyswitch){
@@ -1223,9 +1233,10 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 	
 	
 	if(downStrumHeld || upStrumHeld){
-		Console.print("hello?");
 		return false;
 	}
+	
+	Console.print("bruh");
 	
 	
 	for(i = 0; i < noteIdsToUpdate.length; i++){
@@ -1239,6 +1250,7 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 	
 	Synth.noteOffDelayedByEventId(noteIdsToUpdate[i], Math.random() * Engine.getSamplesForMilliSeconds(10));
 		noteIdsToUpdate[i] = -1;
+		stringNote[i] = NO_NOTE;
 		Globals.g_stringNotes[i] = NO_NOTE;
 			}
 		}
@@ -1305,25 +1317,17 @@ inline function randomAddOrSub(deviation){
 	}
 	
 	
-	if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
+	/*if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
 		
 		currStrummingDirection = StrummingDirection.downStrumming;
 	downStrumHeld = true;
 	 // C7 in HISE
-	 	downStrum(notesToTest, IdsToTest, 100, StrummingDirection.downStrumming);
+	 	downStrum(notesToTest, IdsToTest, velocityPlayed, StrummingDirection.downStrumming);
 	 	//singleNoteStrum(notesToTest, IdsToTest, 100);
 
-	}
+	}*/
 	
-	if(notePlayed == StrummingKeyswitches.upStrumKeyswitch){
-		
-		currStrummingDirection = StrummingDirection.upStrumming;
-	upStrumHeld = true;
-	 // C7 in HISE
-	 	upStrum(notesToTest, IdsToTest, 100, StrummingDirection.upStrumming);
-	 	//singleNoteStrum(notesToTest, IdsToTest, 100);
-	
-	}
+	strumIfStrumKeyPressed(notePlayed, stringNoteId, stringNote, velocityPlayed);
 	
 	// eventualy put this for the string chosen
 }
@@ -1361,7 +1365,7 @@ function onNoteOff()
 			    }
 			}
 			
-	releaseStrumKeyIfReleased(releasedNote, IdsToTest);
+	releaseStrumKeyIfReleased(releasedNote, stringNoteId);
     
     updateGlobals();
 }function onController()
