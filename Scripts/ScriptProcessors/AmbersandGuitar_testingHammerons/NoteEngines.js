@@ -1236,7 +1236,7 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingSt
 
 
 
-inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
+inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate, notesToUpdate){
 	
 
 	
@@ -1253,8 +1253,6 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 		return false;
 	}
 	
-	Console.print("bruh");
-	
 	
 	for(i = 0; i < noteIdsToUpdate.length; i++){
 		
@@ -1268,8 +1266,22 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 	Synth.noteOffDelayedByEventId(noteIdsToUpdate[i], Math.random() * Engine.getSamplesForMilliSeconds(10));
 		noteIdsToUpdate[i] = -1;
 		Globals.g_stringNotes[i] = NO_NOTE;
+		if(eventIds.getValue(notesToUpdate[i]) == NO_NOTE){
+		
+			notesToUpdate[i] == NO_NOTE;
+		}
+		
 			}
 		}
+		
+		
+		for(i = 0; i < notesToUpdate.length; i++){
+			notesToUpdate[i] = -1;
+		}
+		
+		/*for(i = 0; i < notesToUpdate.length; i++){
+			Console.print(notesToUpdate[i]);
+		}*/
 }
 
 
@@ -1298,8 +1310,9 @@ inline function randomAddOrSub(deviation){
 {
 	local notePlayed = Message.getNoteNumber();
 	local velocityPlayed = Message.getVelocity();
+	local notePlayedId = Message.getEventId();
 
-
+	eventIds.setValue(notePlayed, notePlayedId);
 	
 	//easy way to implement strumming system? Look into later
 	//Message.delayEvent((notePlayed - LOWESTNOTE) * 1000);
@@ -1353,6 +1366,8 @@ function onNoteOff()
     local releasedNoteId = Message.getEventId();
     local noteFound = false;
     local noteFoundInLegato = false;
+    
+    eventIds.setValue(releasedNote, NO_NOTE);
 
 	if(releasedNote == legatoKeySwitchNote)
 		legatoKeySwitchPlaying = false;
@@ -1381,7 +1396,7 @@ function onNoteOff()
 			    }
 			}
 			
-	releaseStrumKeyIfReleased(releasedNote, stringNoteId);
+	releaseStrumKeyIfReleased(releasedNote, stringNoteId, stringNote);
     
     updateGlobals();
 }function onController()

@@ -569,7 +569,7 @@
     <Component type="ScriptImage" id="NerdDetails_BG" x="3" y="3" width="597"
                height="100" parentComponent="DebugPanel" fileName="{PROJECT_FOLDER}PlayingMode_NerdDetails_BG.png"/>
     <Component type="ScriptLabel" id="handPositionFretLabel" x="388" y="9" width="39"
-               fontSize="20.0" height="13" text="0" parentComponent="DebugPanel"
+               fontSize="20.0" height="13" text="2.0" parentComponent="DebugPanel"
                textColour="4278190080"/>
     <Component type="ScriptLabel" id="String1RRLabel" x="498" y="50" width="100"
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
