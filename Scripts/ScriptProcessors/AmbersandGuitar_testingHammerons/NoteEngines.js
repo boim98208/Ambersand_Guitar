@@ -171,6 +171,20 @@ const var NUMOFKEYSWITCHES = 4;
  */
 var stringNote = [];
 var stringNoteId = [];
+const var eventIds = Engine.createMidiList();
+eventIds.fill(NO_NOTE); 
+
+// use this to check for upcoming notes now please
+inline function getActiveEventIds(resultList)
+{
+    for (i = 0; i < 128; i++)
+    {
+        local id = eventIds.getValue(i);
+        if (id != -1)
+            resultList.push(id);
+    }
+}
+
 var currStrummingDirection = StrummingDirections.notStrumming;
 var downStrumHeld = false;
 var upStrumHeld = false;
@@ -1120,6 +1134,7 @@ inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStru
 			
 			stringChannelToSendTo = stringEnumToMidiChannel(j);
 			
+			Console.print(notesToStrum[j] + " delayed with " + indivNoteDelayRandomized);
 			
 			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
 			
@@ -1202,6 +1217,8 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingSt
 			
 			stringChannelToSendTo = stringEnumToMidiChannel(j);
 			
+			Console.print(notesToStrum[j] + " delayed with " + indivNoteDelayRandomized);
+			
 			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
 			
 			Globals.g_stringNotes[j] = notesToStrum[j];
@@ -1250,7 +1267,6 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate){
 	
 	Synth.noteOffDelayedByEventId(noteIdsToUpdate[i], Math.random() * Engine.getSamplesForMilliSeconds(10));
 		noteIdsToUpdate[i] = -1;
-		stringNote[i] = NO_NOTE;
 		Globals.g_stringNotes[i] = NO_NOTE;
 			}
 		}
