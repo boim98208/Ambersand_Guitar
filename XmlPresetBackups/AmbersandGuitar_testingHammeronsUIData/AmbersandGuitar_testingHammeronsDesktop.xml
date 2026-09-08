@@ -558,6 +558,17 @@
                  textColour="4278190080" text="Double Tracking" fontSize="26.0"
                  editable="0"/>
     </Component>
+    <Component type="ScriptPanel" id="StrummingModePnl" x="630" y="460" width="186"
+               height="71" parentComponent="PlayingModeBG" itemColour="0" itemColour2="0"
+               textColour="16777215" bgColour="16777215">
+      <Component type="ScriptButton" id="StrummingModeEnableBtn" x="-1" y="17"
+                 width="32" height="29" parentComponent="StrummingModePnl" filmstripImage="{PROJECT_FOLDER}Checkbox_Filmstrip.png"
+                 scaleFactor="0.5"/>
+      <Component type="ScriptLabel" id="StrummingModeLabel" x="20" y="-20" width="120"
+                 height="100" parentComponent="StrummingModePnl" fontName="Shehroz"
+                 textColour="4278190080" text="Strumming Mode" fontSize="26.0"
+                 editable="0"/>
+    </Component>
   </Component>
   <Component type="ScriptPanel" id="DebugPanel" x="160" y="0" itemColour="0"
              itemColour2="0" bgColour="16777215" textColour="16777215" borderSize="0.0"
@@ -578,16 +589,16 @@
                height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String3RRLabel" x="300" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="4" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String4RRLabel" x="202" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="3" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String5RRLabel" x="105" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="1" textColour="4278190080"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="String6RRLabel" x="4" y="50" width="100"
-               height="21" parentComponent="DebugPanel" text="not playing" textColour="4278190080"
+               height="21" parentComponent="DebugPanel" text="2" textColour="4278190080"
                fontSize="16.0"/>
   </Component>
   <Component type="ScriptImage" id="ArticulationBG" x="0" y="-60" width="1020"

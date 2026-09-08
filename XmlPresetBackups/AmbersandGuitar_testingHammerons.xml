@@ -19,6 +19,7 @@
             <Control type="ScriptSlider" id="VibratoFreqKnob" value="8.5"/>
             <Control type="ScriptSlider" id="PitchBendRangeKnob" value="2.0"/>
             <Control type="ScriptButton" id="DoubleTrackingBtn" value="0.0"/>
+            <Control type="ScriptButton" id="StrummingModeEnableBtn" value="1.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="SustainModulatorsSustain" value="0.0"/>
@@ -715,7 +716,7 @@
                         <Processor Type="AHDSR" ID="SusAHDSR" Bypassed="0" Monophonic="0.0" Retrigger="1.0"
                                    Intensity="1.0" AttackCurve="0.5" DecayCurve="0.4173228442668915"
                                    Attack="0.0" AttackLevel="0.0" Hold="1.785698413848877" Decay="1.0"
-                                   Sustain="0.0" Release="38.04982376098633" EcoMode="1.0">
+                                   Sustain="0.0" Release="151.0" EcoMode="1.0">
                           <ChildProcessors>
                             <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                               <ChildProcessors/>

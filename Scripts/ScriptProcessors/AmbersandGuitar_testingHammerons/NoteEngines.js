@@ -1326,6 +1326,11 @@ inline function randomAddOrSub(deviation){
 		legatoKeySwitchPlaying = true;
 	
 	if(isBetweenIncl(notePlayed, LOWESTNOTE, HIGHESTNOTE)){
+		
+		if(Globals.g_strummingModeOn){
+			Message.ignoreEvent(true);
+		}
+	
 		if(legatoKeySwitchPlaying){
 			
 			local didPlayNoteLegato = playNextNoteLegato(notePlayed, velocityPlayed);

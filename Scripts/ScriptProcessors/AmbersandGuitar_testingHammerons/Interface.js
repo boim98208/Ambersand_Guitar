@@ -23,6 +23,10 @@ Globals.g_legatoRange = 2;
 Globals.g_releaseVolume = 5;
 
 Globals.g_timeStretchRatio = 1;
+
+Globals.g_strummingModeOn = false;
+
+
 var timeStretchRatioBeforeDisabling = 1;
 
 const var NOTESPERSTRING = 22;
@@ -231,6 +235,17 @@ inline function onDoubleTrackingBtnControl(component, value)
 
 Content.getComponent("DoubleTrackingBtn").setControlCallback(onDoubleTrackingBtnControl);
 
+
+inline function onStrummingModeEnableBtnControl(component, value)
+{
+	if(value){
+		Globals.g_strummingModeOn = true;
+	}else{
+		Globals.g_strummingModeOn = false;
+	}
+};
+
+Content.getComponent("StrummingModeEnableBtn").setControlCallback(onStrummingModeEnableBtnControl);
 
 
 
