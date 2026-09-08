@@ -29,8 +29,6 @@ Globals.g_strummingModeOn = false;
 
 var timeStretchRatioBeforeDisabling = 1;
 
-const var NOTESPERSTRING = 22;
-const var NUMOFSTRINGS = 6;
 
 const var NONOTE = -1;
 

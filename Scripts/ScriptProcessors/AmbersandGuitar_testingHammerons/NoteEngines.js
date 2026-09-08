@@ -1285,6 +1285,23 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate, notesTo
 }
 
 
+inline function individualNoteStrum(notePlayed, noteVelocity){
+	local indexOfNoteToPlay;
+	local 
+	local noteToPlay;
+	
+	if(!isBetweenIncl(notePlayed, StrummingKeyswitches.lowIndivStrumKeyswitch, StrummingKeyswitches.highIndivStrumKeyswitch)){
+		return false;
+	}
+	
+	indexOfNoteToPlay = notePlayed - StrummingKeyswitches.downStrumKeyswitch;
+	
+	
+	
+	
+}
+
+
 inline function capAtLimits(lowLimit, highLimit, num){
 	if(isBetweenIncl(num, lowLimit, highLimit)){
 		return num;
