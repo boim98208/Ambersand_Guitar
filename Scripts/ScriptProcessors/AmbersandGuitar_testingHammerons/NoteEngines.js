@@ -240,6 +240,10 @@ inline function playString(stringToPlay){
 	
 	// adding 1 because the enum starts on 0 but channels start on 1
 	Message.setChannel(stringEnumToMidiChannel(stringToPlay));
+	incrementRR(stringToPlay);
+}
+
+inline function incrementRR(stringToPlay){
 	if(Globals.g_currRRBehaviour == RRBehaviour.LINEAR){
 		linearRR_incrementSamplersRR(stringToPlay);
 	}
@@ -254,6 +258,10 @@ inline function noteOffString(stringToOff, stringNotesToUpdate, stringIdsToUpdat
 	stringNotesToUpdate[stringToOff] = NO_NOTE;
 	stringIdsToUpdate[stringToOff] = NO_NOTE;
 	Message.setChannel(midiChannelToSend);
+}
+
+inline function updateGlobalStringNote(stringToUpdate, notePlayed, RRPlayed){
+	Globals.g_stringNotes[stringToUpdate] = notePlayed;
 }
  
 
@@ -873,7 +881,7 @@ inline function disableStandardRRBehaviour(){
 
 // keep in mind that the right samplers still need disabled RRs as it needs to very precisely be incremented from the left
 
-inline function enableLinearRRBehaviour(){
+inline function linearRR_EnableBehaviour(){
 	
 
 	Globals.g_currRRBehaviour = RRBehaviour.LINEAR;
@@ -889,7 +897,7 @@ inline function enableLinearRRBehaviour(){
 	}
 }
 
-enableLinearRRBehaviour();
+linearRR_EnableBehaviour();
 
 const var numOfRRs = [];
 numOfRRs.reserve(PerformanceType.NUMOFPERFORMANCES);
@@ -1271,15 +1279,19 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate, notesTo
 }
 
 
-const var notesToTest = [-1, 22, -1, -1, -1, -1];
+const var notesToTest = [79, 71, 67, 64, 59, 52];
 const var IdsToTest = [-1, -1, -1, -1, -1, -1];
 
 inline function individualNoteStrum(notePlayed, noteVelocity, notesToStrumFrom, noteIdsToUpdate){
+	
+	Console.print("hello");
+
 	local heightOfNoteToPlay;
 	local noteFound = false;
 	local noteIncrement = 0;
 	local noteToPlay = NO_NOTE;
 	local stringOfNoteToPlay;
+	local midiChannelToPlayString = 0;
 	local notesAvailableToPlay = 0;
 	
 	if(!isBetweenIncl(notePlayed, StrummingKeyswitches.lowIndivStrumKeyswitch, StrummingKeyswitches.highIndivStrumKeyswitch)){
@@ -1299,8 +1311,10 @@ inline function individualNoteStrum(notePlayed, noteVelocity, notesToStrumFrom, 
 	if(notesAvailableToPlay < heightOfNoteToPlay){
 		
 		// topmost strum keys will all just play the available highest note
-	
 		heightOfNoteToPlay = notesAvailableToPlay;
+		
+	}else if(notesAvailableToPlay == 0){
+		return false;
 	}
 	
 	for(i = NUMOFSTRINGS - 1; i >= 0 && !noteFound; i--){
@@ -1316,10 +1330,18 @@ inline function individualNoteStrum(notePlayed, noteVelocity, notesToStrumFrom, 
 		}
 	}
 	
-	Console.print(noteToPlay);
+	if(noteIdsToUpdate[stringOfNoteToPlay] != NO_NOTE){
+		Synth.noteOffByEventId(noteIdsToUpdate[stringOfNoteToPlay]);
+		noteIdsToUpdate[stringOfNoteToPlay] = NO_NOTE;
+	}
 	
 	
-
+	midiChannelToPlayString = stringEnumToMidiChannel(stringOfNoteToPlay);
+	
+	
+	noteIdsToUpdate[stringOfNoteToPlay] = Synth.addNoteOn(midiChannelToPlayString, noteToPlay, noteVelocity, 0);
+	
+	return true;
 	
 }
 
@@ -1395,6 +1417,7 @@ inline function randomAddOrSub(deviation){
 	strumIfStrumKeyPressed(notePlayed, stringNoteId, stringNote, velocityPlayed);
 	
 	individualNoteStrum(notePlayed, velocityPlayed, notesToTest, IdsToTest);
+	
 }
 function onNoteOff()
 {

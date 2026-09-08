@@ -40,7 +40,7 @@
             <Control type="ScriptSlider" id="TremoloModulatorsDecay" value="0.0"/>
             <Control type="ScriptSlider" id="TremoloModulatorsTremolo" value="-1.100000023841858"/>
             <Control type="ScriptSlider" id="TremoloModulatorsRelease" value="151.0"/>
-            <Control type="ScriptSlider" id="TremoloTimestretchKnob" value="1.574803113937378"/>
+            <Control type="ScriptSlider" id="TremoloTimestretchKnob" value="1.574803149606299"/>
             <Control type="ScriptButton" id="PurgeTremoloBtn" value="1.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsAttack" value="0.0"/>
             <Control type="ScriptSlider" id="SFXModulatorsDecay" value="0.0"/>
