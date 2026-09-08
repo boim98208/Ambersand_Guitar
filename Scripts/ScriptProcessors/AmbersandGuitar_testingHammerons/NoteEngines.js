@@ -1035,8 +1035,7 @@ inline function stringEnumToMidiChannel(stringEnum){
 
 //const var notesToTest = [55, 71, 67, 64, 59, 52];
 
-const var notesToTest = [76, 71, 67, 64, 59, 52];
-const var IdsToTest = [-1, -1, -1, -1, -1, -1];
+
 
 inline function singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity)
 {
@@ -1073,7 +1072,6 @@ inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStru
 	
 	local totalTimeMS = linMap(noteVelocity, 1, 127, slowestTotalStrumTime, fastestTotalStrumTime);
 	
-	Console.print(totalTimeMS);
 	
 	local totalTimeSamples = Engine.getSamplesForMilliSeconds(totalTimeMS);
 	local indivNoteDelay;
@@ -1134,8 +1132,6 @@ inline function upStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingStru
 			
 			stringChannelToSendTo = stringEnumToMidiChannel(j);
 			
-			Console.print(notesToStrum[j] + " delayed with " + indivNoteDelayRandomized);
-			
 			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
 			
 			Globals.g_stringNotes[j] = notesToStrum[j];
@@ -1183,7 +1179,6 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingSt
 		singleNoteStrum(notesToStrum, noteIdsToUpdate, noteVelocity);
 	}else{
 		// did not down strum because no notes
-		Console.print("hello");
 		return false;
 	}
 	
@@ -1216,8 +1211,6 @@ inline function downStrum(notesToStrum, noteIdsToUpdate, noteVelocity, playingSt
 			randomizedNoteVelocity = capAtLimits(1, 127, randomizedNoteVelocity);
 			
 			stringChannelToSendTo = stringEnumToMidiChannel(j);
-			
-			Console.print(notesToStrum[j] + " delayed with " + indivNoteDelayRandomized);
 			
 			noteIdsToUpdate[j] = Synth.addNoteOn(stringChannelToSendTo, notesToStrum[j], randomizedNoteVelocity, indivNoteDelayRandomized);
 			
@@ -1258,10 +1251,6 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate, notesTo
 		
 		if(noteIdsToUpdate[i] != -1){
 			
-	/*	
-	At the moment , randomizing a delayed off time seems to create hanging heldNotes so I'll just keep with making it a super fast release
-		Synth.noteOffDelayedByEventId(testIds[i], Math.randInt(0, 10) * Engine.getSamplesForMilliSeconds(2));
-	*/
 	
 	Synth.noteOffDelayedByEventId(noteIdsToUpdate[i], Math.random() * Engine.getSamplesForMilliSeconds(10));
 		noteIdsToUpdate[i] = -1;
@@ -1279,25 +1268,58 @@ inline function releaseStrumKeyIfReleased(noteReleased, noteIdsToUpdate, notesTo
 			notesToUpdate[i] = -1;
 		}
 		
-		/*for(i = 0; i < notesToUpdate.length; i++){
-			Console.print(notesToUpdate[i]);
-		}*/
 }
 
 
-inline function individualNoteStrum(notePlayed, noteVelocity){
-	local indexOfNoteToPlay;
-	local 
-	local noteToPlay;
+const var notesToTest = [-1, 22, -1, -1, -1, -1];
+const var IdsToTest = [-1, -1, -1, -1, -1, -1];
+
+inline function individualNoteStrum(notePlayed, noteVelocity, notesToStrumFrom, noteIdsToUpdate){
+	local heightOfNoteToPlay;
+	local noteFound = false;
+	local noteIncrement = 0;
+	local noteToPlay = NO_NOTE;
+	local stringOfNoteToPlay;
+	local notesAvailableToPlay = 0;
 	
 	if(!isBetweenIncl(notePlayed, StrummingKeyswitches.lowIndivStrumKeyswitch, StrummingKeyswitches.highIndivStrumKeyswitch)){
 		return false;
 	}
 	
-	indexOfNoteToPlay = notePlayed - StrummingKeyswitches.downStrumKeyswitch;
+	
+	heightOfNoteToPlay = notePlayed - StrummingKeyswitches.lowIndivStrumKeyswitch + 1;
+	
+	for(i = NUMOFSTRINGS - 1; i >= 0; i--){
+		if(notesToStrumFrom[i] != NO_NOTE){
+		
+			notesAvailableToPlay++;
+		}
+	}
+	
+	if(notesAvailableToPlay < heightOfNoteToPlay){
+		
+		// topmost strum keys will all just play the available highest note
+	
+		heightOfNoteToPlay = notesAvailableToPlay;
+	}
+	
+	for(i = NUMOFSTRINGS - 1; i >= 0 && !noteFound; i--){
+		if(notesToStrumFrom[i] != NO_NOTE){
+		
+			noteIncrement++;
+		}
+		
+		if(noteIncrement == heightOfNoteToPlay){
+			noteToPlay = notesToStrumFrom[i];
+			stringOfNoteToPlay = i;
+			noteFound = true;
+		}
+	}
+	
+	Console.print(noteToPlay);
 	
 	
-	
+
 	
 }
 
@@ -1368,19 +1390,11 @@ inline function randomAddOrSub(deviation){
 	}
 	
 	
-	/*if(notePlayed == StrummingKeyswitches.downStrumKeyswitch){
-		
-		currStrummingDirection = StrummingDirection.downStrumming;
-	downStrumHeld = true;
-	 // C7 in HISE
-	 	downStrum(notesToTest, IdsToTest, velocityPlayed, StrummingDirection.downStrumming);
-	 	//singleNoteStrum(notesToTest, IdsToTest, 100);
 
-	}*/
 	
 	strumIfStrumKeyPressed(notePlayed, stringNoteId, stringNote, velocityPlayed);
 	
-	// eventualy put this for the string chosen
+	individualNoteStrum(notePlayed, velocityPlayed, notesToTest, IdsToTest);
 }
 function onNoteOff()
 {
